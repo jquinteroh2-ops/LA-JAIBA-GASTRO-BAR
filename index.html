@@ -304,6 +304,30 @@
     animation: pulseSlow 4s ease-in-out infinite;
   }
   .about-crab-big { font-size: 14rem; position: relative; z-index: 2; animation: floatCrab 6s ease-in-out infinite; }
+  .about-photo-wrap {
+    position: relative; z-index: 2; width: 88%;
+    animation: floatCrab 6s ease-in-out infinite;
+  }
+  .about-photo-wrap img {
+    width: 100%; display: block;
+    border: 10px solid #ffffff;
+    border-bottom-width: 36px;
+    border-radius: 2px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 4px 16px rgba(0,0,0,0.3);
+    transform: rotate(-2.5deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .about-photo-wrap:hover img {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 2px var(--gold);
+  }
+  .about-photo-caption {
+    position: absolute; bottom: 10px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif; font-size: 0.72rem;
+    letter-spacing: 2px; color: var(--ocean-deep);
+    text-transform: uppercase; font-weight: 600;
+  }
   .about-badge {
     position: absolute; bottom: 10%; right: 5%;
     background: var(--coral); color: white;
@@ -588,6 +612,75 @@
   .contact-text { font-size: 0.95rem; color: var(--cream); }
   .contact-text small { display: block; color: var(--sand); font-size: 0.78rem; margin-bottom: 2px; letter-spacing: 1px; text-transform: uppercase; }
 
+  /* RESERVATION TOGGLE */
+  .res-toggle-wrap {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .res-toggle {
+    display: flex;
+    background: rgba(10,22,40,0.8);
+    border: 1px solid rgba(14,110,140,0.3);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .res-toggle-btn {
+    padding: 16px 48px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: var(--sand);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s ease;
+  }
+  .res-toggle-btn.active-normal {
+    background: linear-gradient(135deg, var(--ocean-teal), var(--ocean-light));
+    color: white;
+  }
+  .res-toggle-btn.active-especial {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--ocean-deep);
+  }
+  .form-panel {
+    transition: opacity 0.3s ease;
+  }
+  .form-panel.hidden, .hidden { display: none; }
+  .form-submit.especial-submit {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--ocean-deep);
+  }
+  .form-submit.especial-submit:hover { box-shadow: 0 10px 30px rgba(200,151,42,0.4); }
+  .event-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,42,0.12);
+    border: 1px solid rgba(200,151,42,0.3);
+    border-radius: 2px; padding: 8px 16px;
+    font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 16px;
+  }
+  .event-capacidades {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin: 24px 0;
+  }
+  .event-cap-item {
+    background: rgba(13,43,78,0.6);
+    border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 4px; padding: 16px;
+    text-align: center;
+  }
+  .event-cap-item .cap-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; color: var(--gold-light); line-height: 1;
+  }
+  .event-cap-item .cap-label {
+    font-size: 0.75rem; color: var(--sand);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+  }
+
   /* LOCATION */
   #ubicacion {
     padding: 120px 60px;
@@ -810,7 +903,10 @@
     <div class="about-visual reveal-left">
       <div class="about-img-frame">
         <div class="about-circle-bg"></div>
-        <span class="about-crab-big">🦀</span>
+        <div class="about-photo-wrap">
+          <img src="fachada.jpg" alt="Fachada La Jaiba Gastrobar — Barrio el Recreo, Cartagena" loading="lazy">
+          <div class="about-photo-caption">La Jaiba Gastrobar — Cartagena</div>
+        </div>
         <div class="about-badge">
           <div class="num">5,5K</div>
           <div class="lbl">Seguidores</div>
@@ -1149,68 +1245,190 @@
 
 <!-- RESERVAS -->
 <section id="reservas">
-  <div class="reservas-grid">
-    <div class="reservas-form-card reveal-left">
-      <div class="form-title">Reserva tu Mesa</div>
-      <div class="form-subtitle">Te esperamos en La Jaiba Gastrobar</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="res-nombre">Nombre</label>
-          <input id="res-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
-        </div>
-        <div class="form-group">
-          <label for="res-telefono">Teléfono</label>
-          <input id="res-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="res-fecha">Fecha</label>
-          <input id="res-fecha" type="date">
-        </div>
-        <div class="form-group">
-          <label for="res-hora">Hora</label>
-          <input id="res-hora" type="time" value="19:00">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="res-personas">Número de personas</label>
-        <select id="res-personas">
-          <option>1 persona</option>
-          <option>2 personas</option>
-          <option>3-4 personas</option>
-          <option>5-6 personas</option>
-          <option>Más de 6</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="res-mensaje">Mensaje especial</label>
-        <textarea id="res-mensaje" rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
-      </div>
-      <button class="form-submit" onclick="sendReservation()">📞 RESERVAR POR WHATSAPP</button>
+  <!-- TOGGLE -->
+  <div class="res-toggle-wrap">
+    <div class="res-toggle">
+      <button type="button" id="btn-normal" class="res-toggle-btn active-normal" onclick="toggleReservaMode('normal')">🍽️ Mesa Normal</button>
+      <button type="button" id="btn-especial" class="res-toggle-btn" onclick="toggleReservaMode('especial')">🎉 Salón de Eventos</button>
     </div>
+  </div>
+
+  <div class="reservas-grid">
+    <!-- LEFT: Formulario -->
+    <div class="reservas-form-card reveal-left">
+
+      <!-- FORMULARIO NORMAL -->
+      <div id="form-normal" class="form-panel">
+        <div class="form-title">Reserva tu Mesa</div>
+        <div class="form-subtitle">Te esperamos en La Jaiba Gastrobar</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-nombre">Nombre</label>
+            <input id="res-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="res-telefono">Teléfono</label>
+            <input id="res-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-fecha">Fecha</label>
+            <input id="res-fecha" type="date">
+          </div>
+          <div class="form-group">
+            <label for="res-hora">Hora</label>
+            <input id="res-hora" type="time" value="19:00">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="res-personas">Número de personas</label>
+          <select id="res-personas">
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3-4 personas</option>
+            <option>5-6 personas</option>
+            <option>Más de 6</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="res-mensaje">Mensaje especial</label>
+          <textarea id="res-mensaje" rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
+        </div>
+        <button class="form-submit" onclick="sendReservation()">📞 RESERVAR POR WHATSAPP</button>
+      </div>
+
+      <!-- FORMULARIO ESPECIAL -->
+      <div id="form-especial" class="form-panel hidden">
+        <div class="form-title">Reserva tu Salón</div>
+        <div class="form-subtitle">Eventos que quedan en la memoria</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ev-nombre">Nombre completo</label>
+            <input id="ev-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="ev-telefono">Teléfono</label>
+            <input id="ev-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ev-tipo">Tipo de evento</label>
+          <select id="ev-tipo">
+            <option value="">— Selecciona el tipo de evento —</option>
+            <option>Cumpleaños</option>
+            <option>Quinceañera</option>
+            <option>Matrimonio / Boda</option>
+            <option>Reunión Empresarial</option>
+            <option>Grado / Graduación</option>
+            <option>Fiesta Privada</option>
+            <option>Baby Shower</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ev-asistentes">Número de asistentes</label>
+            <select id="ev-asistentes">
+              <option value="">— Selecciona —</option>
+              <option>20 - 30 personas</option>
+              <option>30 - 50 personas</option>
+              <option>50 - 100 personas</option>
+              <option>100 - 150 personas</option>
+              <option>Más de 150 personas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ev-fecha">Fecha del evento</label>
+            <input id="ev-fecha" type="date">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ev-hora-inicio">Hora de inicio</label>
+            <input id="ev-hora-inicio" type="time" value="18:00">
+          </div>
+          <div class="form-group">
+            <label for="ev-hora-fin">Hora de fin</label>
+            <input id="ev-hora-fin" type="time" value="23:00">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ev-servicios">Servicios requeridos</label>
+          <textarea id="ev-servicios" rows="3" placeholder="Ej: decoración temática, servicio de bar, música, catering especial..."></textarea>
+        </div>
+        <button class="form-submit especial-submit" onclick="sendSpecialReservation()">🎉 CONSULTAR DISPONIBILIDAD</button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Info panel -->
     <div class="reservas-info reveal-right">
-      <div class="section-label">Contacto</div>
-      <h3>¿Listo para vivir la <em>experiencia</em>?</h3>
-      <p>Reserva tu mesa y disfruta de la mejor cocina marina de Cartagena. Te garantizamos una experiencia llena de sabor, frescura y mucha costa en el corazón.</p>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-text"><small>Ubicación</small>Barrio el Recreo, Cartagena de Indias</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🕐</div>
-          <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📱</div>
-          <div class="contact-text"><small>Instagram</small>@lajaiba_gastrobar</div>
+
+      <!-- INFO NORMAL -->
+      <div id="info-normal">
+        <div class="section-label">Contacto</div>
+        <h3>¿Listo para vivir la <em>experiencia</em>?</h3>
+        <p>Reserva tu mesa y disfruta de la mejor cocina marina de Cartagena. Te garantizamos una experiencia llena de sabor, frescura y mucha costa en el corazón.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text"><small>Ubicación</small>Barrio el Recreo, Cartagena de Indias</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-text"><small>Instagram</small>@lajaiba_gastrobar</div>
+          </div>
         </div>
       </div>
+
+      <!-- INFO ESPECIAL -->
+      <div id="info-especial" class="hidden">
+        <div class="section-label">Eventos</div>
+        <h3>Tu evento, nuestro <em>escenario</em></h3>
+        <p>Celebra los momentos más importantes de tu vida en La Jaiba Gastrobar. Nuestros salones se adaptan a cualquier ocasión con ambientación, gastronomía y servicio de primera.</p>
+        <div class="event-capacidades">
+          <div class="event-cap-item">
+            <div class="cap-number">20+</div>
+            <div class="cap-label">Personas</div>
+          </div>
+          <div class="event-cap-item">
+            <div class="cap-number">150+</div>
+            <div class="cap-label">Cap. máxima</div>
+          </div>
+          <div class="event-cap-item">
+            <div class="cap-number">🍽️</div>
+            <div class="cap-label">Catering propio</div>
+          </div>
+          <div class="event-cap-item">
+            <div class="cap-number">🎶</div>
+            <div class="cap-label">Ambientación</div>
+          </div>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text"><small>Consultas de eventos</small>302 271 3343</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📅</div>
+            <div class="contact-text"><small>Disponibilidad</small>Consulta con anticipación para asegurar tu fecha</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✨</div>
+            <div class="contact-text"><small>Personalización</small>Decoración y menú a tu medida</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1408,6 +1626,16 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 3500);
 }
 
+function toggleReservaMode(mode) {
+  const isEspecial = mode === 'especial';
+  document.getElementById('form-normal').classList.toggle('hidden', isEspecial);
+  document.getElementById('form-especial').classList.toggle('hidden', !isEspecial);
+  document.getElementById('info-normal').classList.toggle('hidden', isEspecial);
+  document.getElementById('info-especial').classList.toggle('hidden', !isEspecial);
+  document.getElementById('btn-normal').className = 'res-toggle-btn' + (isEspecial ? '' : ' active-normal');
+  document.getElementById('btn-especial').className = 'res-toggle-btn' + (isEspecial ? ' active-especial' : '');
+}
+
 function sendReservation() {
   const name = document.getElementById('res-nombre').value.trim();
   const phone = document.getElementById('res-telefono').value.trim();
@@ -1423,6 +1651,27 @@ function sendReservation() {
   const text = `Hola La Jaiba Gastrobar! 🦀\n\nQuiero hacer una reserva:\n👤 Nombre: ${name}\n📱 Teléfono: ${phone}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n👥 Personas: ${persons}${msg ? '\n💬 Mensaje: ' + msg : ''}\n\n¡Gracias!`;
   window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
   showToast('✅ ¡Reserva enviada por WhatsApp!');
+}
+
+function sendSpecialReservation() {
+  const name = document.getElementById('ev-nombre').value.trim();
+  const phone = document.getElementById('ev-telefono').value.trim();
+  const tipo = document.getElementById('ev-tipo').value;
+  const asistentes = document.getElementById('ev-asistentes').value;
+  const date = document.getElementById('ev-fecha').value;
+  const horaInicio = document.getElementById('ev-hora-inicio').value;
+  const horaFin = document.getElementById('ev-hora-fin').value;
+  const servicios = document.getElementById('ev-servicios').value.trim();
+
+  if (!name) { showToast('⚠️ Por favor ingresa tu nombre.'); document.getElementById('ev-nombre').focus(); return; }
+  if (!phone) { showToast('⚠️ Por favor ingresa tu teléfono.'); document.getElementById('ev-telefono').focus(); return; }
+  if (!tipo) { showToast('⚠️ Por favor selecciona el tipo de evento.'); document.getElementById('ev-tipo').focus(); return; }
+  if (!asistentes) { showToast('⚠️ Por favor selecciona el número de asistentes.'); document.getElementById('ev-asistentes').focus(); return; }
+  if (!date) { showToast('⚠️ Por favor selecciona la fecha del evento.'); document.getElementById('ev-fecha').focus(); return; }
+
+  const text = `Hola La Jaiba Gastrobar! 🎉\n\nConsulta de *Reserva Especial — Salón de Eventos*:\n\n👤 Nombre: ${name}\n📱 Teléfono: ${phone}\n🎊 Tipo de evento: ${tipo}\n👥 Asistentes: ${asistentes}\n📅 Fecha: ${date}\n🕐 Horario: ${horaInicio} — ${horaFin}${servicios ? '\n✨ Servicios requeridos: ' + servicios : ''}\n\n¡Quedo atento a su respuesta!`;
+  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
+  showToast('🎉 ¡Consulta de evento enviada por WhatsApp!');
 }
 
 // 3D TILT on special cards
