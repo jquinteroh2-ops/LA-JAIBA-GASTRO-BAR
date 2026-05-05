@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Bebas+Neue&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean-deep: #0a1628;
+    --ocean-mid: #0d2b4e;
+    --ocean-teal: #0e6e8c;
+    --ocean-light: #1ab3d4;
+    --coral: #e8442a;
+    --coral-light: #ff6b4a;
+    --gold: #c8972a;
+    --gold-light: #f0c060;
+    --cream: #f5ede0;
+    --white: #ffffff;
+    --sand: #d4b896;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ocean-deep);
+    color: var(--cream);
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    width: 20px; height: 20px;
+    border: 2px solid var(--coral);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transition: transform 0.1s ease, background 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-dot {
+    width: 6px; height: 6px;
+    background: var(--coral);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scale(2); background: rgba(232,68,42,0.2); }
+
+  /* PARTICLES CANVAS */
+  #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.4; }
+
+  /* WAVES */
+  .wave-divider { position: relative; overflow: hidden; line-height: 0; }
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(10,22,40,0.95);
+    backdrop-filter: blur(20px);
+    padding: 14px 60px;
+    border-bottom: 1px solid rgba(200,151,42,0.2);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span { color: var(--coral); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: var(--cream); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 500; position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--coral);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--coral); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--coral); color: white !important;
+    padding: 10px 24px; border-radius: 2px;
+    font-weight: 600 !important;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--coral-light) !important; transform: translateY(-2px); }
+  .nav-cta::after { display: none !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 50%, rgba(14,110,140,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(232,68,42,0.15) 0%, transparent 50%),
+      linear-gradient(180deg, #051020 0%, #0a1628 40%, #061830 100%);
+  }
+  .hero-ocean {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(10,43,78,0.6));
+    overflow: hidden;
+  }
+  .ocean-wave {
+    position: absolute; bottom: 0; left: -100%;
+    width: 300%; height: 200px;
+    background: rgba(14,110,140,0.15);
+    border-radius: 50%;
+    animation: waveMove 8s infinite linear;
+  }
+  .ocean-wave:nth-child(2) { animation: waveMove 12s infinite linear reverse; opacity: 0.5; height: 150px; }
+  .ocean-wave:nth-child(3) { animation: waveMove 6s infinite linear; opacity: 0.3; height: 100px; }
+  @keyframes waveMove { 0% { transform: translateX(0) rotate(0); } 100% { transform: translateX(33%) rotate(2deg); } }
+
+  .hero-content {
+    position: relative; z-index: 5;
+    text-align: center; padding: 120px 20px 60px;
+  }
+  .hero-tag {
+    font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+    margin-bottom: 24px;
+    animation: fadeUp 1s 0.2s both;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .hero-tag::before, .hero-tag::after {
+    content: ''; width: 60px; height: 1px; background: var(--gold); opacity: 0.6;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 16vw, 14rem);
+    line-height: 0.85;
+    color: white;
+    animation: fadeUp 1s 0.4s both;
+    position: relative;
+  }
+  .hero-title .la { color: var(--ocean-light); font-size: 0.5em; display: block; }
+  .hero-title .jaiba {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--coral));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    filter: drop-shadow(0 0 40px rgba(200,151,42,0.5));
+  }
+  .hero-title .gastrobar { font-size: 0.22em; letter-spacing: 8px; color: var(--sand); display: block; margin-top: 8px; }
+
+  .hero-crab {
+    font-size: 8rem;
+    animation: floatCrab 4s ease-in-out infinite, fadeUp 1s 0.6s both;
+    display: block; line-height: 1;
+    filter: drop-shadow(0 20px 40px rgba(232,68,42,0.4));
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-style: italic;
+    color: var(--sand);
+    margin: 24px 0 40px;
+    animation: fadeUp 1s 0.8s both;
+    line-height: 1.6;
+  }
+  .hero-btns {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 1s 1s both;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--coral), var(--coral-light));
+    color: white; border: none;
+    padding: 16px 44px; font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(232,68,42,0.4); }
+  .btn-secondary {
+    background: transparent; color: var(--cream);
+    border: 1px solid rgba(200,151,42,0.5);
+    padding: 16px 44px; font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,151,42,0.08); }
+
+  .scroll-indicator {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    animation: bounce 2s infinite, fadeUp 1s 1.4s both;
+    z-index: 5;
+  }
+  .scroll-indicator span {
+    display: block; width: 24px; height: 40px;
+    border: 2px solid rgba(200,151,42,0.5); border-radius: 12px;
+    position: relative; margin: 0 auto;
+  }
+  .scroll-indicator span::after {
+    content: ''; display: block; width: 4px; height: 8px;
+    background: var(--gold); border-radius: 2px;
+    position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    animation: scrollDot 2s infinite;
+  }
+
+  @keyframes floatCrab { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-10px); } }
+  @keyframes scrollDot { 0% { top: 6px; opacity: 1; } 100% { top: 22px; opacity: 0; } }
+
+  /* FEATURES BAR */
+  .features-bar {
+    background: linear-gradient(90deg, var(--coral) 0%, #c0391f 100%);
+    padding: 0; overflow: hidden;
+    position: relative; z-index: 10;
+  }
+  .features-ticker {
+    display: flex; animation: ticker 20s infinite linear;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    padding: 16px 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 3px;
+    display: flex; align-items: center; gap: 16px;
+    flex-shrink: 0;
+  }
+  .ticker-item .dot { color: var(--gold-light); font-size: 1.5rem; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* SECTION COMMONS */
+  section { position: relative; z-index: 1; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--coral); font-weight: 700;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::before { content: ''; width: 40px; height: 2px; background: var(--coral); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1; color: white;
+    margin-bottom: 20px;
+  }
+  .section-title em { color: var(--gold-light); font-style: italic; }
+  .section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--sand); font-style: italic;
+    line-height: 1.7;
+  }
+
+  /* ABOUT */
+  #about {
+    padding: 120px 60px;
+    background: linear-gradient(180deg, var(--ocean-deep) 0%, var(--ocean-mid) 50%, var(--ocean-deep) 100%);
+  }
+  .about-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-frame {
+    position: relative; width: 100%; aspect-ratio: 1/1.1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-circle-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle, rgba(14,110,140,0.3), transparent 70%);
+    border-radius: 50%;
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+  .about-crab-big { font-size: 14rem; position: relative; z-index: 2; animation: floatCrab 6s ease-in-out infinite; }
+  .about-badge {
+    position: absolute; bottom: 10%; right: 5%;
+    background: var(--coral); color: white;
+    padding: 20px; border-radius: 4px;
+    text-align: center; z-index: 3;
+    animation: floatBadge 3s ease-in-out infinite;
+  }
+  .about-badge .num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; line-height: 1; }
+  .about-badge .lbl { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;
+  }
+  .stat-card {
+    background: rgba(14,110,140,0.1);
+    border: 1px solid rgba(14,110,140,0.3);
+    padding: 24px; border-radius: 4px;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .stat-card .val { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold-light); }
+  .stat-card .lbl { font-size: 0.8rem; color: var(--sand); letter-spacing: 1px; margin-top: 4px; }
+
+  @keyframes pulseSlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  @keyframes floatBadge { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-10px) rotate(3deg); } }
+
+  /* MENU SECTION */
+  #menu {
+    padding: 120px 60px;
+    background: var(--ocean-deep);
+  }
+  .menu-header { text-align: center; margin-bottom: 80px; }
+  .menu-tabs {
+    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .tab-btn {
+    background: transparent; border: 1px solid rgba(200,151,42,0.3);
+    color: var(--sand); padding: 10px 28px;
+    font-family: 'Raleway', sans-serif; font-size: 0.8rem;
+    letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+    cursor: pointer; transition: all 0.3s;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--coral); border-color: var(--coral); color: white;
+  }
+  .menu-panel { display: none; animation: fadeIn 0.4s ease; }
+  .menu-panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  .menu-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;
+  }
+  .menu-category { margin-bottom: 40px; }
+  .menu-category-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; color: var(--gold-light);
+    letter-spacing: 3px; margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(200,151,42,0.2);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .menu-card {
+    background: rgba(13,43,78,0.6);
+    border: 1px solid rgba(14,110,140,0.2);
+    border-radius: 4px; padding: 20px 24px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .menu-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--coral); transform: scaleY(0);
+    transition: transform 0.3s; transform-origin: bottom;
+  }
+  .menu-card:hover { transform: translateX(4px); border-color: rgba(232,68,42,0.3); background: rgba(13,43,78,0.9); }
+  .menu-card:hover::before { transform: scaleY(1); }
+  .menu-item-name { font-weight: 600; font-size: 0.95rem; color: var(--cream); margin-bottom: 4px; }
+  .menu-item-desc { font-size: 0.78rem; color: var(--sand); font-style: italic; }
+  .menu-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--gold-light); white-space: nowrap; margin-left: 20px; }
+
+  /* Full menu grid for 2 columns */
+  .menu-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; }
+
+  /* HOURS & INFO */
+  .hours-banner {
+    background: linear-gradient(135deg, rgba(232,68,42,0.15), rgba(14,110,140,0.15));
+    border: 1px solid rgba(200,151,42,0.2);
+    max-width: 900px; margin: 60px auto 0;
+    padding: 40px 60px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hours-banner::before {
+    content: '🦀'; font-size: 8rem; position: absolute;
+    right: -20px; top: 50%; transform: translateY(-50%);
+    opacity: 0.08;
+  }
+  .hours-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 20px; }
+  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .hour-block { padding: 16px; background: rgba(10,22,40,0.5); border-radius: 4px; }
+  .hour-time { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--coral); }
+  .hour-label { font-size: 0.8rem; color: var(--sand); letter-spacing: 1px; margin-top: 4px; }
+
+  /* GALLERY / REELS */
+  #gallery {
+    padding: 120px 60px;
+    background: linear-gradient(180deg, var(--ocean-deep), var(--ocean-mid));
+  }
+  .gallery-header { text-align: center; margin-bottom: 60px; }
+  .reels-layout {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+  }
+  .reel-card {
+    position: relative; border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(14,110,140,0.25);
+    transition: transform 0.4s, box-shadow 0.4s;
+    background: rgba(13,43,78,0.6);
+  }
+  .reel-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+  .reel-label {
+    padding: 16px 20px;
+    font-family: 'Raleway', sans-serif; font-size: 0.82rem;
+    color: var(--sand); letter-spacing: 1px;
+    border-top: 1px solid rgba(14,110,140,0.15);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .reel-label svg { flex-shrink: 0; }
+  .reel-embed-wrap {
+    position: relative; width: 100%;
+    /* Instagram embed aspect ratio roughly 9:16 but we let it auto-size */
+  }
+  .reel-embed-wrap iframe {
+    display: block; width: 100%; border: none;
+    min-height: 560px;
+  }
+  .ig-follow-banner {
+    max-width: 1100px; margin: 40px auto 0;
+    background: linear-gradient(135deg, rgba(200,151,42,0.1), rgba(14,110,140,0.1));
+    border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 4px; padding: 28px 40px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .ig-follow-text h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: white; margin-bottom: 6px; }
+  .ig-follow-text p { color: var(--sand); font-size: 0.88rem; }
+  .ig-follow-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: white; text-decoration: none;
+    padding: 14px 32px; border-radius: 4px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 2px;
+    transition: transform 0.3s, box-shadow 0.3s; white-space: nowrap;
+  }
+  .ig-follow-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(131,58,180,0.4); }
+
+  /* SPECIALS */
+  #specials {
+    padding: 120px 60px;
+    background: var(--ocean-deep);
+    position: relative; overflow: hidden;
+  }
+  #specials::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(14,110,140,0.1) 0%, transparent 70%);
+  }
+  .specials-content { max-width: 1100px; margin: 0 auto; }
+  .specials-header { text-align: center; margin-bottom: 60px; }
+  .specials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .special-card {
+    background: linear-gradient(135deg, rgba(13,43,78,0.9), rgba(10,22,40,0.9));
+    border: 1px solid rgba(14,110,140,0.25);
+    border-radius: 4px; padding: 40px 30px;
+    text-align: center; position: relative; overflow: hidden;
+    transition: all 0.4s; cursor: pointer;
+  }
+  .special-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(232,68,42,0.05), rgba(200,151,42,0.05));
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .special-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+  .special-card:hover::after { opacity: 1; }
+  .special-card.featured { border-color: var(--gold); background: linear-gradient(135deg, rgba(200,151,42,0.15), rgba(13,43,78,0.9)); }
+  .special-badge {
+    position: absolute; top: -1px; right: 20px;
+    background: var(--gold); color: var(--ocean-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.8rem; letter-spacing: 2px;
+    padding: 6px 16px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  }
+  .special-icon { font-size: 4.5rem; display: block; margin-bottom: 20px; }
+  .special-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: white; margin-bottom: 8px; }
+  .special-desc { font-size: 0.85rem; color: var(--sand); line-height: 1.6; margin-bottom: 20px; }
+  .special-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold-light); }
+  .special-price span { font-size: 1rem; color: var(--sand); }
+
+  /* RESERVATION */
+  #reservas {
+    padding: 120px 60px;
+    background: linear-gradient(180deg, var(--ocean-mid), var(--ocean-deep));
+  }
+  .reservas-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .reservas-form-card {
+    background: rgba(13,43,78,0.6);
+    border: 1px solid rgba(14,110,140,0.3);
+    padding: 50px; border-radius: 4px;
+  }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin-bottom: 8px; }
+  .form-subtitle { color: var(--sand); font-style: italic; margin-bottom: 32px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--sand); margin-bottom: 8px; font-weight: 600; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: rgba(10,22,40,0.8);
+    border: 1px solid rgba(14,110,140,0.3); color: var(--cream);
+    padding: 14px 18px; font-family: 'Raleway', sans-serif; font-size: 0.9rem;
+    border-radius: 2px; outline: none;
+    transition: border-color 0.3s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--ocean-deep); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--coral), var(--coral-light)); color: white; border: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 3px; cursor: pointer; transition: all 0.3s; margin-top: 8px; }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,68,42,0.4); }
+  .reservas-info h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: white; line-height: 1.2; margin-bottom: 20px; }
+  .reservas-info h3 em { color: var(--gold-light); }
+  .reservas-info p { color: var(--sand); line-height: 1.8; margin-bottom: 30px; font-style: italic; font-size: 1.05rem; }
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; align-items: center; gap: 16px; }
+  .contact-icon { width: 48px; height: 48px; background: rgba(232,68,42,0.15); border: 1px solid rgba(232,68,42,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+  .contact-text { font-size: 0.95rem; color: var(--cream); }
+  .contact-text small { display: block; color: var(--sand); font-size: 0.78rem; margin-bottom: 2px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* LOCATION */
+  #ubicacion {
+    padding: 120px 60px;
+    background: var(--ocean-deep);
+  }
+  .ubicacion-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .map-placeholder {
+    aspect-ratio: 1/0.8;
+    background: linear-gradient(135deg, rgba(13,43,78,0.9), rgba(14,110,140,0.3));
+    border: 1px solid rgba(14,110,140,0.3);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-size: 6rem; position: relative; overflow: hidden;
+    flex-direction: column; gap: 20px;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .map-placeholder:hover { border-color: var(--coral); transform: scale(1.02); }
+  .map-placeholder::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(14,110,140,0.05) 0px, rgba(14,110,140,0.05) 1px, transparent 1px, transparent 20px);
+  }
+  .map-label { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 3px; color: var(--gold); position: relative; }
+  .map-btn { background: var(--coral); color: white; padding: 12px 28px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 1rem; border-radius: 2px; position: relative; }
+  .ubicacion-info h3 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: white; margin-bottom: 16px; }
+  .ubicacion-info p { color: var(--sand); line-height: 1.8; margin-bottom: 24px; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .info-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 0.9rem; color: var(--cream); }
+  .info-list li span:first-child { font-size: 1.4rem; }
+
+  /* FOOTER */
+  footer {
+    background: #050d1a;
+    padding: 60px 60px 30px;
+    border-top: 1px solid rgba(14,110,140,0.2);
+  }
+  .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 50px; }
+  .footer-brand { }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold-light); letter-spacing: 2px; margin-bottom: 16px; display: block; }
+  .footer-brand p { color: var(--sand); font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+  .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+  .social-btn { width: 40px; height: 40px; background: rgba(14,110,140,0.2); border: 1px solid rgba(14,110,140,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: all 0.3s; }
+  .social-btn:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-3px); }
+  .footer-col h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col ul li a { color: var(--sand); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
+  .footer-col ul li a:hover { color: var(--cream); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; text-align: center; color: var(--sand); font-size: 0.8rem; }
+
+  /* FLOATING WHATSAPP */
+  .whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; z-index: 200;
+    background: #25D366; color: white;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; text-decoration: none;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+    animation: pulse 2s infinite;
+    transition: transform 0.3s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  @keyframes pulse { 0%,100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); } 50% { box-shadow: 0 8px 50px rgba(37,211,102,0.7); } }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 110px; right: 30px; z-index: 300;
+    background: var(--ocean-mid); border: 1px solid var(--gold);
+    color: var(--cream); padding: 16px 24px; border-radius: 4px;
+    font-size: 0.9rem; transform: translateX(200%); transition: transform 0.4s;
+    max-width: 280px;
+  }
+  .toast.show { transform: translateX(0); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-left.visible { opacity: 1; transform: none; }
+  .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-right.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-links { display: none; }
+    #about, #menu, #gallery, #specials, #reservas, #ubicacion { padding: 80px 24px; }
+    .about-grid, .reservas-grid, .ubicacion-grid { grid-template-columns: 1fr; gap: 40px; }
+    .specials-grid { grid-template-columns: 1fr; }
+    .menu-2col { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">🦀 <span>LA</span> JAIBA</a>
+  <ul class="nav-links">
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#specials">Destacados</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#reservas" class="nav-cta">Reservar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ocean">
+    <div class="ocean-wave"></div>
+    <div class="ocean-wave"></div>
+    <div class="ocean-wave"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Barrio el Recreo • Cartagena • Colombia</div>
+    <span class="hero-crab">🦀</span>
+    <h1 class="hero-title">
+      <span class="la">LA</span>
+      <span class="jaiba">JAIBA</span>
+      <span class="gastrobar">GASTROBAR</span>
+    </h1>
+    <p class="hero-subtitle">
+      Sabor, frescura y mucha costa en el corazón<br>
+      <em>Tradición marina con el mejor sazón</em>
+    </p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">🍽️ Ver Menú</a>
+      <a href="#reservas" class="btn-secondary">📞 Reservar Mesa</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- TICKER -->
+<div class="features-bar">
+  <div class="features-ticker" id="ticker">
+    <span class="ticker-item"><span class="dot">🦞</span> MARISCOS FRESCOS</span>
+    <span class="ticker-item"><span class="dot">🍹</span> COCTELES ARTESANALES</span>
+    <span class="ticker-item"><span class="dot">🌊</span> SABOR A MAR</span>
+    <span class="ticker-item"><span class="dot">🦀</span> PAELLAS DE MARISCOS</span>
+    <span class="ticker-item"><span class="dot">🐟</span> PESCADOS DEL DÍA</span>
+    <span class="ticker-item"><span class="dot">🌅</span> ABIERTO TODOS LOS DÍAS</span>
+    <span class="ticker-item"><span class="dot">📍</span> BARRIO EL RECREO</span>
+    <span class="ticker-item"><span class="dot">🦞</span> MARISCOS FRESCOS</span>
+    <span class="ticker-item"><span class="dot">🍹</span> COCTELES ARTESANALES</span>
+    <span class="ticker-item"><span class="dot">🌊</span> SABOR A MAR</span>
+    <span class="ticker-item"><span class="dot">🦀</span> PAELLAS DE MARISCOS</span>
+    <span class="ticker-item"><span class="dot">🐟</span> PESCADOS DEL DÍA</span>
+    <span class="ticker-item"><span class="dot">🌅</span> ABIERTO TODOS LOS DÍAS</span>
+    <span class="ticker-item"><span class="dot">📍</span> BARRIO EL RECREO</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-img-frame">
+        <div class="about-circle-bg"></div>
+        <span class="about-crab-big">🦀</span>
+        <div class="about-badge">
+          <div class="num">5,5K</div>
+          <div class="lbl">Seguidores</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="section-label">Nuestra Historia</div>
+      <h2 class="section-title">El sabor del <em>océano</em> en cada plato</h2>
+      <p class="section-subtitle" style="margin-bottom:30px;">
+        En La Jaiba Gastrobar traemos lo mejor del mar directamente a tu mesa. Ubicados en el Barrio el Recreo de Cartagena, somos el punto de encuentro para los amantes de los mariscos, los cócteles tropicales y el buen ambiente costeño.
+      </p>
+      <p style="color: var(--sand); font-size: 0.9rem; line-height: 1.8; margin-bottom:30px;">
+        Desde nuestras cazuelas humeantes y paellas generosas, hasta nuestros cócteles refrescantes con sabores tropicales — cada visita es una celebración del mar.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card reveal">
+          <div class="val">11AM</div>
+          <div class="lbl">Apertura diaria</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val">🍹</div>
+          <div class="lbl">Coctelería todo el día</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val">100%</div>
+          <div class="lbl">Mariscos frescos</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val">🌊</div>
+          <div class="lbl">Ambiente costeño</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-header reveal">
+    <div class="section-label" style="justify-content:center;">Nuestros Platos</div>
+    <h2 class="section-title">El <em>Menú</em></h2>
+    <p class="section-subtitle">Tradición marina con el mejor sazón</p>
+  </div>
+
+  <div class="menu-tabs reveal">
+    <button class="tab-btn active" onclick="showTab('entradas')">🦐 Entradas</button>
+    <button class="tab-btn" onclick="showTab('pescados')">🐟 Pescados</button>
+    <button class="tab-btn" onclick="showTab('mariscos')">🦞 Mariscos</button>
+    <button class="tab-btn" onclick="showTab('paellas')">🥘 Paellas</button>
+    <button class="tab-btn" onclick="showTab('bebidas')">🍹 Bebidas</button>
+    <button class="tab-btn" onclick="showTab('licores')">🥃 Licores</button>
+  </div>
+
+  <!-- ENTRADAS -->
+  <div class="menu-panel active" id="tab-entradas">
+    <div class="menu-2col">
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🦀 Entradas Calientes</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Muelas de Jaiba al ajillo</div></div><div class="menu-price">$19.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Muelas de Jaiba gratinadas</div></div><div class="menu-price">$21.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Canastas de patacón con camarón</div></div><div class="menu-price">$24.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Almejas gratinadas</div></div><div class="menu-price">$20.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Canoas de camarón</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Langostino al perejil</div></div><div class="menu-price">$35.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Triología de empanadas de mariscos</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Pincho de camarón</div></div><div class="menu-price">$28.000</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🧊 Entradas Frías</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Pequeño</div></div><div class="menu-price">$18.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Grande</div></div><div class="menu-price">$30.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Pequeño</div></div><div class="menu-price">$18.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Grande</div></div><div class="menu-price">$30.000</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1100px;margin:40px auto 0;">
+      <div class="menu-category">
+        <div class="menu-category-title">🍲 Sancochos & Cazuelas</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
+          <div class="menu-card"><div><div class="menu-item-name">Sancocho de pescado</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Sancocho trifásico</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Mote de queso</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela de Jaiba</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$29.900</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Sencilla Mixta</div></div><div class="menu-price">$38.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Solo Camarón</div></div><div class="menu-price">$49.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Camarón y Langostinos</div></div><div class="menu-price">$55.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Mixta</div></div><div class="menu-price">$65.000</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESCADOS -->
+  <div class="menu-panel" id="tab-pescados">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco, patacón y ensalada</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Frito</div></div><div class="menu-price">$43.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo al ajillo con camarones</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Mixto</div></div><div class="menu-price">$64.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina al ajillo con camarones</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina Mixta</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo Frito</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo Mixto</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Mixta</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Mixta</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Viuda de Bocachico Abierto</div></div><div class="menu-price">$49.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Salmón de Marisco</div></div><div class="menu-price">$60.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Filete de Pescado en Salsa de Camarón</div></div><div class="menu-price">$78.000</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARISCOS -->
+  <div class="menu-panel" id="tab-mariscos">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco y patacón</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
+        <div class="menu-card"><div><div class="menu-item-name">Langostinos al ajillo</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Langostino gratinado</div></div><div class="menu-price">$65.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Muelas de jaiba guisada</div></div><div class="menu-price">$45.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Caracol guisado</div></div><div class="menu-price">$45.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pulpo relleno de mariscos</div></div><div class="menu-price">$85.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Explosión de camarones en salsa de piña</div></div><div class="menu-price">$68.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Explosión mixta en salsa de piña</div></div><div class="menu-price">$80.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Ensalada de camarón</div></div><div class="menu-price">$38.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Langosta al ajillo Pequeña</div></div><div class="menu-price">$45.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Langosta al ajillo Mediana</div></div><div class="menu-price">$75.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Langosta al ajillo Grande</div></div><div class="menu-price">$95.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pastas del mar</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón y langostinos</div></div><div class="menu-price">$62.000</div></div>
+      </div>
+      <div style="margin-top:30px;">
+        <div class="menu-category-title" style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--gold-light);letter-spacing:3px;padding-bottom:10px;border-bottom:1px solid rgba(200,151,42,0.2);">🥩 Picadas para Compartir</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:16px;">
+          <div class="menu-card"><div><div class="menu-item-name">Picada 2 Personas</div><div class="menu-item-desc">Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela</div></div><div class="menu-price">$80.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Picada 4 Personas</div></div><div class="menu-price">$155.000</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAELLAS -->
+  <div class="menu-panel" id="tab-paellas">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.9rem;margin-bottom:40px;">Acompañadas de arroz con langostino, mejillones, camarón y otras delicias del mar</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;">
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.1),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Paella Sencilla</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$39.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(232,68,42,0.15),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🦞🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 2 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$75.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(14,110,140,0.2),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🎉🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 4 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$140.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.2),rgba(13,43,78,0.8));border-color:var(--gold);">
+          <div style="font-size:3rem;margin-bottom:16px;">👑🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 6 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$230.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEBIDAS -->
+  <div class="menu-panel" id="tab-bebidas">
+    <div class="menu-2col">
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🥤 Bebidas</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Agua</div></div><div class="menu-price">$10.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Leche</div></div><div class="menu-price">$12.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coca Cola</div></div><div class="menu-price">$6.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Hatsu (frambuesa, fresa, sandía, uva, hierva limón)</div></div><div class="menu-price">$8.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda Schweppes</div></div><div class="menu-price">$5.000</div></div>
+          </div>
+        </div>
+        <div class="menu-category" style="margin-top:30px;">
+          <div class="menu-category-title">🍺 Cervezas Nacionales</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Águila Light</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Águila Negra</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Costeña</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Club Colombia</div></div><div class="menu-price">$7.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coronita</div></div><div class="menu-price">$6.000</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🍹 Cocteles</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Fruto del Amor</div><div class="menu-item-desc">Frutos rojos, ácido cítrico y soda</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Oleada de Verano</div><div class="menu-item-desc">Maracuyá, jengibre, zumo de limón y soda hatsu</div></div><div class="menu-price">$20.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Tamarindo</div><div class="menu-item-desc">Sirope de tamarindo, soda y zumo de limón</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Maracuyá</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Jamaica</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Corozo</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Mojito Cubano de la Casa</div><div class="menu-item-desc">Ron oscuro, hierba buena, zumo de limón y soda</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Mojito de Corozo</div></div><div class="menu-price">$28.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Piña Colada</div><div class="menu-item-desc">Ron oscuro, piña, crema de coco y leche condensada</div></div><div class="menu-price">$30.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coronita Endiablada</div><div class="menu-item-desc">Coronita, zumo de limón, naranja y granadilla</div></div><div class="menu-price">$13.000</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LICORES -->
+  <div class="menu-panel" id="tab-licores">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
+      <div class="menu-card"><div><div class="menu-item-name">Ron Viejo de Caldas 750ml</div></div><div class="menu-price">$99.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 375ml</div></div><div class="menu-price">$85.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 750ml</div></div><div class="menu-price">$139.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Amarillo 750ml</div></div><div class="menu-price">$80.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Antioqueño 375ml</div></div><div class="menu-price">$51.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Real 700ml</div></div><div class="menu-price">$89.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Buchanas Master 750ml</div></div><div class="menu-price">$402.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Buchanas Deluxe 750ml</div></div><div class="menu-price">$294.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Johnnie Walker 700ml</div></div><div class="menu-price">$139.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Heinkes 750ml</div></div><div class="menu-price">$111.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Gordon 700ml</div></div><div class="menu-price">$149.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Tanqueray 750ml</div></div><div class="menu-price">$299.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vodka Smirnoff Iulo 750ml</div></div><div class="menu-price">$89.990</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Jose Cuervo Amarillo 750ml</div></div><div class="menu-price">$175.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio 700ml</div></div><div class="menu-price">$459.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio Cristal 70 años</div></div><div class="menu-price">$520.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Baileys 1lt</div></div><div class="menu-price">$165.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vino Tinto Plaza Castillo 750ml</div></div><div class="menu-price">$45.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vino Viejo Vinedo Blanco 750ml</div></div><div class="menu-price">$45.000</div></div>
+    </div>
+  </div>
+
+  <!-- HOURS -->
+  <div class="hours-banner reveal" style="margin-top:60px;">
+    <div class="hours-title">🕐 Horarios de Servicio</div>
+    <div class="hours-grid">
+      <div class="hour-block">
+        <div class="hour-time">11AM – 5PM</div>
+        <div class="hour-label">Comidas calientes</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">5PM – Noche</div>
+        <div class="hour-label">Cevichería, Coctelería & Pizzas</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">Todo el Día</div>
+        <div class="hour-label">Coctelería & Cevichería</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">Todos los días</div>
+        <div class="hour-label">Abierto siempre para ti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <div class="section-label" style="justify-content:center;">Vive la Experiencia</div>
+    <h2 class="section-title">Nuestro <em>Ambiente</em></h2>
+    <p class="section-subtitle">Mariscos frescos · Coctelería tropical · Buen ambiente costeño</p>
+  </div>
+  <div class="gallery-grid reveal" style="max-width:1200px;margin:0 auto;">
+    <div class="gallery-item">🦀<div class="gallery-overlay"><span>La Jaiba</span><span style="font-size:0.8rem;color:var(--sand);">Especialidad de la casa</span></div></div>
+    <div class="gallery-item">🦞<div class="gallery-overlay"><span>Langostinos</span></div></div>
+    <div class="gallery-item">🍹<div class="gallery-overlay"><span>Cocteles</span></div></div>
+    <div class="gallery-item">🥘<div class="gallery-overlay"><span>Paella Marina</span></div></div>
+    <div class="gallery-item">🐟<div class="gallery-overlay"><span>Pescados Frescos</span></div></div>
+    <div class="gallery-item">🦑<div class="gallery-overlay"><span>Pulpo</span></div></div>
+    <div class="gallery-item">🌊<div class="gallery-overlay"><span>Sabor a Mar</span><span style="font-size:0.8rem;color:var(--sand);">Cartagena, Colombia</span></div></div>
+    <div class="gallery-item">🍋<div class="gallery-overlay"><span>Ceviches</span></div></div>
+    <div class="gallery-item">🌴<div class="gallery-overlay"><span>Ambiente Tropical</span></div></div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials">
+  <div class="specials-content">
+    <div class="specials-header reveal">
+      <div class="section-label" style="justify-content:center;">Lo Más Pedido</div>
+      <h2 class="section-title">Nuestros <em>Destacados</em></h2>
+    </div>
+    <div class="specials-grid">
+      <div class="special-card reveal">
+        <span class="special-icon">🥘</span>
+        <div class="special-name">Paella de Mariscos</div>
+        <div class="special-desc">Arroz con langostino, mejillones, camarón y otras delicias del mar. Para compartir en buena compañía.</div>
+        <div class="special-price">$75.000 <span>/ 2 personas</span></div>
+      </div>
+      <div class="special-card featured reveal">
+        <div class="special-badge">⭐ ESTRELLA</div>
+        <span class="special-icon">🦀</span>
+        <div class="special-name">Cazuela de Jaiba</div>
+        <div class="special-desc">Nuestra especialidad insignia. Cazuela humeante de jaiba con arroz de coco y patacón. Un sabor único e inigualable.</div>
+        <div class="special-price">$29.900</div>
+      </div>
+      <div class="special-card reveal">
+        <span class="special-icon">🦞</span>
+        <div class="special-name">Langosta al Ajillo</div>
+        <div class="special-desc">Langosta fresca preparada al ajillo con arroz de coco y patacón. Disponible en tres tamaños.</div>
+        <div class="special-price">$45.000 <span>/ pequeña</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reservas">
+  <div class="reservas-grid">
+    <div class="reservas-form-card reveal-left">
+      <div class="form-title">Reserva tu Mesa</div>
+      <div class="form-subtitle">Te esperamos en La Jaiba Gastrobar</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="300 000 0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Fecha</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Hora</label>
+          <input type="time" value="19:00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Número de personas</label>
+        <select>
+          <option>1 persona</option>
+          <option>2 personas</option>
+          <option>3-4 personas</option>
+          <option>5-6 personas</option>
+          <option>Más de 6</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensaje especial</label>
+        <textarea rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
+      </div>
+      <button class="form-submit" onclick="sendReservation()">📞 RESERVAR POR WHATSAPP</button>
+    </div>
+    <div class="reservas-info reveal-right">
+      <div class="section-label">Contacto</div>
+      <h3>¿Listo para vivir la <em>experiencia</em>?</h3>
+      <p>Reserva tu mesa y disfruta de la mejor cocina marina de Cartagena. Te garantizamos una experiencia llena de sabor, frescura y mucha costa en el corazón.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text"><small>Ubicación</small>Barrio el Recreo, Cartagena de Indias</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-text"><small>Instagram</small>@lajaiba_gastrobar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section id="ubicacion">
+  <div class="ubicacion-grid">
+    <div class="reveal-left">
+      <div class="section-label">Encuéntranos</div>
+      <h3 class="section-title">Barrio el Recreo,<br><em>Cartagena</em></h3>
+      <p class="section-subtitle" style="margin-bottom:30px;">En el corazón de Cartagena de Indias, en el Barrio el Recreo. Un lugar con ambiente acogedor, luces cálidas y el aroma del mar en cada rincón.</p>
+      <ul class="info-list">
+        <li><span>📍</span><span>Barrio el Recreo, Cartagena de Indias, Colombia</span></li>
+        <li><span>🕐</span><span>Abierto todos los días desde las 11:00 AM</span></li>
+        <li><span>📞</span><span>302 271 3343 — Llamadas y WhatsApp</span></li>
+        <li><span>🅿️</span><span>Zona de parqueo disponible en el sector</span></li>
+        <li><span>♿</span><span>Acceso accesible para todos</span></li>
+      </ul>
+    </div>
+    <a href="https://maps.google.com/?q=Barrio+el+Recreo+Cartagena+Colombia" target="_blank" class="map-placeholder reveal-right">
+      <span style="font-size:5rem;position:relative;z-index:1;">🗺️</span>
+      <span class="map-label">VER EN GOOGLE MAPS</span>
+      <span class="map-btn">📍 ABRIR MAPA</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">🦀 LA JAIBA</span>
+      <p>Sabor, frescura y mucha costa en el corazón. La mejor cocina marina de Cartagena, con tradición y el mejor sazón desde el Barrio el Recreo.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" class="social-btn">📸</a>
+        <a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank" class="social-btn">💬</a>
+        <a href="tel:+573022713343" class="social-btn">📞</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="#menu">Entradas</a></li>
+        <li><a href="#menu">Pescados</a></li>
+        <li><a href="#menu">Mariscos</a></li>
+        <li><a href="#menu">Paellas</a></li>
+        <li><a href="#menu">Cocteles</a></li>
+        <li><a href="#menu">Licores</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Restaurante</h4>
+      <ul>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#specials">Destacados</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+573022713343">302 271 3343</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/lajaiba_gastrobar" target="_blank">@lajaiba_gastrobar</a></li>
+        <li><a href="#ubicacion">Barrio el Recreo</a></li>
+        <li><a href="#ubicacion">Cartagena, Colombia</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 La Jaiba Gastrobar · Cartagena de Indias · Cocina de Mar · Sabores del Océano</p>
+    <p style="margin-top:8px;opacity:0.5;">Tradición marina con el mejor sazón 🦀</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://api.whatsapp.com/send?phone=573022713343&text=Hola! Quiero hacer una reserva en La Jaiba Gastrobar 🦀" target="_blank" class="whatsapp-float">💬</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ ¡Reserva enviada por WhatsApp!</div>
+
+<script>
+// CURSOR
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .menu-card, .special-card, .gallery-item').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; cursor.style.background = 'rgba(232,68,42,0.2)'; });
+  el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.background = 'transparent'; });
+});
+
+// PARTICLES
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+const particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 2 + 0.5,
+    speedX: (Math.random() - 0.5) * 0.5,
+    speedY: (Math.random() - 0.5) * 0.5,
+    opacity: Math.random() * 0.6 + 0.1,
+    color: Math.random() > 0.5 ? '14,110,140' : '200,151,42'
+  });
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.speedX; p.y += p.speedY;
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${p.color},${p.opacity})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// NAVBAR SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// TABS
+function showTab(name) {
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// RESERVATION
+function sendReservation() {
+  const name = document.querySelector('input[placeholder="Tu nombre"]').value || 'Cliente';
+  const phone = document.querySelector('input[placeholder="300 000 0000"]').value || '';
+  const date = document.querySelectorAll('input[type="date"]')[0].value || '';
+  const time = document.querySelectorAll('input[type="time"]')[0].value || '';
+  const persons = document.querySelector('select').value;
+  const msg = document.querySelector('textarea').value || '';
+  const text = `Hola La Jaiba Gastrobar! 🦀\n\nQuiero hacer una reserva:\n👤 Nombre: ${name}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n👥 Personas: ${persons}\n💬 Mensaje: ${msg}\n\n¡Gracias!`;
+  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// 3D TILT on special cards
+document.querySelectorAll('.special-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-8px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// Ticker duplicate for seamless loop
+const ticker = document.getElementById('ticker');
+ticker.innerHTML += ticker.innerHTML;
+</script>
+</body>
+</html>
