@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón</title>
+<meta name="description" content="La Jaiba Gastrobar — La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más en el Barrio el Recreo. Reserva tu mesa hoy.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a1628">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón">
+<meta property="og:description" content="La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más. Barrio el Recreo, Cartagena de Indias.">
+<meta property="og:site_name" content="La Jaiba Gastrobar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón">
+<meta name="twitter:description" content="La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Bebas+Neue&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -450,6 +460,55 @@
   }
   .ig-follow-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(131,58,180,0.4); }
 
+  /* GALLERY GRID */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 40px;
+  }
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 1/1;
+    background: rgba(13,43,78,0.8);
+    border: 1px solid rgba(14,110,140,0.25);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+  }
+  .gallery-item:first-child {
+    grid-column: span 2;
+    aspect-ratio: 2/1;
+  }
+  .gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-color: rgba(232,68,42,0.4);
+  }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+  }
+
   /* SPECIALS */
   #specials {
     padding: 120px 60px;
@@ -535,22 +594,26 @@
     background: var(--ocean-deep);
   }
   .ubicacion-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .map-placeholder {
+  .map-embed {
     aspect-ratio: 1/0.8;
-    background: linear-gradient(135deg, rgba(13,43,78,0.9), rgba(14,110,140,0.3));
     border: 1px solid rgba(14,110,140,0.3);
-    border-radius: 4px; display: flex; align-items: center; justify-content: center;
-    font-size: 6rem; position: relative; overflow: hidden;
-    flex-direction: column; gap: 20px;
-    text-decoration: none; transition: all 0.3s;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.3s;
   }
-  .map-placeholder:hover { border-color: var(--coral); transform: scale(1.02); }
-  .map-placeholder::before {
-    content: ''; position: absolute; inset: 0;
-    background: repeating-linear-gradient(45deg, rgba(14,110,140,0.05) 0px, rgba(14,110,140,0.05) 1px, transparent 1px, transparent 20px);
+  .map-embed:hover { border-color: var(--coral); }
+  .map-embed iframe { display: block; width: 100%; height: 100%; border: none; }
+  .map-open-btn {
+    position: absolute; bottom: 14px; right: 14px;
+    background: var(--coral); color: white;
+    padding: 10px 22px; font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px; font-size: 0.95rem; border-radius: 2px;
+    text-decoration: none; z-index: 10;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   }
-  .map-label { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 3px; color: var(--gold); position: relative; }
-  .map-btn { background: var(--coral); color: white; padding: 12px 28px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 1rem; border-radius: 2px; position: relative; }
+  .map-open-btn:hover { background: var(--coral-light); transform: translateY(-2px); }
   .ubicacion-info h3 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: white; margin-bottom: 16px; }
   .ubicacion-info p { color: var(--sand); line-height: 1.8; margin-bottom: 24px; }
   .info-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
@@ -590,6 +653,12 @@
   .whatsapp-float:hover { transform: scale(1.1); }
   @keyframes pulse { 0%,100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); } 50% { box-shadow: 0 8px 50px rgba(37,211,102,0.7); } }
 
+  /* CURSOR: ocultar en dispositivos táctiles */
+  @media (hover: none), (pointer: coarse) {
+    .cursor, .cursor-dot { display: none; }
+    body { cursor: auto; }
+  }
+
   /* TOAST */
   .toast {
     position: fixed; bottom: 110px; right: 30px; z-index: 300;
@@ -608,18 +677,61 @@
   .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal-right.visible { opacity: 1; transform: none; }
 
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 110;
+    position: relative;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: all 0.35s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     nav.scrolled { padding: 12px 24px; }
-    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(5,13,26,0.98);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      padding: 80px 40px 40px;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.77,0,0.18,1);
+      z-index: 105;
+      display: flex !important;
+    }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 1.3rem; letter-spacing: 3px; }
+    .nav-cta { padding: 14px 36px !important; font-size: 1rem !important; }
     #about, #menu, #gallery, #specials, #reservas, #ubicacion { padding: 80px 24px; }
     .about-grid, .reservas-grid, .ubicacion-grid { grid-template-columns: 1fr; gap: 40px; }
     .specials-grid { grid-template-columns: 1fr; }
     .menu-2col { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:first-child { grid-column: span 2; aspect-ratio: 2/1; }
   }
 </style>
 </head>
@@ -632,13 +744,16 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">🦀 <span>LA</span> JAIBA</a>
-  <ul class="nav-links">
-    <li><a href="#about">Nosotros</a></li>
-    <li><a href="#menu">Menú</a></li>
-    <li><a href="#specials">Destacados</a></li>
-    <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="#reservas" class="nav-cta">Reservar</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">Nosotros</a></li>
+    <li><a href="#menu" onclick="closeNav()">Menú</a></li>
+    <li><a href="#specials" onclick="closeNav()">Destacados</a></li>
+    <li><a href="#ubicacion" onclick="closeNav()">Ubicación</a></li>
+    <li><a href="#reservas" class="nav-cta" onclick="closeNav()">Reservar</a></li>
   </ul>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -742,12 +857,12 @@
   </div>
 
   <div class="menu-tabs reveal">
-    <button class="tab-btn active" onclick="showTab('entradas')">🦐 Entradas</button>
-    <button class="tab-btn" onclick="showTab('pescados')">🐟 Pescados</button>
-    <button class="tab-btn" onclick="showTab('mariscos')">🦞 Mariscos</button>
-    <button class="tab-btn" onclick="showTab('paellas')">🥘 Paellas</button>
-    <button class="tab-btn" onclick="showTab('bebidas')">🍹 Bebidas</button>
-    <button class="tab-btn" onclick="showTab('licores')">🥃 Licores</button>
+    <button class="tab-btn active" onclick="showTab('entradas', event)">🦐 Entradas</button>
+    <button class="tab-btn" onclick="showTab('pescados', event)">🐟 Pescados</button>
+    <button class="tab-btn" onclick="showTab('mariscos', event)">🦞 Mariscos</button>
+    <button class="tab-btn" onclick="showTab('paellas', event)">🥘 Paellas</button>
+    <button class="tab-btn" onclick="showTab('bebidas', event)">🍹 Bebidas</button>
+    <button class="tab-btn" onclick="showTab('licores', event)">🥃 Licores</button>
   </div>
 
   <!-- ENTRADAS -->
@@ -763,7 +878,7 @@
             <div class="menu-card"><div><div class="menu-item-name">Almejas gratinadas</div></div><div class="menu-price">$20.000</div></div>
             <div class="menu-card"><div><div class="menu-item-name">Canoas de camarón</div></div><div class="menu-price">$25.000</div></div>
             <div class="menu-card"><div><div class="menu-item-name">Langostino al perejil</div></div><div class="menu-price">$35.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Triología de empanadas de mariscos</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Trilogía de empanadas de mariscos</div></div><div class="menu-price">$15.000</div></div>
             <div class="menu-card"><div><div class="menu-item-name">Pincho de camarón</div></div><div class="menu-price">$28.000</div></div>
           </div>
         </div>
@@ -1040,27 +1155,27 @@
       <div class="form-subtitle">Te esperamos en La Jaiba Gastrobar</div>
       <div class="form-row">
         <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre">
+          <label for="res-nombre">Nombre</label>
+          <input id="res-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
         </div>
         <div class="form-group">
-          <label>Teléfono</label>
-          <input type="tel" placeholder="300 000 0000">
+          <label for="res-telefono">Teléfono</label>
+          <input id="res-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>Fecha</label>
-          <input type="date">
+          <label for="res-fecha">Fecha</label>
+          <input id="res-fecha" type="date">
         </div>
         <div class="form-group">
-          <label>Hora</label>
-          <input type="time" value="19:00">
+          <label for="res-hora">Hora</label>
+          <input id="res-hora" type="time" value="19:00">
         </div>
       </div>
       <div class="form-group">
-        <label>Número de personas</label>
-        <select>
+        <label for="res-personas">Número de personas</label>
+        <select id="res-personas">
           <option>1 persona</option>
           <option>2 personas</option>
           <option>3-4 personas</option>
@@ -1069,8 +1184,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Mensaje especial</label>
-        <textarea rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
+        <label for="res-mensaje">Mensaje especial</label>
+        <textarea id="res-mensaje" rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
       </div>
       <button class="form-submit" onclick="sendReservation()">📞 RESERVAR POR WHATSAPP</button>
     </div>
@@ -1115,11 +1230,16 @@
         <li><span>♿</span><span>Acceso accesible para todos</span></li>
       </ul>
     </div>
-    <a href="https://maps.google.com/?q=Barrio+el+Recreo+Cartagena+Colombia" target="_blank" class="map-placeholder reveal-right">
-      <span style="font-size:5rem;position:relative;z-index:1;">🗺️</span>
-      <span class="map-label">VER EN GOOGLE MAPS</span>
-      <span class="map-btn">📍 ABRIR MAPA</span>
-    </a>
+    <div class="map-embed reveal-right">
+      <iframe
+        src="https://maps.google.com/maps?q=Barrio+El+Recreo,+Cartagena+de+Indias,+Colombia&output=embed&hl=es&z=15"
+        width="100%" height="100%"
+        allowfullscreen
+        loading="lazy"
+        title="Ubicación La Jaiba Gastrobar — Barrio el Recreo, Cartagena">
+      </iframe>
+      <a href="https://maps.google.com/?q=Barrio+El+Recreo,+Cartagena+de+Indias,+Colombia" target="_blank" rel="noopener" class="map-open-btn">📍 ABRIR EN GOOGLE MAPS</a>
+    </div>
   </div>
 </section>
 
@@ -1236,12 +1356,37 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
+// HAMBURGER MENU
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+function closeNav() {
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+  if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    closeNav();
+  }
+});
+
 // TABS
-function showTab(name) {
+function showTab(name, e) {
   document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
-  event.target.classList.add('active');
+  e.target.classList.add('active');
 }
 
 // SCROLL REVEAL
@@ -1256,18 +1401,28 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealEls.forEach(el => revealObserver.observe(el));
 
 // RESERVATION
-function sendReservation() {
-  const name = document.querySelector('input[placeholder="Tu nombre"]').value || 'Cliente';
-  const phone = document.querySelector('input[placeholder="300 000 0000"]').value || '';
-  const date = document.querySelectorAll('input[type="date"]')[0].value || '';
-  const time = document.querySelectorAll('input[type="time"]')[0].value || '';
-  const persons = document.querySelector('select').value;
-  const msg = document.querySelector('textarea').value || '';
-  const text = `Hola La Jaiba Gastrobar! 🦀\n\nQuiero hacer una reserva:\n👤 Nombre: ${name}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n👥 Personas: ${persons}\n💬 Mensaje: ${msg}\n\n¡Gracias!`;
-  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
+function showToast(msg) {
   const toast = document.getElementById('toast');
+  toast.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+function sendReservation() {
+  const name = document.getElementById('res-nombre').value.trim();
+  const phone = document.getElementById('res-telefono').value.trim();
+  const date = document.getElementById('res-fecha').value;
+  const time = document.getElementById('res-hora').value;
+  const persons = document.getElementById('res-personas').value;
+  const msg = document.getElementById('res-mensaje').value.trim();
+
+  if (!name) { showToast('⚠️ Por favor ingresa tu nombre.'); document.getElementById('res-nombre').focus(); return; }
+  if (!phone) { showToast('⚠️ Por favor ingresa tu teléfono.'); document.getElementById('res-telefono').focus(); return; }
+  if (!date) { showToast('⚠️ Por favor selecciona una fecha.'); document.getElementById('res-fecha').focus(); return; }
+
+  const text = `Hola La Jaiba Gastrobar! 🦀\n\nQuiero hacer una reserva:\n👤 Nombre: ${name}\n📱 Teléfono: ${phone}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n👥 Personas: ${persons}${msg ? '\n💬 Mensaje: ' + msg : ''}\n\n¡Gracias!`;
+  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
+  showToast('✅ ¡Reserva enviada por WhatsApp!');
 }
 
 // 3D TILT on special cards
