@@ -258,6 +258,7 @@ document.querySelectorAll('.special-card').forEach(card => {
     card.style.transform = `translateY(-8px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
   });
   card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  card.addEventListener('touchend',   () => { card.style.transform = ''; });
 });
 
 // Ticker duplicate for seamless loop
@@ -334,3 +335,17 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') lightboxNav(-1);
   if (e.key === 'ArrowRight') lightboxNav(1);
 });
+
+// Touch swipe for lightbox on mobile
+(function initLightboxSwipe() {
+  const overlay = document.getElementById('lightboxOverlay');
+  let touchStartX = 0;
+  overlay.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  overlay.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) < 40) return;
+    lightboxNav(dx < 0 ? 1 : -1);
+  }, { passive: true });
+})();
