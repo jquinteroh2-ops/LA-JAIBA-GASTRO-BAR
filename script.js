@@ -18,8 +18,27 @@ for (let i = 0; i < 80; i++) {
   });
 }
 
+// BUBBLES
+const bubbles = [];
+const BUBBLE_COUNT = 35;
+
+function createBubble(fromBottom) {
+  return {
+    x: Math.random() * canvas.width,
+    y: fromBottom ? canvas.height + Math.random() * 60 : Math.random() * canvas.height,
+    radius: Math.random() * 18 + 4,
+    speedY: Math.random() * 0.65 + 0.25,
+    wobble: Math.random() * Math.PI * 2,
+    wobbleSpeed: (Math.random() - 0.5) * 0.045,
+    opacity: Math.random() * 0.28 + 0.07,
+  };
+}
+
+for (let i = 0; i < BUBBLE_COUNT; i++) bubbles.push(createBubble(false));
+
 function animParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   particles.forEach(p => {
     p.x += p.speedX; p.y += p.speedY;
     if (p.x < 0) p.x = canvas.width;
@@ -31,9 +50,66 @@ function animParticles() {
     ctx.fillStyle = `rgba(${p.color},${p.opacity})`;
     ctx.fill();
   });
+
+  bubbles.forEach((b, i) => {
+    b.wobble += b.wobbleSpeed;
+    b.x += Math.sin(b.wobble) * 0.55;
+    b.y -= b.speedY;
+    if (b.y + b.radius < 0) bubbles[i] = createBubble(true);
+
+    ctx.save();
+    ctx.globalAlpha = b.opacity;
+
+    ctx.beginPath();
+    ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(14,200,230,0.85)';
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(14,200,230,0.04)';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(b.x - b.radius * 0.28, b.y - b.radius * 0.3, b.radius * 0.22, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.fill();
+
+    ctx.restore();
+  });
+
   requestAnimationFrame(animParticles);
 }
 animParticles();
+
+// DATE CONSTRAINTS — reserva normal solo desde hoy en adelante
+(function setDateMin() {
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm   = String(d.getMonth() + 1).padStart(2, '0');
+  const dd   = String(d.getDate()).padStart(2, '0');
+  const fechaInput = document.getElementById('res-fecha');
+  if (fechaInput) fechaInput.min = `${yyyy}-${mm}-${dd}`;
+})();
+
+// HERO BUBBLES
+(function spawnHeroBubbles() {
+  const hero = document.getElementById('hero');
+  for (let i = 0; i < 28; i++) {
+    const b = document.createElement('div');
+    b.className = 'hero-bubble';
+    const size   = Math.random() * 28 + 6;
+    const left   = Math.random() * 100;
+    const delay  = Math.random() * 12;
+    const dur    = Math.random() * 10 + 8;
+    const drift  = ((Math.random() - 0.5) * 80).toFixed(1);
+    const bottom = Math.random() * 30;
+    b.style.cssText =
+      `width:${size}px;height:${size}px;` +
+      `left:${left}%;bottom:${bottom}%;` +
+      `animation-duration:${dur}s;animation-delay:-${delay}s;` +
+      `--drift:${drift}px;`;
+    hero.appendChild(b);
+  }
+})();
 
 // NAVBAR SCROLL
 window.addEventListener('scroll', () => {
@@ -106,42 +182,71 @@ function toggleReservaMode(mode) {
 
 // SEND NORMAL RESERVATION
 function sendReservation() {
-  const name = document.getElementById('res-nombre').value.trim();
-  const phone = document.getElementById('res-telefono').value.trim();
-  const date = document.getElementById('res-fecha').value;
-  const time = document.getElementById('res-hora').value;
+  const name    = document.getElementById('res-nombre').value.trim();
+  const phone   = document.getElementById('res-telefono').value.trim();
+  const date    = document.getElementById('res-fecha').value;
+  const time    = document.getElementById('res-hora').value;
   const persons = document.getElementById('res-personas').value;
-  const msg = document.getElementById('res-mensaje').value.trim();
+  const msg     = document.getElementById('res-mensaje').value.trim();
 
-  if (!name) { showToast('⚠️ Por favor ingresa tu nombre.'); document.getElementById('res-nombre').focus(); return; }
-  if (!phone) { showToast('⚠️ Por favor ingresa tu teléfono.'); document.getElementById('res-telefono').focus(); return; }
-  if (!date) { showToast('⚠️ Por favor selecciona una fecha.'); document.getElementById('res-fecha').focus(); return; }
+  if (!name)  { showToast('Por favor ingresa tu nombre.');    document.getElementById('res-nombre').focus();   return; }
+  if (!phone) { showToast('Por favor ingresa tu teléfono.');  document.getElementById('res-telefono').focus(); return; }
+  if (!date)  { showToast('Por favor selecciona una fecha.');  document.getElementById('res-fecha').focus();   return; }
+  if (time < '11:00' || time > '21:30') { showToast('El horario de atención es de 11:00 AM a 9:30 PM.'); document.getElementById('res-hora').focus(); return; }
 
-  const text = `Hola La Jaiba Gastrobar! 🦀\n\nQuiero hacer una reserva:\n👤 Nombre: ${name}\n📱 Teléfono: ${phone}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n👥 Personas: ${persons}${msg ? '\n💬 Mensaje: ' + msg : ''}\n\n¡Gracias!`;
-  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
-  showToast('✅ ¡Reserva enviada por WhatsApp!');
+  const lines = [
+    'Hola, La Jaiba Gastrobar.',
+    '',
+    'Solicitud de reserva:',
+    'Nombre: '    + name,
+    'Telefono: '  + phone,
+    'Fecha: '     + date,
+    'Hora: '      + time,
+    'Personas: '  + persons,
+  ];
+  if (msg) lines.push('Mensaje: ' + msg);
+  lines.push('', 'Quedo atento. Gracias.');
+
+  const text = lines.join('\n');
+  window.open('https://api.whatsapp.com/send?phone=573022713343&text=' + encodeURIComponent(text), '_blank');
+  showToast('Reserva enviada por WhatsApp.');
 }
 
 // SEND SPECIAL RESERVATION
 function sendSpecialReservation() {
-  const name = document.getElementById('ev-nombre').value.trim();
-  const phone = document.getElementById('ev-telefono').value.trim();
-  const tipo = document.getElementById('ev-tipo').value;
+  const name       = document.getElementById('ev-nombre').value.trim();
+  const phone      = document.getElementById('ev-telefono').value.trim();
+  const tipo       = document.getElementById('ev-tipo').value;
   const asistentes = document.getElementById('ev-asistentes').value;
-  const date = document.getElementById('ev-fecha').value;
+  const date       = document.getElementById('ev-fecha').value;
   const horaInicio = document.getElementById('ev-hora-inicio').value;
-  const horaFin = document.getElementById('ev-hora-fin').value;
-  const servicios = document.getElementById('ev-servicios').value.trim();
+  const horaFin    = document.getElementById('ev-hora-fin').value;
+  const servicios  = document.getElementById('ev-servicios').value.trim();
 
-  if (!name) { showToast('⚠️ Por favor ingresa tu nombre.'); document.getElementById('ev-nombre').focus(); return; }
-  if (!phone) { showToast('⚠️ Por favor ingresa tu teléfono.'); document.getElementById('ev-telefono').focus(); return; }
-  if (!tipo) { showToast('⚠️ Por favor selecciona el tipo de evento.'); document.getElementById('ev-tipo').focus(); return; }
-  if (!asistentes) { showToast('⚠️ Por favor selecciona el número de asistentes.'); document.getElementById('ev-asistentes').focus(); return; }
-  if (!date) { showToast('⚠️ Por favor selecciona la fecha del evento.'); document.getElementById('ev-fecha').focus(); return; }
+  if (!name)       { showToast('Por favor ingresa tu nombre.');                    document.getElementById('ev-nombre').focus();      return; }
+  if (!phone)      { showToast('Por favor ingresa tu teléfono.');                  document.getElementById('ev-telefono').focus();    return; }
+  if (!tipo)       { showToast('Por favor selecciona el tipo de evento.');         document.getElementById('ev-tipo').focus();        return; }
+  if (!asistentes) { showToast('Por favor selecciona el número de asistentes.');   document.getElementById('ev-asistentes').focus();  return; }
+  if (!date)       { showToast('Por favor selecciona la fecha del evento.');       document.getElementById('ev-fecha').focus();       return; }
 
-  const text = `Hola La Jaiba Gastrobar! 🎉\n\nConsulta de *Reserva Especial — Salón de Eventos*:\n\n👤 Nombre: ${name}\n📱 Teléfono: ${phone}\n🎊 Tipo de evento: ${tipo}\n👥 Asistentes: ${asistentes}\n📅 Fecha: ${date}\n🕐 Horario: ${horaInicio} — ${horaFin}${servicios ? '\n✨ Servicios requeridos: ' + servicios : ''}\n\n¡Quedo atento a su respuesta!`;
-  window.open(`https://api.whatsapp.com/send?phone=573022713343&text=${encodeURIComponent(text)}`, '_blank');
-  showToast('🎉 ¡Consulta de evento enviada por WhatsApp!');
+  const lines = [
+    'Hola, La Jaiba Gastrobar.',
+    '',
+    'Consulta de Reserva Especial - Salon de Eventos:',
+    '',
+    'Nombre: '         + name,
+    'Telefono: '       + phone,
+    'Tipo de evento: ' + tipo,
+    'Asistentes: '     + asistentes,
+    'Fecha: '          + date,
+    'Horario: '        + horaInicio + ' - ' + horaFin,
+  ];
+  if (servicios) lines.push('Servicios requeridos: ' + servicios);
+  lines.push('', 'Quedo atento. Gracias.');
+
+  const text = lines.join('\n');
+  window.open('https://api.whatsapp.com/send?phone=573022713343&text=' + encodeURIComponent(text), '_blank');
+  showToast('Consulta de evento enviada por WhatsApp.');
 }
 
 // 3D TILT on special cards

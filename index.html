@@ -431,7 +431,7 @@
       <h4>¿Quieres ver más?</h4>
       <p>Síguenos en Instagram para ver nuestros platos, cocteles y ambiente cada día</p>
     </div>
-    <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" rel="noopener" class="ig-follow-btn">📸 @lajaiba_gastrobar</a>
+    <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fa-brands fa-instagram"></i> @lajaiba_gastrobar</a>
   </div>
 </section>
 
@@ -501,8 +501,8 @@
             <input id="res-fecha" type="date">
           </div>
           <div class="form-group">
-            <label for="res-hora">Hora</label>
-            <input id="res-hora" type="time" value="19:00">
+            <label for="res-hora">Hora <small class="field-hint">(11:00 AM – 9:30 PM)</small></label>
+            <input id="res-hora" type="time" value="19:00" min="11:00" max="21:30">
           </div>
         </div>
         <div class="form-group">
@@ -511,8 +511,6 @@
             <option>1 persona</option>
             <option>2 personas</option>
             <option>3-4 personas</option>
-            <option>5-6 personas</option>
-            <option>Más de 6</option>
           </select>
         </div>
         <div class="form-group">
@@ -556,10 +554,7 @@
             <select id="ev-asistentes">
               <option value="">— Selecciona —</option>
               <option>20 - 30 personas</option>
-              <option>30 - 50 personas</option>
-              <option>50 - 100 personas</option>
-              <option>100 - 150 personas</option>
-              <option>Más de 150 personas</option>
+              <option>30 - 40 personas</option>  
             </select>
           </div>
           <div class="form-group">
@@ -621,20 +616,24 @@
         <p>Celebra los momentos más importantes de tu vida en La Jaiba Gastrobar. Nuestros salones se adaptan a cualquier ocasión con ambientación, gastronomía y servicio de primera.</p>
         <div class="event-capacidades">
           <div class="event-cap-item">
+            <i class="fa-solid fa-users cap-icon"></i>
             <div class="cap-number">20+</div>
             <div class="cap-label">Personas</div>
           </div>
           <div class="event-cap-item">
-            <div class="cap-number">150+</div>
+            <i class="fa-solid fa-people-group cap-icon"></i>
+            <div class="cap-number">40+</div>
             <div class="cap-label">Cap. máxima</div>
           </div>
           <div class="event-cap-item">
-            <div class="cap-number"><i class="fa-solid fa-utensils"></i></div>
-            <div class="cap-label">Catering propio</div>
+            <i class="fa-solid fa-utensils cap-icon"></i>
+            <div class="cap-number">Catering</div>
+            <div class="cap-label">Propio y personalizado</div>
           </div>
           <div class="event-cap-item">
-            <div class="cap-number"><i class="fa-solid fa-music"></i></div>
-            <div class="cap-label">Ambientación</div>
+            <i class="fa-solid fa-music cap-icon"></i>
+            <div class="cap-number">Música</div>
+            <div class="cap-label">Ambientación incluida</div>
           </div>
         </div>
         <div class="contact-items">
