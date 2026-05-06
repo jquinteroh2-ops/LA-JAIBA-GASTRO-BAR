@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón">
 <meta name="twitter:description" content="La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Bebas+Neue&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -57,8 +58,8 @@
       <em>Tradición marina con el mejor sazón</em>
     </p>
     <div class="hero-btns">
-      <a href="#menu" class="btn-primary">🍽️ Ver Menú</a>
-      <a href="#reservas" class="btn-secondary">📞 Reservar Mesa</a>
+      <a href="#menu" class="btn-primary"><i class="fa-solid fa-utensils"></i> Ver Menú</a>
+      <a href="#reservas" class="btn-secondary"><i class="fa-solid fa-phone"></i> Reservar Mesa</a>
     </div>
   </div>
   <div class="scroll-indicator"><span></span></div>
@@ -94,10 +95,6 @@
           <img src="fachada.jpg" alt="Fachada La Jaiba Gastrobar — Barrio el Recreo, Cartagena" loading="lazy">
           <div class="about-photo-caption">La Jaiba Gastrobar — Cartagena</div>
         </div>
-        <div class="about-badge">
-          <div class="num">5,5K</div>
-          <div class="lbl">Seguidores</div>
-        </div>
       </div>
     </div>
     <div class="reveal-right">
@@ -115,7 +112,7 @@
           <div class="lbl">Apertura diaria</div>
         </div>
         <div class="stat-card reveal">
-          <div class="val">🍹</div>
+          <div class="val"><i class="fa-solid fa-martini-glass-citrus"></i></div>
           <div class="lbl">Coctelería todo el día</div>
         </div>
         <div class="stat-card reveal">
@@ -123,7 +120,7 @@
           <div class="lbl">Mariscos frescos</div>
         </div>
         <div class="stat-card reveal">
-          <div class="val">🌊</div>
+          <div class="val"><i class="fa-solid fa-umbrella-beach"></i></div>
           <div class="lbl">Ambiente costeño</div>
         </div>
       </div>
@@ -140,12 +137,12 @@
   </div>
 
   <div class="menu-tabs reveal">
-    <button class="tab-btn active" onclick="showTab('entradas', event)">🦐 Entradas</button>
-    <button class="tab-btn" onclick="showTab('pescados', event)">🐟 Pescados</button>
-    <button class="tab-btn" onclick="showTab('mariscos', event)">🦞 Mariscos</button>
-    <button class="tab-btn" onclick="showTab('paellas', event)">🥘 Paellas</button>
-    <button class="tab-btn" onclick="showTab('bebidas', event)">🍹 Bebidas</button>
-    <button class="tab-btn" onclick="showTab('licores', event)">🥃 Licores</button>
+    <button class="tab-btn active" onclick="showTab('entradas', event)"><i class="fa-solid fa-shrimp"></i> Entradas</button>
+    <button class="tab-btn" onclick="showTab('pescados', event)"><i class="fa-solid fa-fish"></i> Pescados</button>
+    <button class="tab-btn" onclick="showTab('mariscos', event)"><i class="fa-solid fa-fish-fins"></i> Mariscos</button>
+    <button class="tab-btn" onclick="showTab('paellas', event)"><i class="fa-solid fa-bowl-food"></i> Paellas</button>
+    <button class="tab-btn" onclick="showTab('bebidas', event)"><i class="fa-solid fa-martini-glass-citrus"></i> Bebidas</button>
+    <button class="tab-btn" onclick="showTab('licores', event)"><i class="fa-solid fa-wine-glass"></i> Licores</button>
   </div>
 
   <!-- ENTRADAS -->
@@ -347,7 +344,7 @@
 
   <!-- HOURS -->
   <div class="hours-banner reveal" style="margin-top:60px;">
-    <div class="hours-title">🕐 Horarios de Servicio</div>
+    <div class="hours-title"><i class="fa-solid fa-clock"></i> Horarios de Servicio</div>
     <div class="hours-grid">
       <div class="hour-block">
         <div class="hour-time">11AM – 5PM</div>
@@ -379,9 +376,9 @@
 
   <div class="gallery-filters reveal">
     <button class="gallery-filter-btn active" onclick="filterGallery('all',this)">Todos</button>
-    <button class="gallery-filter-btn" onclick="filterGallery('ambiente',this)">🌊 Ambiente</button>
-    <button class="gallery-filter-btn" onclick="filterGallery('platos',this)">🍽️ Platos</button>
-    <button class="gallery-filter-btn" onclick="filterGallery('cocteles',this)">🍹 Cocteles</button>
+    <button class="gallery-filter-btn" onclick="filterGallery('ambiente',this)"><i class="fa-solid fa-water"></i> Ambiente</button>
+    <button class="gallery-filter-btn" onclick="filterGallery('platos',this)"><i class="fa-solid fa-utensils"></i> Platos</button>
+    <button class="gallery-filter-btn" onclick="filterGallery('cocteles',this)"><i class="fa-solid fa-martini-glass-citrus"></i> Cocteles</button>
   </div>
 
   <div class="gallery-grid reveal" id="galleryGrid" style="max-width:1200px;margin:0 auto;">
@@ -458,6 +455,13 @@
         <div class="special-name">Cazuela de Jaiba</div>
         <div class="special-desc">Nuestra especialidad insignia. Cazuela humeante de jaiba con arroz de coco y patacón. Un sabor único e inigualable.</div>
         <div class="special-price">$29.900</div>
+      </div>
+      <div class="special-card reveal">
+        <div class="special-badge casa">🏠 DE LA CASA</div>
+        <span class="special-icon">🦞</span>
+        <div class="special-name">Langostino Gratinado</div>
+        <div class="special-desc">Langostinos frescos gratinados con queso fundido y hierbas aromáticas. Acompañados de arroz con coco y patacón. Sabor del mar en su máxima expresión.</div>
+        <div class="special-price">$65.000</div>
       </div>
     </div>
   </div>
@@ -592,19 +596,19 @@
         <p>Reserva tu mesa y disfruta de la mejor cocina marina de Cartagena. Te garantizamos una experiencia llena de sabor, frescura y mucha costa en el corazón.</p>
         <div class="contact-items">
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
             <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div class="contact-text"><small>Ubicación</small>Barrio el Recreo, Cartagena de Indias</div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">🕐</div>
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
             <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
             <div class="contact-text"><small>Instagram</small>@lajaiba_gastrobar</div>
           </div>
         </div>
@@ -625,25 +629,25 @@
             <div class="cap-label">Cap. máxima</div>
           </div>
           <div class="event-cap-item">
-            <div class="cap-number">🍽️</div>
+            <div class="cap-number"><i class="fa-solid fa-utensils"></i></div>
             <div class="cap-label">Catering propio</div>
           </div>
           <div class="event-cap-item">
-            <div class="cap-number">🎶</div>
+            <div class="cap-number"><i class="fa-solid fa-music"></i></div>
             <div class="cap-label">Ambientación</div>
           </div>
         </div>
         <div class="contact-items">
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
             <div class="contact-text"><small>Consultas de eventos</small>302 271 3343</div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📅</div>
+            <div class="contact-icon"><i class="fa-regular fa-calendar-check"></i></div>
             <div class="contact-text"><small>Disponibilidad</small>Consulta con anticipación para asegurar tu fecha</div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">✨</div>
+            <div class="contact-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
             <div class="contact-text"><small>Personalización</small>Decoración y menú a tu medida</div>
           </div>
         </div>
@@ -661,11 +665,11 @@
       <h3 class="section-title">Barrio el Recreo,<br><em>Cartagena</em></h3>
       <p class="section-subtitle" style="margin-bottom:30px;">En el corazón de Cartagena de Indias, en el Barrio el Recreo. Un lugar con ambiente acogedor, luces cálidas y el aroma del mar en cada rincón.</p>
       <ul class="info-list">
-        <li><span>📍</span><span>Barrio el Recreo, Cartagena de Indias, Colombia</span></li>
-        <li><span>🕐</span><span>Abierto todos los días desde las 11:00 AM</span></li>
-        <li><span>📞</span><span>302 271 3343 — Llamadas y WhatsApp</span></li>
-        <li><span>🅿️</span><span>Zona de parqueo disponible en el sector</span></li>
-        <li><span>♿</span><span>Acceso accesible para todos</span></li>
+        <li><span><i class="fa-solid fa-location-dot"></i></span><span>Barrio el Recreo, Cartagena de Indias, Colombia</span></li>
+        <li><span><i class="fa-solid fa-clock"></i></span><span>Abierto todos los días desde las 11:00 AM</span></li>
+        <li><span><i class="fa-solid fa-phone"></i></span><span>302 271 3343 — Llamadas y WhatsApp</span></li>
+        <li><span><i class="fa-solid fa-square-parking"></i></span><span>Zona de parqueo disponible en el sector</span></li>
+        <li><span><i class="fa-solid fa-wheelchair"></i></span><span>Acceso accesible para todos</span></li>
       </ul>
     </div>
     <div class="map-embed reveal-right">
@@ -688,9 +692,9 @@
       <span class="footer-logo">🦀 LA JAIBA</span>
       <p>Sabor, frescura y mucha costa en el corazón. La mejor cocina marina de Cartagena, con tradición y el mejor sazón desde el Barrio el Recreo.</p>
       <div class="footer-social">
-        <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" class="social-btn">📸</a>
-        <a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank" class="social-btn">💬</a>
-        <a href="tel:+573022713343" class="social-btn">📞</a>
+        <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+573022713343" class="social-btn" aria-label="Teléfono"><i class="fa-solid fa-phone"></i></a>
       </div>
     </div>
     <div class="footer-col">
@@ -746,7 +750,7 @@
 </div>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://api.whatsapp.com/send?phone=573022713343&text=Hola! Quiero hacer una reserva en La Jaiba Gastrobar 🦀" target="_blank" class="whatsapp-float">💬</a>
+<a href="https://api.whatsapp.com/send?phone=573022713343&text=Hola! Quiero hacer una reserva en La Jaiba Gastrobar 🦀" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
 <!-- TOAST -->
 <div class="toast" id="toast">✅ ¡Reserva enviada por WhatsApp!</div>

@@ -306,7 +306,8 @@
     transition: transform 0.3s, border-color 0.3s;
   }
   .stat-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-  .stat-card .val { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold-light); }
+  .stat-card .val { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold-light); display: flex; align-items: center; }
+  .stat-card .val i { font-size: 2rem; }
   .stat-card .lbl { font-size: 0.8rem; color: var(--sand); letter-spacing: 1px; margin-top: 4px; }
 
   @keyframes pulseSlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
@@ -499,6 +500,7 @@
     padding: 6px 16px;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
   }
+  .special-badge.casa { background: var(--coral); }
   .special-icon { font-size: 4.5rem; display: block; margin-bottom: 20px; }
   .special-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: white; margin-bottom: 8px; }
   .special-desc { font-size: 0.85rem; color: var(--sand); line-height: 1.6; margin-bottom: 20px; }
@@ -589,7 +591,7 @@
   .ubicacion-info p { color: var(--sand); line-height: 1.8; margin-bottom: 24px; }
   .info-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   .info-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 0.9rem; color: var(--cream); }
-  .info-list li span:first-child { font-size: 1.4rem; }
+  .info-list li span:first-child { font-size: 1.1rem; color: var(--coral); width: 22px; text-align: center; flex-shrink: 0; }
 
   /* FOOTER */
   footer { background: #050d1a; padding: 60px 60px 30px; border-top: 1px solid rgba(14,110,140,0.2); }
