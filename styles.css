@@ -14,7 +14,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--ocean-deep);
@@ -515,6 +515,7 @@
     background: rgba(13,43,78,0.6);
     border: 1px solid rgba(14,110,140,0.3);
     padding: 50px; border-radius: 4px;
+    max-width: 100%; box-sizing: border-box;
   }
   .form-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin-bottom: 8px; }
   .form-subtitle { color: var(--sand); font-style: italic; margin-bottom: 32px; }
@@ -541,12 +542,14 @@
   .contact-text small { display: block; color: var(--sand); font-size: 0.78rem; margin-bottom: 2px; letter-spacing: 1px; text-transform: uppercase; }
 
   /* RESERVATION TOGGLE */
-  .res-toggle-wrap { max-width: 1100px; margin: 0 auto 50px; display: flex; justify-content: center; }
-  .res-toggle { display: flex; background: rgba(10,22,40,0.8); border: 1px solid rgba(14,110,140,0.3); border-radius: 4px; overflow: hidden; }
+  .res-toggle-wrap { max-width: 1100px; margin: 0 auto 50px; display: flex; justify-content: center; padding: 0 14px; box-sizing: border-box; }
+  .res-toggle { display: flex; background: rgba(10,22,40,0.8); border: 1px solid rgba(14,110,140,0.3); border-radius: 4px; overflow: hidden; width: 100%; max-width: 560px; }
   .res-toggle-btn {
+    flex: 1; min-width: 0;
     padding: 16px 48px; font-family: 'Bebas Neue', sans-serif;
     font-size: 1rem; letter-spacing: 3px; color: var(--sand);
     background: transparent; border: none; cursor: pointer; transition: all 0.35s ease;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
   .res-toggle-btn.active-normal { background: linear-gradient(135deg, var(--ocean-teal), var(--ocean-light)); color: white; }
   .res-toggle-btn.active-especial { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--ocean-deep); }
@@ -789,7 +792,7 @@
     .hours-banner { padding: 30px 20px; }
     .hours-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .reservas-form-card { padding: 30px 24px; }
-    .res-toggle-btn { padding: 14px 24px; font-size: 0.88rem; letter-spacing: 1.5px; }
+    .res-toggle-btn { padding: 14px 20px; font-size: 0.88rem; letter-spacing: 1.5px; }
     .reservas-info h3 { font-size: 2rem; }
     .map-embed { min-height: 280px; aspect-ratio: 4/3; }
     .ig-follow-banner { flex-direction: column; text-align: center; gap: 16px; }
@@ -816,7 +819,7 @@
     .about-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
     .menu-price { font-size: 1.2rem; }
     .map-embed { aspect-ratio: 1/1; }
-    .res-toggle-btn { padding: 12px 20px; }
+    .res-toggle-btn { padding: 12px 16px; font-size: 0.82rem; letter-spacing: 1px; }
     .lightbox-wrap { max-width: 95vw; }
     .lightbox-img { max-width: 95vw; max-height: 75vh; }
   }
@@ -827,7 +830,7 @@
     .section-title { font-size: 1.85rem; }
     .reservas-form-card { padding: 20px 14px; }
     .form-title { font-size: 1.6rem; }
-    .res-toggle-btn { padding: 12px 14px; font-size: 0.8rem; letter-spacing: 1px; }
+    .res-toggle-btn { padding: 10px 10px; font-size: 0.75rem; letter-spacing: 0.5px; }
     .whatsapp-float { width: 52px; height: 52px; font-size: 1.5rem; bottom: 20px; right: 16px; }
     .toast { right: 16px; max-width: calc(100vw - 32px); bottom: 90px; }
     .gallery-filters { gap: 8px; }
