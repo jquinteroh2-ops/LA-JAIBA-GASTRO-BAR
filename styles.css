@@ -647,15 +647,15 @@
     .hamburger { display: flex; }
     .nav-links {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(5,13,26,0.98);
-      -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+      background: rgba(5,13,26,0.99);
       flex-direction: column; align-items: center; justify-content: center;
       gap: 36px; padding: 80px 40px 40px;
       transform: translateX(100%);
       transition: transform 0.4s cubic-bezier(0.77,0,0.18,1);
-      z-index: 105; display: flex !important;
+      z-index: 9999; display: flex !important;
     }
     .nav-links.open { transform: translateX(0); }
+    nav.menu-open { z-index: 9998 !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
     .nav-links a { font-size: 1.3rem; letter-spacing: 3px; }
     .nav-cta { padding: 14px 36px !important; font-size: 1rem !important; }
     #about, #menu, #gallery, #specials, #reservas, #ubicacion { padding: 80px 24px; }
