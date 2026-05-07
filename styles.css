@@ -862,6 +862,54 @@
     .lightbox-img { max-width: 95vw; max-height: 75vh; }
   }
 
+  /* ---- Safari iOS: overflow horizontal fixes ---- */
+
+  /* date/time en Safari ignoran width sin esto */
+  input[type="date"],
+  input[type="time"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  /* Grid cells no pueden crecer más que su padre */
+  .form-row > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Fuerza que el card no desborde */
+  .reservas-form-card {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Asegura que todos los inputs respeten el box-sizing */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    max-width: 100%;
+    min-width: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* Previene que el toggle desborde en pantallas muy pequeñas */
+  .res-toggle {
+    max-width: 100%;
+  }
+  .res-toggle-btn {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /* ---- 420px: teléfonos pequeños ---- */
   @media (max-width: 420px) {
     #about, #menu, #gallery, #specials, #reservas, #ubicacion { padding: 50px 14px; }
