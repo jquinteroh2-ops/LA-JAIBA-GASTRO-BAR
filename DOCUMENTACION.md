@@ -3,7 +3,7 @@
 
 > **Documento preparado para:** Dirección del Restaurante  
 > **Fecha:** Mayo 2025  
-> **Versión:** 1.0  
+> **Versión:** 6.0  
 > **Desarrollado por:** Jose Quintero
 
 ---
