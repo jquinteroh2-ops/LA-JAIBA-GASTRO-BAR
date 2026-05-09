@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón</title>
+<meta name="description" content="La Jaiba Gastrobar — La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más en el Barrio el Recreo. Reserva tu mesa hoy.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a1628">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón">
+<meta property="og:description" content="La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más. Barrio el Recreo, Cartagena de Indias.">
+<meta property="og:site_name" content="La Jaiba Gastrobar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Jaiba Gastrobar | Tradición Marina con el Mejor Sazón">
+<meta name="twitter:description" content="La mejor cocina marina de Cartagena. Mariscos frescos, paellas, cocteles artesanales y más.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Bebas+Neue&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">🦀 <span>LA</span> JAIBA <span class="nav-logo-gastrobar">GASTROBAR</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">Nosotros</a></li>
+    <li><a href="#menu" onclick="closeNav()">Menú</a></li>
+    <li><a href="#specials" onclick="closeNav()">Destacados</a></li>
+    <li><a href="#ubicacion" onclick="closeNav()">Ubicación</a></li>
+    <li><a href="#reservas" class="nav-cta" onclick="closeNav()">Reservar</a></li>
+  </ul>
+  <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ocean">
+    <div class="ocean-wave"></div>
+    <div class="ocean-wave"></div>
+    <div class="ocean-wave"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Barrio el Recreo • Cartagena • Colombia</div>
+    <span class="hero-crab">🦀</span>
+    <h1 class="hero-title">
+      <span class="la">LA</span>
+      <span class="jaiba">JAIBA</span>
+      <span class="gastrobar">GASTROBAR</span>
+    </h1>
+    <p class="hero-subtitle">
+      Sabor, frescura y mucha costa en el corazón<br>
+      <em>Tradición marina con el mejor sazón</em>
+    </p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary"><i class="fa-solid fa-utensils"></i> Ver Menú</a>
+      <a href="#reservas" class="btn-secondary"><i class="fa-solid fa-phone"></i> Reservar Mesa</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- TICKER -->
+<div class="features-bar">
+  <div class="features-ticker" id="ticker">
+    <span class="ticker-item"><span class="dot">🦞</span> MARISCOS FRESCOS</span>
+    <span class="ticker-item"><span class="dot">🍹</span> COCTELES ARTESANALES</span>
+    <span class="ticker-item"><span class="dot">🌊</span> SABOR A MAR</span>
+    <span class="ticker-item"><span class="dot">🦀</span> PAELLAS DE MARISCOS</span>
+    <span class="ticker-item"><span class="dot">🐟</span> PESCADOS DEL DÍA</span>
+    <span class="ticker-item"><span class="dot">🌅</span> ABIERTO TODOS LOS DÍAS</span>
+    <span class="ticker-item"><span class="dot">📍</span> BARRIO EL RECREO</span>
+    <span class="ticker-item"><span class="dot">🦞</span> MARISCOS FRESCOS</span>
+    <span class="ticker-item"><span class="dot">🍹</span> COCTELES ARTESANALES</span>
+    <span class="ticker-item"><span class="dot">🌊</span> SABOR A MAR</span>
+    <span class="ticker-item"><span class="dot">🦀</span> PAELLAS DE MARISCOS</span>
+    <span class="ticker-item"><span class="dot">🐟</span> PESCADOS DEL DÍA</span>
+    <span class="ticker-item"><span class="dot">🌅</span> ABIERTO TODOS LOS DÍAS</span>
+    <span class="ticker-item"><span class="dot">📍</span> BARRIO EL RECREO</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-img-frame">
+        <div class="about-circle-bg"></div>
+        <div class="about-photo-wrap">
+          <img src="img/fachada.jpg" alt="Fachada La Jaiba Gastrobar — Barrio el Recreo, Cartagena" loading="lazy">
+          <div class="about-photo-caption">La Jaiba Gastrobar — Cartagena</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="section-label">Nuestra Historia</div>
+      <h2 class="section-title">El sabor del <em>océano</em> en cada plato</h2>
+      <p class="section-subtitle" style="margin-bottom:30px;">
+        En La Jaiba Gastrobar traemos lo mejor del mar directamente a tu mesa. Ubicados en el Barrio el Recreo de Cartagena, somos el punto de encuentro para los amantes de los mariscos, los cócteles tropicales y el buen ambiente costeño.
+      </p>
+      <p style="color: var(--sand); font-size: 0.9rem; line-height: 1.8; margin-bottom:30px;">
+        Desde nuestras cazuelas humeantes y paellas generosas, hasta nuestros cócteles refrescantes con sabores tropicales — cada visita es una celebración del mar.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card reveal">
+          <div class="val">11AM</div>
+          <div class="lbl">Apertura diaria</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+          <div class="lbl">Coctelería todo el día</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val">100%</div>
+          <div class="lbl">Mariscos frescos</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="val"><i class="fa-solid fa-umbrella-beach"></i></div>
+          <div class="lbl">Ambiente costeño</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-header reveal">
+    <div class="section-label" style="justify-content:center;">Nuestros Platos</div>
+    <h2 class="section-title">El <em>Menú</em></h2>
+    <p class="section-subtitle">Tradición marina con el mejor sazón</p>
+  </div>
+
+  <div class="menu-tabs reveal">
+    <button class="tab-btn active" onclick="showTab('entradas', event)"><i class="fa-solid fa-shrimp"></i> Entradas</button>
+    <button class="tab-btn" onclick="showTab('pescados', event)"><i class="fa-solid fa-fish"></i> Pescados</button>
+    <button class="tab-btn" onclick="showTab('mariscos', event)"><i class="fa-solid fa-fish-fins"></i> Mariscos</button>
+    <button class="tab-btn" onclick="showTab('paellas', event)"><i class="fa-solid fa-bowl-food"></i> Paellas</button>
+    <button class="tab-btn" onclick="showTab('bebidas', event)"><i class="fa-solid fa-martini-glass-citrus"></i> Bebidas</button>
+    <button class="tab-btn" onclick="showTab('licores', event)"><i class="fa-solid fa-wine-glass"></i> Licores</button>
+  </div>
+
+  <!-- ENTRADAS -->
+  <div class="menu-panel active" id="tab-entradas">
+    <div class="menu-2col">
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🦀 Entradas Calientes</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Muelas de Jaiba gratinadas</div></div><div class="menu-price">$21.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Langostino al perejil</div></div><div class="menu-price">$35.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Trilogía de empanadas de mariscos</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Pincho de camarón</div></div><div class="menu-price">$28.000</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">❄️ Entradas Frías</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Pequeño</div></div><div class="menu-price">$18.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Grande</div></div><div class="menu-price">$30.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Pequeño</div></div><div class="menu-price">$18.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Grande</div></div><div class="menu-price">$30.000</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1100px;margin:40px auto 0;">
+      <div class="menu-category">
+        <div class="menu-category-title">🫕 Sancochos & Cazuelas</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
+          <div class="menu-card"><div><div class="menu-item-name">Sancocho de pescado</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Sancocho trifásico</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Mote de queso</div></div><div class="menu-price">$30.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela de Jaiba</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$29.900</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Sencilla Mixta</div></div><div class="menu-price">$38.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Solo Camarón</div></div><div class="menu-price">$49.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Camarón y Langostinos</div></div><div class="menu-price">$55.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Cazuela Mixta</div></div><div class="menu-price">$65.000</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESCADOS -->
+  <div class="menu-panel" id="tab-pescados">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco, patacón y ensalada</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Frito</div></div><div class="menu-price">$43.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo al ajillo con camarones</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Mixto</div></div><div class="menu-price">$64.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina al ajillo con camarones</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Corvina Mixta</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo Frito</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Robalo Mixto</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Mixta</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Frita</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Mixta</div></div><div class="menu-price">$62.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Viuda de Bocachico Abierto</div></div><div class="menu-price">$49.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Salmón de Marisco</div></div><div class="menu-price">$60.000</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARISCOS -->
+  <div class="menu-panel" id="tab-mariscos">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco y patacón</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
+        <div class="menu-card"><div><div class="menu-item-name">Langostinos al ajillo</div></div><div class="menu-price">$59.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Langostino gratinado</div></div><div class="menu-price">$65.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Muelas de jaiba guisada</div></div><div class="menu-price">$45.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Caracol guisado</div></div><div class="menu-price">$45.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pulpo relleno de mariscos</div></div><div class="menu-price">$85.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Explosión de camarones en salsa de piña</div></div><div class="menu-price">$68.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón</div></div><div class="menu-price">$30.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pastas del mar</div></div><div class="menu-price">$42.000</div></div>
+        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón y langostinos</div></div><div class="menu-price">$62.000</div></div>
+      </div>
+      <div style="margin-top:30px;">
+        <div class="menu-category-title" style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--gold-light);letter-spacing:3px;padding-bottom:10px;border-bottom:1px solid rgba(200,151,42,0.2);">🦐 Picadas para Compartir</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:16px;">
+          <div class="menu-card"><div><div class="menu-item-name">Picada 2 Personas</div><div class="menu-item-desc">Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela</div></div><div class="menu-price">$80.000</div></div>
+          <div class="menu-card"><div><div class="menu-item-name">Picada 4 Personas</div></div><div class="menu-price">$155.000</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAELLAS -->
+  <div class="menu-panel" id="tab-paellas">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <p style="color:var(--sand);font-style:italic;font-size:0.9rem;margin-bottom:40px;">Acompañadas de arroz con langostino, mejillones, camarón y otras delicias del mar</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;">
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.1),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Paella Sencilla</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$39.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(232,68,42,0.15),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🦞🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 2 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$75.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(14,110,140,0.2),rgba(13,43,78,0.8));">
+          <div style="font-size:3rem;margin-bottom:16px;">🍽️🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 4 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$140.000</div>
+        </div>
+        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.2),rgba(13,43,78,0.8));border-color:var(--gold);">
+          <div style="font-size:3rem;margin-bottom:16px;">👑🥘</div>
+          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 6 Personas</div>
+          <div class="menu-price" style="font-size:2rem;margin:0;">$230.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEBIDAS -->
+  <div class="menu-panel" id="tab-bebidas">
+    <div class="menu-2col">
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🥤 Bebidas</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Agua</div></div><div class="menu-price">$10.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Leche</div></div><div class="menu-price">$12.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coca Cola</div></div><div class="menu-price">$6.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Hatsu (frambuesa, fresa, sandía, uva, hierva limón)</div></div><div class="menu-price">$8.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda Schweppes</div></div><div class="menu-price">$5.000</div></div>
+          </div>
+        </div>
+        <div class="menu-category" style="margin-top:30px;">
+          <div class="menu-category-title">🍺 Cervezas Nacionales</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Águila Light</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Águila Negra</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Costeña</div></div><div class="menu-price">$5.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Club Colombia</div></div><div class="menu-price">$7.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coronita</div></div><div class="menu-price">$6.000</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-category">
+          <div class="menu-category-title">🍹 Cocteles</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div class="menu-card"><div><div class="menu-item-name">Fruto del Amor</div><div class="menu-item-desc">Frutos rojos, ácido cítrico y soda</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Oleada de Verano</div><div class="menu-item-desc">Maracuyá, jengibre, zumo de limón y soda hatsu</div></div><div class="menu-price">$20.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Tamarindo</div><div class="menu-item-desc">Sirope de tamarindo, soda y zumo de limón</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Maracuyá</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Jamaica</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Soda de Corozo</div></div><div class="menu-price">$15.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Mojito Cubano de la Casa</div><div class="menu-item-desc">Ron oscuro, hierba buena, zumo de limón y soda</div></div><div class="menu-price">$25.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Mojito de Corozo</div></div><div class="menu-price">$28.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Piña Colada</div><div class="menu-item-desc">Ron oscuro, piña, crema de coco y leche condensada</div></div><div class="menu-price">$30.000</div></div>
+            <div class="menu-card"><div><div class="menu-item-name">Coronita Endiablada</div><div class="menu-item-desc">Coronita, zumo de limón, naranja y granadilla</div></div><div class="menu-price">$13.000</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LICORES -->
+  <div class="menu-panel" id="tab-licores">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
+      <div class="menu-card"><div><div class="menu-item-name">Ron Viejo de Caldas 750ml</div></div><div class="menu-price">$99.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 375ml</div></div><div class="menu-price">$85.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 750ml</div></div><div class="menu-price">$139.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Amarillo 750ml</div></div><div class="menu-price">$80.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Antioqueño 375ml</div></div><div class="menu-price">$51.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Real 700ml</div></div><div class="menu-price">$89.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Buchanas Master 750ml</div></div><div class="menu-price">$402.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Buchanas Deluxe 750ml</div></div><div class="menu-price">$294.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Johnnie Walker 700ml</div></div><div class="menu-price">$139.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Heinkes 750ml</div></div><div class="menu-price">$111.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Gordon 700ml</div></div><div class="menu-price">$149.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Ginebra Tanqueray 750ml</div></div><div class="menu-price">$299.900</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vodka Smirnoff Iulo 750ml</div></div><div class="menu-price">$89.990</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Jose Cuervo Amarillo 750ml</div></div><div class="menu-price">$175.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio 700ml</div></div><div class="menu-price">$459.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio Cristal 70 años</div></div><div class="menu-price">$520.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Baileys 1lt</div></div><div class="menu-price">$165.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vino Tinto Plaza Castillo 750ml</div></div><div class="menu-price">$45.000</div></div>
+      <div class="menu-card"><div><div class="menu-item-name">Vino Viejo Vinedo Blanco 750ml</div></div><div class="menu-price">$45.000</div></div>
+    </div>
+  </div>
+
+  <!-- HOURS -->
+  <div class="hours-banner reveal" style="margin-top:60px;">
+    <div class="hours-title"><i class="fa-solid fa-clock"></i> Horarios de Servicio</div>
+    <div class="hours-grid">
+      <div class="hour-block">
+        <div class="hour-time">11AM – 5PM</div>
+        <div class="hour-label">Comidas calientes</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">5PM – Noche</div>
+        <div class="hour-label">Cevichería, Coctelería & Pizzas</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">Todo el Día</div>
+        <div class="hour-label">Coctelería & Cevichería</div>
+      </div>
+      <div class="hour-block">
+        <div class="hour-time">Todos los días</div>
+        <div class="hour-label">Abierto siempre para ti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <div class="section-label" style="justify-content:center;">Vive la Experiencia</div>
+    <h2 class="section-title">Nuestro <em>Ambiente</em></h2>
+    <p class="section-subtitle">Mariscos frescos · Coctelería tropical · Buen ambiente costeño</p>
+  </div>
+
+  <div class="gallery-filters reveal">
+    <button class="gallery-filter-btn active" onclick="filterGallery('all',this)">Todos</button>
+    <button class="gallery-filter-btn" onclick="filterGallery('ambiente',this)"><i class="fa-solid fa-water"></i> Ambiente</button>
+    <button class="gallery-filter-btn" onclick="filterGallery('cocteles',this)"><i class="fa-solid fa-martini-glass-citrus"></i> Cocteles</button>
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid" style="max-width:1200px;margin:0 auto;">
+    <div class="gallery-item gallery-item--featured" data-cat="ambiente" data-title="Nuestro Equipo" data-sub="Familia La Jaiba Gastrobar" onclick="openLightbox(this)">
+      <img src="img/equipo.jpg" alt="Equipo La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Nuestro Equipo</span><span class="gallery-sub">Familia La Jaiba Gastrobar</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="cocteles" data-title="Cocteles Artesanales" data-sub="Sabores tropicales únicos" onclick="openLightbox(this)">
+      <img src="img/cocteles.jpg" alt="Cocteles artesanales La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Cocteles Artesanales</span><span class="gallery-sub">Sabores tropicales únicos</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Nuestro Salón" data-sub="Bar y zona de coctelería" onclick="openLightbox(this)">
+      <img src="img/salon.jpg" alt="Salón y bar La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Nuestro Salón</span><span class="gallery-sub">Bar y zona de coctelería</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Interior del Local" data-sub="Un ambiente acogedor y familiar" onclick="openLightbox(this)">
+      <img src="img/para%20la%20pagina%201.jpeg" alt="Interior del restaurante La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Interior del Local</span><span class="gallery-sub">Un ambiente acogedor y familiar</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Ven y Conócenos" data-sub="Sabor de la Jaiva" onclick="openLightbox(this)">
+      <img src="img/carta.jpg" alt="Carta promocional La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Ven y Conócenos</span><span class="gallery-sub">Sabor de la Jaiva</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Fachada del Restaurante" data-sub="Barrio el Recreo, Cartagena" onclick="openLightbox(this)">
+      <img src="img/fachada.jpg" alt="Fachada La Jaiba Gastrobar — Barrio el Recreo, Cartagena" loading="lazy">
+      <div class="gallery-overlay"><span>Fachada del Restaurante</span><span class="gallery-sub">Barrio el Recreo, Cartagena</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Ambiente Costeño" data-sub="Cartagena, Colombia" onclick="openLightbox(this)">
+      <img src="img/para%20la%20pagina%202.jpeg" alt="Ambiente costeño La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Ambiente Costeño</span><span class="gallery-sub">Cartagena, Colombia</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Nuestras Mesas" data-sub="Espacios listos para recibirte" onclick="openLightbox(this)">
+      <img src="img/mesas.jpg" alt="Mesas y salón La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Nuestras Mesas</span><span class="gallery-sub">Espacios listos para recibirte</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Zona vip 1" data-sub="Comodidad y estilo para tus eventos" onclick="openLightbox(this)">
+      <img src="img/salon2.jpg.jpg" alt="Zona VIP 1 La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Zona VIP 1</span><span class="gallery-sub">Comodidad y estilo para tus eventos</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Sala VIP 2" data-sub="Comodidad y estilo para tus eventos" onclick="openLightbox(this)">
+      <img src="img/vip2a.jpg.jpeg" alt="Sala VIP 2 La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Sala VIP 2</span><span class="gallery-sub">Comodidad y estilo para tus eventos</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div class="gallery-item" data-cat="ambiente" data-title="Mesa para 6" data-sub="Disfruta en familia" onclick="openLightbox(this)">
+      <img src="img/mesa6.jpg.jpg" alt="Mesa para 6 La Jaiba Gastrobar" loading="lazy">
+      <div class="gallery-overlay"><span>Mesa para 6</span><span class="gallery-sub">Disfruta en familia</span></div>
+      <div class="gallery-zoom"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+  </div>
+
+  <div class="ig-follow-banner reveal" style="max-width:1200px;margin:40px auto 0;">
+    <div class="ig-follow-text">
+      <h4>¿Quieres ver más?</h4>
+      <p>Síguenos en Instagram para ver nuestros platos, cocteles y ambiente cada día</p>
+    </div>
+    <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fa-brands fa-instagram"></i> @lajaiba_gastrobar</a>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials">
+  <div class="specials-content">
+    <div class="specials-header reveal">
+      <div class="section-label" style="justify-content:center;">Lo Más Pedido</div>
+      <h2 class="section-title">Nuestros <em>Destacados</em></h2>
+    </div>
+    <div class="specials-grid">
+      <div class="special-card reveal">
+        <span class="special-icon">🥘</span>
+        <div class="special-name">Paella de Mariscos</div>
+        <div class="special-desc">Arroz con langostino, mejillones, camarón y otras delicias del mar. Para compartir en buena compañía.</div>
+        <div class="special-price">$75.000 <span>/ 2 personas</span></div>
+      </div>
+      <div class="special-card featured reveal">
+        <div class="special-badge">⭐ ESTRELLA</div>
+        <span class="special-icon">🦀</span>
+        <div class="special-name">Cazuela de Jaiba</div>
+        <div class="special-desc">Nuestra especialidad insignia. Cazuela humeante de jaiba con arroz de coco y patacón. Un sabor único e inigualable.</div>
+        <div class="special-price">$29.900</div>
+      </div>
+      <div class="special-card reveal">
+        <div class="special-badge casa">🏠 DE LA CASA</div>
+        <span class="special-icon">🦞</span>
+        <div class="special-name">Langostino Gratinado</div>
+        <div class="special-desc">Langostinos frescos gratinados con queso fundido y hierbas aromáticas. Acompañados de arroz con coco y patacón. Sabor del mar en su máxima expresión.</div>
+        <div class="special-price">$65.000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reservas">
+  <!-- TOGGLE -->
+  <div class="res-toggle-wrap">
+    <div class="res-toggle">
+      <button type="button" id="btn-normal" class="res-toggle-btn active-normal" onclick="toggleReservaMode('normal')">🍽️ Mesa Normal</button>
+      <button type="button" id="btn-mesa6" class="res-toggle-btn" onclick="toggleReservaMode('mesa6')">🎂 Mesa para 6</button>
+      <button type="button" id="btn-especial" class="res-toggle-btn" onclick="toggleReservaMode('especial')">👑 Zonas VIP</button>
+    </div>
+  </div>
+
+  <div class="reservas-grid">
+    <!-- LEFT: Formulario -->
+    <div class="reservas-form-card reveal-left">
+
+      <!-- FORMULARIO NORMAL -->
+      <div id="form-normal" class="form-panel">
+        <div class="form-title">Reserva tu Mesa</div>
+        <div class="form-subtitle">Te esperamos en La Jaiba Gastrobar</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-nombre">Nombre</label>
+            <input id="res-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="res-telefono">Teléfono</label>
+            <input id="res-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-fecha">Fecha</label>
+            <input id="res-fecha" type="date">
+          </div>
+          <div class="form-group">
+            <label for="res-hora">Hora <small class="field-hint">(11:00 AM – 9:30 PM)</small></label>
+            <input id="res-hora" type="time" value="19:00" min="11:00" max="21:30">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="res-personas">Número de personas</label>
+          <select id="res-personas">
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3-4 personas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="res-mensaje">Mensaje especial</label>
+          <textarea id="res-mensaje" rows="3" placeholder="¿Alguna celebración? ¿Restricciones alimentarias?"></textarea>
+        </div>
+        <button class="form-submit" onclick="sendReservation()"><i class="fa-brands fa-whatsapp"></i> RESERVAR POR WHATSAPP</button>
+      </div>
+
+      <!-- FORMULARIO MESA PARA 6 -->
+      <div id="form-mesa6" class="form-panel hidden">
+        <div class="form-title">Mesa para 6 Personas</div>
+        <div class="form-subtitle">Celebra en La Jaiba Gastrobar</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m6-nombre">Nombre</label>
+            <input id="m6-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="m6-telefono">Teléfono</label>
+            <input id="m6-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="m6-evento">Tipo de evento</label>
+          <select id="m6-evento">
+            <option value="">— Selecciona el tipo de evento —</option>
+            <option>Cumpleaños</option>
+            <option>Reunión familiar</option>
+            <option>Aniversario</option>
+            <option>Graduación</option>
+            <option>Cena de negocios</option>
+            <option>Despedida de soltera/o</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="m6-fecha">Fecha</label>
+            <input id="m6-fecha" type="date">
+          </div>
+          <div class="form-group">
+            <label for="m6-hora">Hora <small class="field-hint">(11:00 AM – 9:30 PM)</small></label>
+            <input id="m6-hora" type="time" value="19:00" min="11:00" max="21:30">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="m6-mensaje">Mensaje especial</label>
+          <textarea id="m6-mensaje" rows="3" placeholder="¿Decoración especial? ¿Restricciones alimentarias?"></textarea>
+        </div>
+        <button class="form-submit" onclick="sendMesa6Reservation()"><i class="fa-brands fa-whatsapp"></i> RESERVAR POR WHATSAPP</button>
+      </div>
+
+      <!-- FORMULARIO ESPECIAL -->
+      <div id="form-especial" class="form-panel hidden">
+        <div class="form-title">Reserva tu Zona VIP</div>
+        <div class="form-subtitle">Eventos que quedan en la memoria</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ev-nombre">Nombre completo</label>
+            <input id="ev-nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="ev-telefono">Teléfono</label>
+            <input id="ev-telefono" type="tel" placeholder="300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ev-zona">Zona VIP</label>
+          <select id="ev-zona">
+            <option value="">— Selecciona la zona —</option>
+            <option value="Zona VIP 1 (máx. 15 personas)">👑 Zona VIP 1 — máx. 15 personas</option>
+            <option value="Sala VIP 2 (máx. 10 personas)">✨ Sala VIP 2 — máx. 10 personas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ev-tipo">Tipo de evento</label>
+          <select id="ev-tipo">
+            <option value="">— Selecciona el tipo de evento —</option>
+            <option>Cumpleaños</option>
+            <option>Quinceañera</option>
+            <option>Matrimonio / Boda</option>
+            <option>Reunión Empresarial</option>
+            <option>Grado / Graduación</option>
+            <option>Fiesta Privada</option>
+            <option>Baby Shower</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ev-fecha">Fecha del evento</label>
+          <input id="ev-fecha" type="date">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ev-hora-inicio">Hora de inicio</label>
+            <input id="ev-hora-inicio" type="time" value="18:00">
+          </div>
+          <div class="form-group">
+            <label for="ev-hora-fin">Hora de fin</label>
+            <input id="ev-hora-fin" type="time" value="23:00">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ev-servicios">Servicios requeridos</label>
+          <textarea id="ev-servicios" rows="3" placeholder="Ej: decoración temática, servicio de bar, música, catering especial..."></textarea>
+        </div>
+        <button class="form-submit especial-submit" onclick="sendSpecialReservation()">📅 CONSULTAR DISPONIBILIDAD</button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Info panel -->
+    <div class="reservas-info reveal-right">
+
+      <!-- INFO NORMAL -->
+      <div id="info-normal">
+        <div class="section-label">Contacto</div>
+        <h3>¿Listo para vivir la <em>experiencia</em>?</h3>
+        <p>Reserva tu mesa y disfruta de la mejor cocina marina de Cartagena. Te garantizamos una experiencia llena de sabor, frescura y mucha costa en el corazón.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-text"><small>Ubicación</small>Barrio el Recreo, Cartagena de Indias</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="contact-text"><small>Instagram</small>@lajaiba_gastrobar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO MESA PARA 6 -->
+      <div id="info-mesa6" class="hidden">
+        <div class="section-label">Mesa Especial</div>
+        <h3>Una mesa para <em>celebrar</em></h3>
+        <p>Reserva tu mesa para 6 personas y vive una experiencia única en La Jaiba Gastrobar. Perfecta para cumpleaños, aniversarios y reuniones familiares con los mejores sabores del mar.</p>
+        <div class="event-capacidades">
+          <div class="event-cap-item">
+            <i class="fa-solid fa-users cap-icon"></i>
+            <div class="cap-number">6</div>
+            <div class="cap-label">Personas</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-cake-candles cap-icon"></i>
+            <div class="cap-number">Eventos</div>
+            <div class="cap-label">Cumpleaños y más</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-utensils cap-icon"></i>
+            <div class="cap-number">Menú</div>
+            <div class="cap-label">Completo disponible</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-star cap-icon"></i>
+            <div class="cap-number">VIP</div>
+            <div class="cap-label">Atención personalizada</div>
+          </div>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="contact-text"><small>WhatsApp & Teléfono</small>302 271 3343</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-text"><small>Horario</small>Abierto todos los días • 11:00 AM en adelante</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO ESPECIAL — ZONAS VIP -->
+      <div id="info-especial" class="hidden">
+        <div class="section-label">Zonas VIP</div>
+        <h3>Tu espacio <em>exclusivo</em></h3>
+        <p>Nuestras Zonas VIP están diseñadas para que disfrutes con privacidad y comodidad. Elige tu zona favorita.</p>
+
+        <div class="vip-subtoggle">
+          <button type="button" id="btn-vip1" class="vip-sub-btn active" onclick="toggleVipZone('vip1')">👑 Zona VIP 1</button>
+          <button type="button" id="btn-vip2" class="vip-sub-btn" onclick="toggleVipZone('vip2')">✨ Sala VIP 2</button>
+        </div>
+
+        <div id="vip-zone-1">
+          <div style="margin:16px 0;border-radius:4px;overflow:hidden;border:1px solid rgba(200,151,42,0.3);">
+            <img src="img/salon2.jpg.jpg" alt="Zona VIP 1" style="width:100%;height:190px;object-fit:cover;display:block;">
+          </div>
+          <p style="color:var(--sand);font-size:0.88rem;margin-bottom:16px;">Espacio con mesas y sillas de madera, ideal para grupos y eventos privados con todo el ambiente costeño.</p>
+        </div>
+
+        <div id="vip-zone-2" class="hidden">
+          <div style="margin:16px 0;border-radius:4px;overflow:hidden;border:1px solid rgba(200,151,42,0.3);">
+            <img src="img/vip2a.jpg.jpeg" alt="Sala VIP 2" style="width:100%;height:190px;object-fit:cover;display:block;">
+          </div>
+          <p style="color:var(--sand);font-size:0.88rem;margin-bottom:16px;">Sala con sofás confortables y ambientación exclusiva, perfecta para ocasiones especiales e íntimas.</p>
+        </div>
+
+        <div class="event-capacidades">
+          <div class="event-cap-item">
+            <i class="fa-solid fa-users cap-icon"></i>
+            <div class="cap-number">15</div>
+            <div class="cap-label">Máx. VIP 1</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-people-group cap-icon"></i>
+            <div class="cap-number">10</div>
+            <div class="cap-label">Máx. VIP 2</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-utensils cap-icon"></i>
+            <div class="cap-number">Catering</div>
+            <div class="cap-label">Propio y personalizado</div>
+          </div>
+          <div class="event-cap-item">
+            <i class="fa-solid fa-music cap-icon"></i>
+            <div class="cap-number">Música</div>
+            <div class="cap-label">Ambientación incluida</div>
+          </div>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-text"><small>Consultas de eventos</small>302 271 3343</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-regular fa-calendar-check"></i></div>
+            <div class="contact-text"><small>Disponibilidad</small>Consulta con anticipación para asegurar tu fecha</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div class="contact-text"><small>Personalización</small>Decoración y menú a tu medida</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section id="ubicacion">
+  <div class="ubicacion-grid">
+    <div class="reveal-left">
+      <div class="section-label">Encuéntranos</div>
+      <h3 class="section-title">Barrio el Recreo,<br><em>Cartagena</em></h3>
+      <p class="section-subtitle" style="margin-bottom:30px;">En el corazón de Cartagena de Indias, en el Barrio el Recreo. Un lugar con ambiente acogedor, luces cálidas y el aroma del mar en cada rincón.</p>
+      <ul class="info-list">
+        <li><span><i class="fa-solid fa-location-dot"></i></span><span>Barrio el Recreo, Cartagena de Indias, Colombia</span></li>
+        <li><span><i class="fa-solid fa-clock"></i></span><span>Abierto todos los días desde las 11:00 AM</span></li>
+        <li><span><i class="fa-solid fa-phone"></i></span><span>302 271 3343 — Llamadas y WhatsApp</span></li>
+        <li><span><i class="fa-solid fa-square-parking"></i></span><span>Zona de parqueo disponible en el sector</span></li>
+        <li><span><i class="fa-solid fa-wheelchair"></i></span><span>Acceso accesible para todos</span></li>
+      </ul>
+    </div>
+    <div class="map-embed reveal-right">
+      <iframe
+        src="https://maps.google.com/maps?q=La+Jaiba+Gastrobar&ll=10.3877,-75.4725&output=embed&hl=es&z=17"
+        width="100%" height="100%"
+        allowfullscreen
+        loading="lazy"
+        title="Ubicación La Jaiba Gastrobar — Barrio el Recreo, Cartagena">
+      </iframe>
+      <a href="https://share.google/jrWh6DpFkTtEGp0V6" target="_blank" rel="noopener" class="map-open-btn">📍 ABRIR EN GOOGLE MAPS</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">🦀 LA JAIBA</span>
+      <p>Sabor, frescura y mucha costa en el corazón. La mejor cocina marina de Cartagena, con tradición y el mejor sazón desde el Barrio el Recreo.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/lajaiba_gastrobar" target="_blank" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+573022713343" class="social-btn" aria-label="Teléfono"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="#menu">Entradas</a></li>
+        <li><a href="#menu">Pescados</a></li>
+        <li><a href="#menu">Mariscos</a></li>
+        <li><a href="#menu">Paellas</a></li>
+        <li><a href="#menu">Cocteles</a></li>
+        <li><a href="#menu">Licores</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Restaurante</h4>
+      <ul>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#specials">Destacados</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+573022713343">302 271 3343</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=573022713343" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/lajaiba_gastrobar" target="_blank">@lajaiba_gastrobar</a></li>
+        <li><a href="#ubicacion">Barrio el Recreo</a></li>
+        <li><a href="#ubicacion">Cartagena, Colombia</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 La Jaiba Gastrobar · Cartagena de Indias · Cocina de Mar · Sabores del Océano</p>
+    <p style="margin-top:8px;opacity:0.5;">Tradición marina con el mejor sazón 🦀</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&#x2715;</button>
+  <button type="button" class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1)" aria-label="Anterior">&#8249;</button>
+  <div class="lightbox-wrap" onclick="event.stopPropagation()">
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-caption">
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <div class="lightbox-sub" id="lightboxSub"></div>
+    </div>
+  </div>
+  <button type="button" class="lightbox-nav lightbox-next" onclick="event.stopPropagation();lightboxNav(1)" aria-label="Siguiente">&#8250;</button>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://api.whatsapp.com/send?phone=573022713343&text=Hola! Quiero hacer una reserva en La Jaiba Gastrobar 🦀" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ ¡Reserva enviada por WhatsApp!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
