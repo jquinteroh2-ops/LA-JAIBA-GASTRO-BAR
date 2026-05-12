@@ -142,13 +142,61 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// TABS
-function showTab(name, e) {
-  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-  e.target.classList.add('active');
-}
+// BOOK MENU
+(function () {
+  let current = 0;
+  const total = 2;
+  let flipping = false;
+  let touchStartX = 0;
+
+  function update() {
+    const card = document.getElementById('bookCard');
+    if (!card) return;
+    card.classList.toggle('flipped', current === 1);
+    document.getElementById('prevPage').disabled = current === 0;
+    document.getElementById('nextPage').disabled = current === total - 1;
+    for (let i = 0; i < total; i++) {
+      const dot = document.getElementById('dot-' + i);
+      if (dot) dot.classList.toggle('active', i === current);
+    }
+    const tip = document.querySelector('.book-tip');
+    if (tip) tip.textContent = current === 0
+      ? '🤚 Toca el lado derecho o desliza para pasar la página'
+      : '🤚 Toca el lado izquierdo o desliza para volver';
+  }
+
+  window.flipPage = function (dir) {
+    if (flipping) return;
+    const next = current + dir;
+    if (next < 0 || next >= total) return;
+    flipping = true;
+    current = next;
+    update();
+    setTimeout(() => { flipping = false; }, 780);
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const stage = document.getElementById('bookStage');
+    if (!stage) return;
+
+    stage.addEventListener('click', function (e) {
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      window.flipPage(x > rect.width / 2 ? 1 : -1);
+    });
+
+    stage.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', function (e) {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) window.flipPage(diff > 0 ? 1 : -1);
+    }, { passive: true });
+
+    update();
+  });
+})();
 
 // SCROLL REVEAL
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
