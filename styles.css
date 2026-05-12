@@ -462,7 +462,14 @@
   }
   .pizza-table tr:last-child td { border-bottom: none; }
   .pizza-table tr:hover td { background: rgba(200,151,42,0.04); }
-  @media (max-width: 768px) { .carta-2col { grid-template-columns: 1fr; gap: 30px; } }
+  @media (max-width: 768px) {
+    .carta-2col { grid-template-columns: 1fr; gap: 24px; }
+    .carta-section-title { font-size: 1.3rem; letter-spacing: 2px; }
+    .carta-name { font-size: 0.85rem; max-width: 68%; }
+    .carta-price { font-size: 1rem; }
+    .pizza-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pizza-table { min-width: 420px; }
+  }
 
   /* HOURS */
   .hours-banner {
@@ -914,8 +921,15 @@
     .gallery-item.gallery-item--featured { grid-column: span 1; aspect-ratio: 16/9; }
     .gallery-filter-btn { padding: 9px 18px; font-size: 0.75rem; letter-spacing: 1px; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
-    .tab-btn { padding: 8px 14px; font-size: 0.72rem; letter-spacing: 1px; clip-path: none; }
-    .menu-tabs { gap: 6px; }
+    .tab-btn { padding: 8px 12px; font-size: 0.68rem; letter-spacing: 0.5px; clip-path: none; white-space: nowrap; flex-shrink: 0; }
+    .tab-btn i { display: none; }
+    .menu-tabs { gap: 6px; overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .menu-tabs::-webkit-scrollbar { display: none; }
+    .carta-section-title { font-size: 1.15rem; letter-spacing: 1.5px; }
+    .carta-name { font-size: 0.82rem; max-width: 65%; }
+    .carta-price { font-size: 0.95rem; }
+    .carta-subcategory { font-size: 0.82rem; letter-spacing: 1.5px; }
+    .carta-item { padding: 6px 0; }
     .hours-grid { grid-template-columns: 1fr; }
     .hero-btns { flex-direction: column; align-items: center; gap: 14px; }
     .btn-primary, .btn-secondary { width: 100%; max-width: 320px; justify-content: center; clip-path: none; }
@@ -1001,6 +1015,10 @@
     .about-badge .num { font-size: 2rem; }
     .hours-banner { padding: 24px 14px; }
     .menu-card { padding: 16px; }
+    .carta-section-title { font-size: 1.05rem; letter-spacing: 1px; }
+    .carta-name { font-size: 0.78rem; max-width: 62%; }
+    .carta-price { font-size: 0.9rem; }
+    .carta-sep { margin: 0 5px; }
     .footer-grid { gap: 24px; }
     footer { padding: 40px 14px 20px; }
   }
