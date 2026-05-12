@@ -139,54 +139,66 @@
   <div class="menu-tabs reveal">
     <button class="tab-btn active" onclick="showTab('entradas', event)"><i class="fa-solid fa-shrimp"></i> Entradas</button>
     <button class="tab-btn" onclick="showTab('pescados', event)"><i class="fa-solid fa-fish"></i> Pescados</button>
-    <button class="tab-btn" onclick="showTab('mariscos', event)"><i class="fa-solid fa-fish-fins"></i> Mariscos</button>
-    <button class="tab-btn" onclick="showTab('paellas', event)"><i class="fa-solid fa-bowl-food"></i> Paellas</button>
-    <button class="tab-btn" onclick="showTab('bebidas', event)"><i class="fa-solid fa-martini-glass-citrus"></i> Bebidas</button>
-    <button class="tab-btn" onclick="showTab('licores', event)"><i class="fa-solid fa-wine-glass"></i> Licores</button>
+    <button class="tab-btn" onclick="showTab('mar', event)"><i class="fa-solid fa-fish-fins"></i> Mariscos & Mar</button>
+    <button class="tab-btn" onclick="showTab('paellas', event)"><i class="fa-solid fa-bowl-food"></i> Paellas & Pizzas</button>
+    <button class="tab-btn" onclick="showTab('bebidas', event)"><i class="fa-solid fa-martini-glass-citrus"></i> Bebidas & Postres</button>
+    <button class="tab-btn" onclick="showTab('licores', event)"><i class="fa-solid fa-wine-glass"></i> Cocteles & Licores</button>
   </div>
 
   <!-- ENTRADAS -->
   <div class="menu-panel active" id="tab-entradas">
-    <div class="menu-2col">
-      <div>
-        <div class="menu-category">
-          <div class="menu-category-title">🦀 Entradas Calientes</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="menu-card"><div><div class="menu-item-name">Muelas de Jaiba gratinadas</div></div><div class="menu-price">$21.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Langostino al perejil</div></div><div class="menu-price">$35.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Trilogía de empanadas de mariscos</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Pincho de camarón</div></div><div class="menu-price">$28.000</div></div>
+    <div class="carta-layout">
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🦀 Entradas Calientes</div>
+            <div class="carta-item"><span class="carta-name">Muelas de Jaiba al Ajillo</span><span class="carta-sep"></span><span class="carta-price">$19.990</span></div>
+            <div class="carta-item"><span class="carta-name">Canastas de Patacatón con Camarón</span><span class="carta-sep"></span><span class="carta-price">$24.000</span></div>
+            <div class="carta-item"><span class="carta-name">Canoa de plátano Maduro con camarones</span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">❄️ Entradas Frías</div>
+            <div class="carta-subcategory">Coctel de Camarón</div>
+            <div class="carta-item"><span class="carta-name">Pequeño</span><span class="carta-sep"></span><span class="carta-price">$17.990</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$29.990</span></div>
+            <div class="carta-subcategory">Coctel Mixto Camarón y Caracol</div>
+            <div class="carta-item"><span class="carta-name">Pequeño</span><span class="carta-sep"></span><span class="carta-price">$22.900</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$31.990</span></div>
+            <div class="carta-subcategory">Ceviche de Camarón</div>
+            <div class="carta-item"><span class="carta-name">Pequeño</span><span class="carta-sep"></span><span class="carta-price">$17.990</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$29.990</span></div>
+            <div class="carta-subcategory">Ceviche Mixto Camarón y Caracol</div>
+            <div class="carta-item"><span class="carta-name">Pequeño</span><span class="carta-sep"></span><span class="carta-price">$22.900</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$31.990</span></div>
+            <div class="carta-subcategory">Coctel o Ceviche Frutos del Mar</div>
+            <div class="carta-item"><span class="carta-name">Pequeño</span><span class="carta-sep"></span><span class="carta-price">$35.990</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$54.990</span></div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="menu-category">
-          <div class="menu-category-title">❄️ Entradas Frías</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coctel de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Pequeño</div></div><div class="menu-price">$18.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coctel Camarón y Caracol Grande</div></div><div class="menu-price">$30.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Pequeño</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Ceviche de Camarón Grande</div></div><div class="menu-price">$25.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Pequeño</div></div><div class="menu-price">$18.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Ceviche Mixto Grande</div></div><div class="menu-price">$30.000</div></div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🫕 Sancochos de Pescado</div>
+            <p class="carta-note">Acompañados de arroz con coco y patacón</p>
+            <div class="carta-item"><span class="carta-name">Sancocho de Mojarra Roja</span><span class="carta-sep"></span><span class="carta-price">$35.000</span></div>
+            <div class="carta-item"><span class="carta-name">Sancocho Mojarra Negra</span><span class="carta-sep"></span><span class="carta-price">$35.000</span></div>
+            <div class="carta-item"><span class="carta-name">Sancocho de Robalo</span><span class="carta-sep"></span><span class="carta-price">$45.000</span></div>
+            <div class="carta-item"><span class="carta-name">Sancocho de Pargo</span><span class="carta-sep"></span><span class="carta-price">$49.900</span></div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div style="max-width:1100px;margin:40px auto 0;">
-      <div class="menu-category">
-        <div class="menu-category-title">🫕 Sancochos & Cazuelas</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
-          <div class="menu-card"><div><div class="menu-item-name">Sancocho de pescado</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$30.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Sancocho trifásico</div></div><div class="menu-price">$30.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Mote de queso</div></div><div class="menu-price">$30.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Cazuela de Jaiba</div><div class="menu-item-desc">Con arroz coco y patacón</div></div><div class="menu-price">$29.900</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Cazuela Sencilla Mixta</div></div><div class="menu-price">$38.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Cazuela Solo Camarón</div></div><div class="menu-price">$49.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Cazuela Camarón y Langostinos</div></div><div class="menu-price">$55.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Cazuela Mixta</div></div><div class="menu-price">$65.000</div></div>
+          <div class="carta-section">
+            <div class="carta-section-title">🥘 Cazuelas</div>
+            <p class="carta-note">Acompañadas de arroz con coco y patacón</p>
+            <div class="carta-item"><span class="carta-name">Cazuela de Jaiba</span><span class="carta-sep"></span><span class="carta-price">$29.900</span></div>
+            <div class="carta-item"><span class="carta-name">Cazuela de Camarón</span><span class="carta-sep"></span><span class="carta-price">$49.000</span></div>
+            <div class="carta-item"><span class="carta-name">Cazuela de Camarón y Caracol</span><span class="carta-sep"></span><span class="carta-price">$37.990</span></div>
+            <div class="carta-item"><span class="carta-name">Camarón y Langostinos</span><span class="carta-sep"></span><span class="carta-price">$59.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mixta Frutos del Mar</span><span class="carta-sep"></span><span class="carta-price">$65.990</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍝 Pastas</div>
+            <div class="carta-item"><span class="carta-name">Pastas de camarón</span><span class="carta-sep"></span><span class="carta-price">$38.990</span></div>
+            <div class="carta-item"><span class="carta-name">Pastas del Frutos del Mar</span><span class="carta-sep"></span><span class="carta-price">$52.990</span></div>
+            <div class="carta-item"><span class="carta-name">Pastas de camarón y langostinos</span><span class="carta-sep"></span><span class="carta-price">$68.990</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -194,151 +206,219 @@
 
   <!-- PESCADOS -->
   <div class="menu-panel" id="tab-pescados">
-    <div style="max-width:1100px;margin:0 auto;">
-      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco, patacón y ensalada</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
-        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Frito</div></div><div class="menu-price">$43.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo al ajillo con camarones</div></div><div class="menu-price">$59.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pargo Rojo Mixto</div></div><div class="menu-price">$64.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Corvina Frita</div></div><div class="menu-price">$30.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Corvina al ajillo con camarones</div></div><div class="menu-price">$42.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Corvina Mixta</div></div><div class="menu-price">$59.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Robalo Frito</div></div><div class="menu-price">$30.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Robalo al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Robalo Mixto</div></div><div class="menu-price">$62.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Frita</div></div><div class="menu-price">$30.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Roja Mixta</div></div><div class="menu-price">$62.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Frita</div></div><div class="menu-price">$30.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra al ajillo con camarón</div></div><div class="menu-price">$42.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Mojarra Negra Mixta</div></div><div class="menu-price">$62.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Viuda de Bocachico Abierto</div></div><div class="menu-price">$49.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Salmón de Marisco</div></div><div class="menu-price">$60.000</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MARISCOS -->
-  <div class="menu-panel" id="tab-mariscos">
-    <div style="max-width:1100px;margin:0 auto;">
-      <p style="color:var(--sand);font-style:italic;font-size:0.85rem;margin-bottom:30px;text-align:center;">Acompañados de arroz con coco y patacón</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
-        <div class="menu-card"><div><div class="menu-item-name">Langostinos al ajillo</div></div><div class="menu-price">$59.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Langostino gratinado</div></div><div class="menu-price">$65.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Muelas de jaiba guisada</div></div><div class="menu-price">$45.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Caracol guisado</div></div><div class="menu-price">$45.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pulpo relleno de mariscos</div></div><div class="menu-price">$85.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Explosión de camarones en salsa de piña</div></div><div class="menu-price">$68.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón</div></div><div class="menu-price">$30.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pastas del mar</div></div><div class="menu-price">$42.000</div></div>
-        <div class="menu-card"><div><div class="menu-item-name">Pasta de camarón y langostinos</div></div><div class="menu-price">$62.000</div></div>
-      </div>
-      <div style="margin-top:30px;">
-        <div class="menu-category-title" style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--gold-light);letter-spacing:3px;padding-bottom:10px;border-bottom:1px solid rgba(200,151,42,0.2);">🦐 Picadas para Compartir</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:16px;">
-          <div class="menu-card"><div><div class="menu-item-name">Picada 2 Personas</div><div class="menu-item-desc">Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela</div></div><div class="menu-price">$80.000</div></div>
-          <div class="menu-card"><div><div class="menu-item-name">Picada 4 Personas</div></div><div class="menu-price">$155.000</div></div>
+    <div class="carta-layout">
+      <p class="carta-note" style="margin-bottom:28px;">Acompañados de arroz con coco, patacón y ensalada</p>
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🐟 Pargo Rojo</div>
+            <div class="carta-item"><span class="carta-name">Pargo frito</span><span class="carta-sep"></span><span class="carta-price">$44.990</span></div>
+            <div class="carta-item"><span class="carta-name">Pargo al ajillo con camarones</span><span class="carta-sep"></span><span class="carta-price">$59.990</span></div>
+            <div class="carta-item"><span class="carta-name">Pargo mixto Camarón y caracol</span><span class="carta-sep"></span><span class="carta-price">$64.000</span></div>
+            <div class="carta-item"><span class="carta-name">Pargo Asado</span><span class="carta-sep"></span><span class="carta-price">$49.990</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🐟 Robalo</div>
+            <div class="carta-item"><span class="carta-name">Robalo frito</span><span class="carta-sep"></span><span class="carta-price">$39.990</span></div>
+            <div class="carta-item"><span class="carta-name">Robalo al ajillo con camarón</span><span class="carta-sep"></span><span class="carta-price">$49.900</span></div>
+            <div class="carta-item"><span class="carta-name">Robalo Mixto</span><span class="carta-sep"></span><span class="carta-price">$64.000</span></div>
+            <div class="carta-item"><span class="carta-name">Robalo Asado</span><span class="carta-sep"></span><span class="carta-price">$44.990</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🐟 Mojarra Roja</div>
+            <div class="carta-item"><span class="carta-name">Mojarra Roja frita</span><span class="carta-sep"></span><span class="carta-price">$39.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Roja al ajillo con camarón</span><span class="carta-sep"></span><span class="carta-price">$42.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Roja Mixto</span><span class="carta-sep"></span><span class="carta-price">$62.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Roja Asada</span><span class="carta-sep"></span><span class="carta-price">$34.900</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🐟 Mojarra Negra</div>
+            <div class="carta-item"><span class="carta-name">Mojarra Negra frita</span><span class="carta-sep"></span><span class="carta-price">$29.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Negra al ajillo con camarón</span><span class="carta-sep"></span><span class="carta-price">$42.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Negra Mixto</span><span class="carta-sep"></span><span class="carta-price">$62.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mojarra Negra Asada</span><span class="carta-sep"></span><span class="carta-price">$34.990</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-item" style="padding:12px 0;"><span class="carta-name" style="font-weight:700;color:var(--gold-light);">Viuda de Bocachico Abierto</span><span class="carta-sep"></span><span class="carta-price">$49.000</span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PAELLAS -->
+  <!-- MARISCOS & MAR -->
+  <div class="menu-panel" id="tab-mar">
+    <div class="carta-layout">
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🦞 Otros del Mar</div>
+            <p class="carta-note">Acompañados de arroz con coco y patacón</p>
+            <div class="carta-item"><span class="carta-name">Langostinos al Ajillo</span><span class="carta-sep"></span><span class="carta-price">$60.990</span></div>
+            <div class="carta-item"><span class="carta-name">Langostino Gratinado</span><span class="carta-sep"></span><span class="carta-price">$66.990</span></div>
+            <div class="carta-item"><span class="carta-name">Caracol Guisado</span><span class="carta-sep"></span><span class="carta-price">$45.990</span></div>
+            <div class="carta-item"><span class="carta-name">Pulpo relleno de Mariscos</span><span class="carta-sep"></span><span class="carta-price">$89.990</span></div>
+            <div class="carta-item"><span class="carta-name">Explosión de camarones en salsa de Piña</span><span class="carta-sep"></span><span class="carta-price">$69.990</span></div>
+            <div class="carta-item"><span class="carta-name">Explosión Mixta en salsa de Piña</span><span class="carta-sep"></span><span class="carta-price">$82.990</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🦀 Picadas</div>
+            <p class="carta-note">Medallones de pescado, cazuela de jaiba, arroz de coco, patacones, caracol guisado</p>
+            <div class="carta-subcategory">Para Compartir</div>
+            <div class="carta-item"><span class="carta-name">2 Personas</span><span class="carta-sep"></span><span class="carta-price">$119.000</span></div>
+            <div class="carta-item"><span class="carta-name">4 Personas</span><span class="carta-sep"></span><span class="carta-price">$179.990</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🦞 Langosta</div>
+            <p class="carta-note">Acompañada de patacones y arroz</p>
+            <div class="carta-item"><span class="carta-name">Pequeña</span><span class="carta-sep"></span><span class="carta-price">$49.990</span></div>
+            <div class="carta-item"><span class="carta-name">Mediana</span><span class="carta-sep"></span><span class="carta-price">$79.990</span></div>
+            <div class="carta-item"><span class="carta-name">Grande</span><span class="carta-sep"></span><span class="carta-price">$96.990</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍽️ Otras Especialidades</div>
+            <p class="carta-note">Acompañados de arroz con coco y patacón</p>
+            <div class="carta-item"><span class="carta-name">Pechuga a la Plancha</span><span class="carta-sep"></span><span class="carta-price">$30.000</span></div>
+            <div class="carta-item"><span class="carta-name">Pechuga Gratinada</span><span class="carta-sep"></span><span class="carta-price">$38.000</span></div>
+            <div class="carta-item"><span class="carta-name">Punta Gorda 250 Gr.</span><span class="carta-sep"></span><span class="carta-price">$35.000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAELLAS & PIZZAS -->
   <div class="menu-panel" id="tab-paellas">
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <p style="color:var(--sand);font-style:italic;font-size:0.9rem;margin-bottom:40px;">Acompañadas de arroz con langostino, mejillones, camarón y otras delicias del mar</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;">
-        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.1),rgba(13,43,78,0.8));">
-          <div style="font-size:3rem;margin-bottom:16px;">🥘</div>
-          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Paella Sencilla</div>
-          <div class="menu-price" style="font-size:2rem;margin:0;">$39.000</div>
+    <div class="carta-layout">
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🥘 Paellas</div>
+            <p class="carta-note">Acompañadas de arroz con langostino, mejillones, camarón y otras delicias del mar</p>
+            <div class="carta-item"><span class="carta-name">Sencilla</span><span class="carta-sep"></span><span class="carta-price">$43.990</span></div>
+            <div class="carta-subcategory">Para Compartir</div>
+            <div class="carta-item"><span class="carta-name">2 Personas</span><span class="carta-sep"></span><span class="carta-price">$79.990</span></div>
+            <div class="carta-item"><span class="carta-name">4 Personas</span><span class="carta-sep"></span><span class="carta-price">$149.990</span></div>
+            <div class="carta-item"><span class="carta-name">6 Personas</span><span class="carta-sep"></span><span class="carta-price">$229.990</span></div>
+            <div class="carta-item"><span class="carta-name">Especial de la Casa 6 Pers.</span><span class="carta-sep"></span><span class="carta-price">$299.990</span></div>
+          </div>
         </div>
-        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(232,68,42,0.15),rgba(13,43,78,0.8));">
-          <div style="font-size:3rem;margin-bottom:16px;">🦞🥘</div>
-          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 2 Personas</div>
-          <div class="menu-price" style="font-size:2rem;margin:0;">$75.000</div>
-        </div>
-        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(14,110,140,0.2),rgba(13,43,78,0.8));">
-          <div style="font-size:3rem;margin-bottom:16px;">🍽️🥘</div>
-          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 4 Personas</div>
-          <div class="menu-price" style="font-size:2rem;margin:0;">$140.000</div>
-        </div>
-        <div class="menu-card" style="flex-direction:column;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(200,151,42,0.2),rgba(13,43,78,0.8));border-color:var(--gold);">
-          <div style="font-size:3rem;margin-bottom:16px;">👑🥘</div>
-          <div class="menu-item-name" style="font-size:1.1rem;margin-bottom:8px;">Para Compartir 6 Personas</div>
-          <div class="menu-price" style="font-size:2rem;margin:0;">$230.000</div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍕 Pizzas</div>
+            <table class="pizza-table">
+              <thead>
+                <tr>
+                  <th>Variedad</th>
+                  <th>Pizzeta</th>
+                  <th>Mediana</th>
+                  <th>Grande</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Jamón con Queso</td><td>$15.000</td><td>$30.000</td><td>$40.000</td></tr>
+                <tr><td>Hawaiana</td><td>$15.000</td><td>$30.000</td><td>$40.000</td></tr>
+                <tr><td>Camarón al Ajillo</td><td>$20.000</td><td>$35.000</td><td>$50.000</td></tr>
+                <tr><td>Camarón y Caracol</td><td>$28.000</td><td>$38.000</td><td>$58.000</td></tr>
+                <tr><td>Cuatro Carnes</td><td>$25.000</td><td>$45.000</td><td>$60.000</td></tr>
+                <tr><td>Pollo</td><td>$20.000</td><td>$35.000</td><td>$48.000</td></tr>
+                <tr><td>Carne Esmechada</td><td>$20.000</td><td>$35.000</td><td>$48.000</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- BEBIDAS -->
+  <!-- BEBIDAS & POSTRES -->
   <div class="menu-panel" id="tab-bebidas">
-    <div class="menu-2col">
-      <div>
-        <div class="menu-category">
-          <div class="menu-category-title">🥤 Bebidas</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Agua</div></div><div class="menu-price">$10.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Jugos naturales en Leche</div></div><div class="menu-price">$12.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coca Cola</div></div><div class="menu-price">$6.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Hatsu (frambuesa, fresa, sandía, uva, hierva limón)</div></div><div class="menu-price">$8.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Soda Schweppes</div></div><div class="menu-price">$5.000</div></div>
+    <div class="carta-layout">
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🥤 Bebidas</div>
+            <div class="carta-item"><span class="carta-name">Jugos naturales en Agua</span><span class="carta-sep"></span><span class="carta-price">$10.000</span></div>
+            <div class="carta-item"><span class="carta-name">Jugos naturales en Leche</span><span class="carta-sep"></span><span class="carta-price">$12.000</span></div>
+            <div class="carta-item"><span class="carta-name">Coca Cola / Kola Roman / Sprite / Quatro</span><span class="carta-sep"></span><span class="carta-price">$8.000</span></div>
+            <div class="carta-item"><span class="carta-name">Colombiana</span><span class="carta-sep"></span><span class="carta-price">$8.000</span></div>
+            <div class="carta-item"><span class="carta-name">Prod. Postobon</span><span class="carta-sep"></span><span class="carta-price">$8.000</span></div>
+            <div class="carta-item"><span class="carta-name">Hatsu <small>Frambuesa, fresa, sandía, uva, hierba limón</small></span><span class="carta-sep"></span><span class="carta-price">$8.000</span></div>
+            <div class="carta-item"><span class="carta-name">Agua</span><span class="carta-sep"></span><span class="carta-price">$5.000</span></div>
+            <div class="carta-item"><span class="carta-name">Soda Schweppes</span><span class="carta-sep"></span><span class="carta-price">$5.000</span></div>
+          </div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍺 Cervezas Nacionales</div>
+            <div class="carta-item"><span class="carta-name">Águila Light</span><span class="carta-sep"></span><span class="carta-price">$5.000</span></div>
+            <div class="carta-item"><span class="carta-name">Águila Negra</span><span class="carta-sep"></span><span class="carta-price">$5.000</span></div>
+            <div class="carta-item"><span class="carta-name">Costeña</span><span class="carta-sep"></span><span class="carta-price">$5.000</span></div>
+            <div class="carta-item"><span class="carta-name">Club Colombia</span><span class="carta-sep"></span><span class="carta-price">$7.000</span></div>
+            <div class="carta-item"><span class="carta-name">Coronita</span><span class="carta-sep"></span><span class="carta-price">$6.000</span></div>
           </div>
         </div>
-        <div class="menu-category" style="margin-top:30px;">
-          <div class="menu-category-title">🍺 Cervezas Nacionales</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="menu-card"><div><div class="menu-item-name">Águila Light</div></div><div class="menu-price">$5.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Águila Negra</div></div><div class="menu-price">$5.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Costeña</div></div><div class="menu-price">$5.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Club Colombia</div></div><div class="menu-price">$7.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coronita</div></div><div class="menu-price">$6.000</div></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="menu-category">
-          <div class="menu-category-title">🍹 Cocteles</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="menu-card"><div><div class="menu-item-name">Fruto del Amor</div><div class="menu-item-desc">Frutos rojos, ácido cítrico y soda</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Oleada de Verano</div><div class="menu-item-desc">Maracuyá, jengibre, zumo de limón y soda hatsu</div></div><div class="menu-price">$20.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Soda de Tamarindo</div><div class="menu-item-desc">Sirope de tamarindo, soda y zumo de limón</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Soda de Maracuyá</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Soda de Jamaica</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Soda de Corozo</div></div><div class="menu-price">$15.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Mojito Cubano de la Casa</div><div class="menu-item-desc">Ron oscuro, hierba buena, zumo de limón y soda</div></div><div class="menu-price">$25.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Mojito de Corozo</div></div><div class="menu-price">$28.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Piña Colada</div><div class="menu-item-desc">Ron oscuro, piña, crema de coco y leche condensada</div></div><div class="menu-price">$30.000</div></div>
-            <div class="menu-card"><div><div class="menu-item-name">Coronita Endiablada</div><div class="menu-item-desc">Coronita, zumo de limón, naranja y granadilla</div></div><div class="menu-price">$13.000</div></div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍮 Postres</div>
+            <div class="carta-item"><span class="carta-name">Enyucao</span><span class="carta-sep"></span><span class="carta-price">$10.000</span></div>
+            <div class="carta-item"><span class="carta-name">Arroz con Leche</span><span class="carta-sep"></span><span class="carta-price">$12.000</span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- LICORES -->
+  <!-- COCTELES & LICORES -->
   <div class="menu-panel" id="tab-licores">
-    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
-      <div class="menu-card"><div><div class="menu-item-name">Ron Viejo de Caldas 750ml</div></div><div class="menu-price">$99.900</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 375ml</div></div><div class="menu-price">$85.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Ron Medellín Añejo 8 años 750ml</div></div><div class="menu-price">$139.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Amarillo 750ml</div></div><div class="menu-price">$80.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Antioqueño 375ml</div></div><div class="menu-price">$51.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Aguardiente Real 700ml</div></div><div class="menu-price">$89.900</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Buchanas Master 750ml</div></div><div class="menu-price">$402.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Buchanas Deluxe 750ml</div></div><div class="menu-price">$294.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Johnnie Walker 700ml</div></div><div class="menu-price">$139.900</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Ginebra Heinkes 750ml</div></div><div class="menu-price">$111.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Ginebra Gordon 700ml</div></div><div class="menu-price">$149.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Ginebra Tanqueray 750ml</div></div><div class="menu-price">$299.900</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Vodka Smirnoff Iulo 750ml</div></div><div class="menu-price">$89.990</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Tequila Jose Cuervo Amarillo 750ml</div></div><div class="menu-price">$175.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio 700ml</div></div><div class="menu-price">$459.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Tequila Don Julio Cristal 70 años</div></div><div class="menu-price">$520.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Baileys 1lt</div></div><div class="menu-price">$165.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Vino Tinto Plaza Castillo 750ml</div></div><div class="menu-price">$45.000</div></div>
-      <div class="menu-card"><div><div class="menu-item-name">Vino Viejo Vinedo Blanco 750ml</div></div><div class="menu-price">$45.000</div></div>
+    <div class="carta-layout">
+      <div class="carta-2col">
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🍹 Cocteles</div>
+            <div class="carta-item"><span class="carta-name">Fruto del Amor<small>Frutos rojos, ácido cítrico y soda</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+            <div class="carta-item"><span class="carta-name">Oleada de Verano<small>Maracuyá, jengibre, zumo de limón y soda hatsu</small></span><span class="carta-sep"></span><span class="carta-price">$28.000</span></div>
+            <div class="carta-item"><span class="carta-name">Soda de Tamarindo<small>Sirope de tamarindo, soda y zumo de limón</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+            <div class="carta-item"><span class="carta-name">Soda de Maracuyá<small>Sirope de maracuyá, soda y zumo de limón</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+            <div class="carta-item"><span class="carta-name">Soda de Jamaica<small>Sirope de jamaica, soda y zumo de limón</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+            <div class="carta-item"><span class="carta-name">Soda de Corozo<small>Sirope de corozo, soda y zumo de limón</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+            <div class="carta-item"><span class="carta-name">Mojito Cubano de la Casa<small>Ron oscuro, hierba buena, zumo de limón y soda</small></span><span class="carta-sep"></span><span class="carta-price">$28.000</span></div>
+            <div class="carta-item"><span class="carta-name">Mojito de Corozo<small>Ron oscuro, hierba buena, zumo de limón corozo y soda</small></span><span class="carta-sep"></span><span class="carta-price">$28.000</span></div>
+            <div class="carta-item"><span class="carta-name">Piña Colada<small>Ron oscuro, piña, crema de coco y leche condensada</small></span><span class="carta-sep"></span><span class="carta-price">$30.000</span></div>
+            <div class="carta-item"><span class="carta-name">Coronita Endiablada<small>Coronita, zumo de limón, naranja y granadilla</small></span><span class="carta-sep"></span><span class="carta-price">$18.000</span></div>
+            <div class="carta-item"><span class="carta-name">Lulada<small>Bebida a base de lulo y soda</small></span><span class="carta-sep"></span><span class="carta-price">$25.000</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="carta-section">
+            <div class="carta-section-title">🥃 Licores</div>
+            <div class="carta-item"><span class="carta-name">Ron Viejo de Caldas 750 ml</span><span class="carta-sep"></span><span class="carta-price">$99.900</span></div>
+            <div class="carta-item"><span class="carta-name">Ron Medellín Añejo 8 años 375 ml</span><span class="carta-sep"></span><span class="carta-price">$85.000</span></div>
+            <div class="carta-item"><span class="carta-name">Ron Medellín Añejo 8 años 750 ml</span><span class="carta-sep"></span><span class="carta-price">$139.000</span></div>
+            <div class="carta-item"><span class="carta-name">Ron Medellín Añejo 12 años 375 ml</span><span class="carta-sep"></span><span class="carta-price">$199.900</span></div>
+            <div class="carta-item"><span class="carta-name">Aguardiente Amarillo 750 ml</span><span class="carta-sep"></span><span class="carta-price">$80.000</span></div>
+            <div class="carta-item"><span class="carta-name">Aguardiente Antioqueño 375 ml</span><span class="carta-sep"></span><span class="carta-price">$51.000</span></div>
+            <div class="carta-item"><span class="carta-name">Aguardiente Real 700 ml</span><span class="carta-sep"></span><span class="carta-price">$89.900</span></div>
+            <div class="carta-item"><span class="carta-name">Aguardiente GRD 750 ml</span><span class="carta-sep"></span><span class="carta-price">$89.900</span></div>
+            <div class="carta-item"><span class="carta-name">Buchanan's Master 750 ml</span><span class="carta-sep"></span><span class="carta-price">$402.000</span></div>
+            <div class="carta-item"><span class="carta-name">Buchanan's Deluxe 750 ml</span><span class="carta-sep"></span><span class="carta-price">$294.000</span></div>
+            <div class="carta-item"><span class="carta-name">Johnnie Walker 700 ml</span><span class="carta-sep"></span><span class="carta-price">$139.900</span></div>
+            <div class="carta-item"><span class="carta-name">Ginebra Heinkes 750 ml</span><span class="carta-sep"></span><span class="carta-price">$111.000</span></div>
+            <div class="carta-item"><span class="carta-name">Ginebra Gordon 700 ml</span><span class="carta-sep"></span><span class="carta-price">$149.000</span></div>
+            <div class="carta-item"><span class="carta-name">Ginebra Tanqueray 750 ml</span><span class="carta-sep"></span><span class="carta-price">$299.900</span></div>
+            <div class="carta-item"><span class="carta-name">Vodka Smirnoff Iulo 750 ml</span><span class="carta-sep"></span><span class="carta-price">$89.990</span></div>
+            <div class="carta-item"><span class="carta-name">Tequila Jose Cuervo 750 Reposado</span><span class="carta-sep"></span><span class="carta-price">$175.000</span></div>
+            <div class="carta-item"><span class="carta-name">Tequila Jose Cuervo 750 Blanco</span><span class="carta-sep"></span><span class="carta-price">$175.000</span></div>
+            <div class="carta-item"><span class="carta-name">Tequila Don Julio 700 ml</span><span class="carta-sep"></span><span class="carta-price">$459.000</span></div>
+            <div class="carta-item"><span class="carta-name">Tequila Don Julio Cristal 70 años</span><span class="carta-sep"></span><span class="carta-price">$520.000</span></div>
+            <div class="carta-item"><span class="carta-name">Baileys 1 lt.</span><span class="carta-sep"></span><span class="carta-price">$165.000</span></div>
+            <div class="carta-item"><span class="carta-name">Vino Tinto Plaza Castillo 750 ml</span><span class="carta-sep"></span><span class="carta-price">$45.000</span></div>
+            <div class="carta-item"><span class="carta-name">Vino Viejo Vinedo Blanco 750 ml</span><span class="carta-sep"></span><span class="carta-price">$45.000</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -861,6 +941,271 @@
   </div>
   <button type="button" class="lightbox-nav lightbox-next" onclick="event.stopPropagation();lightboxNav(1)" aria-label="Siguiente">&#8250;</button>
 </div>
+
+<!-- MODAL MENÚ COMPLETO -->
+<div class="menu-modal-overlay" id="menuModal" role="dialog" aria-modal="true" aria-label="Menú completo" onclick="closeMenuModal(event)">
+  <div class="menu-modal" onclick="event.stopPropagation()">
+    <button type="button" class="menu-modal-close" onclick="closeMenuModal()" aria-label="Cerrar menú">&#10005;</button>
+
+    <div class="menu-modal-header">
+      <span class="crab">🦀</span>
+      <h2><span>LA</span> JAIBA <span>GASTROBAR</span></h2>
+      <p>Tradición marina con el mejor sazón</p>
+    </div>
+
+    <div class="menu-modal-grid">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🔥 Entradas Calientes</div>
+          <div class="mm-row"><span class="mm-name">Muelas de Jaiba al ajillo</span><span class="mm-price">$19.000</span></div>
+          <div class="mm-row"><span class="mm-name">Canastas de Patacatón con Camarón</span><span class="mm-price">$24.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">❄️ Entradas Frías</div>
+
+          <div class="mm-sub-title">Coctel de Camarón</div>
+          <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$15.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$25.000</span></div>
+
+          <div class="mm-sub-title">Coctel de Camarón y Caracol</div>
+          <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$18.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$30.000</span></div>
+
+          <div class="mm-sub-title">Ceviche de Camarón</div>
+          <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$15.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$25.000</span></div>
+
+          <div class="mm-sub-title">Ceviche Camarón y Caracol</div>
+          <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$18.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$30.000</span></div>
+
+          <div class="mm-sub-title">Coctel o Ceviche Frutos del Mar</div>
+          <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$35.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$55.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🫕 Sancochos</div>
+          <p class="mm-note">Acompañados de arroz con coco y patacón</p>
+          <div class="mm-row"><span class="mm-name">Sancocho de Pescado</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Sancocho Trifásico</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Sancocho de Mondongo</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mote de Queso</span><span class="mm-price">$30.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🦀 Cazuelas</div>
+          <p class="mm-note">Acompañadas de arroz con coco y patacón</p>
+          <div class="mm-row"><span class="mm-name">Cazuela de Jaiba</span><span class="mm-price">$29.900</span></div>
+          <div class="mm-row"><span class="mm-name">Sencilla Mixta</span><span class="mm-price">$38.000</span></div>
+          <div class="mm-row"><span class="mm-name">Solo Camarón</span><span class="mm-price">$49.000</span></div>
+          <div class="mm-row"><span class="mm-name">Camarón y Langostinos</span><span class="mm-price">$55.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mixta Frutos del Mar</span><span class="mm-price">$65.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🥘 Paellas</div>
+          <p class="mm-note">Con arroz, langostino, mejillones, camarón y otras delicias del mar</p>
+          <div class="mm-row"><span class="mm-name">Sencilla</span><span class="mm-price">$39.000</span></div>
+          <div class="mm-sub-title">Para Compartir</div>
+          <div class="mm-row"><span class="mm-name">2 Personas</span><span class="mm-price">$75.000</span></div>
+          <div class="mm-row"><span class="mm-name">4 Personas</span><span class="mm-price">$140.000</span></div>
+          <div class="mm-row"><span class="mm-name">6 Personas</span><span class="mm-price">$230.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🍝 Pastas</div>
+          <div class="mm-row"><span class="mm-name">Pastas de camarón</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pastas del mar</span><span class="mm-price">$42.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pastas de camarón y langostinos</span><span class="mm-price">$62.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🍕 Pizzas</div>
+          <table class="mm-pizza-table">
+            <thead>
+              <tr>
+                <th>Sabor</th><th>Pizzeta</th><th>Mediana</th><th>Grande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Jamón con Queso</td><td>$15.000</td><td>$30.000</td><td>$40.000</td></tr>
+              <tr><td>Hawaiana</td><td>$15.000</td><td>$30.000</td><td>$40.000</td></tr>
+              <tr><td>Camarón al Ajillo</td><td>$20.000</td><td>$35.000</td><td>$50.000</td></tr>
+              <tr><td>Camarón y Caracol</td><td>$28.000</td><td>$38.000</td><td>$58.000</td></tr>
+              <tr><td>Cuatro Carnes</td><td>$25.000</td><td>$45.000</td><td>$60.000</td></tr>
+              <tr><td>Pollo</td><td>$20.000</td><td>$35.000</td><td>$48.000</td></tr>
+              <tr><td>Carne Esmechada</td><td>$20.000</td><td>$35.000</td><td>$48.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🐟 Pescados</div>
+          <p class="mm-note">Acompañados de arroz con coco, patacón y ensalada</p>
+
+          <div class="mm-sub-title">Pargo Rojo</div>
+          <div class="mm-row"><span class="mm-name">Pargo Rojo Frito</span><span class="mm-price">$43.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pargo Rojo al ajillo con camarones</span><span class="mm-price">$59.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pargo Rojo Mixto</span><span class="mm-price">$64.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pargo Asado</span><span class="mm-price">$48.000</span></div>
+
+          <div class="mm-sub-title">Corvina</div>
+          <div class="mm-row"><span class="mm-name">Corvina Frita</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Corvina al ajillo con camarones</span><span class="mm-price">$42.000</span></div>
+          <div class="mm-row"><span class="mm-name">Corvina Mixta</span><span class="mm-price">$59.000</span></div>
+          <div class="mm-row"><span class="mm-name">Corvina Asada</span><span class="mm-price">$35.000</span></div>
+
+          <div class="mm-sub-title">Robalo</div>
+          <div class="mm-row"><span class="mm-name">Robalo Frito</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Robalo al ajillo con camarón</span><span class="mm-price">$42.000</span></div>
+          <div class="mm-row"><span class="mm-name">Robalo Mixto</span><span class="mm-price">$62.000</span></div>
+          <div class="mm-row"><span class="mm-name">Robalo Asado</span><span class="mm-price">$35.000</span></div>
+
+          <div class="mm-sub-title">Mojarra Roja</div>
+          <div class="mm-row"><span class="mm-name">Mojarra Roja Frita</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Roja al ajillo con camarón</span><span class="mm-price">$42.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Roja Mixta</span><span class="mm-price">$62.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Roja Asada</span><span class="mm-price">$35.000</span></div>
+
+          <div class="mm-sub-title">Mojarra Negra</div>
+          <div class="mm-row"><span class="mm-name">Mojarra Negra Frita</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Negra al ajillo con camarón</span><span class="mm-price">$42.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Negra Mixta</span><span class="mm-price">$62.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojarra Negra Asada</span><span class="mm-price">$30.000</span></div>
+
+          <div class="mm-row" style="margin-top:10px;"><span class="mm-name" style="font-weight:700;">Viuda de Bocachico Abierto</span><span class="mm-price">$49.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🦞 Otros del Mar</div>
+          <p class="mm-note">Acompañados de arroz con coco y patacón</p>
+          <div class="mm-row"><span class="mm-name">Langostinos al Ajillo</span><span class="mm-price">$59.000</span></div>
+          <div class="mm-row"><span class="mm-name">Langostino Gratinado</span><span class="mm-price">$65.000</span></div>
+          <div class="mm-row"><span class="mm-name">Muelas de Jaiba Guisada</span><span class="mm-price">$45.000</span></div>
+          <div class="mm-row"><span class="mm-name">Caracol Guisado</span><span class="mm-price">$45.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pulpo Relleno de Mariscos</span><span class="mm-price">$85.000</span></div>
+          <div class="mm-row"><span class="mm-name">Explosión de Camarones en Salsa de Piña</span><span class="mm-price">$68.000</span></div>
+          <div class="mm-row"><span class="mm-name">Explosión Mixta en Salsa de Piña</span><span class="mm-price">$80.000</span></div>
+          <div class="mm-row"><span class="mm-name">Ensalada de Camarón</span><span class="mm-price">$38.000</span></div>
+          <div class="mm-sub-title">Langosta al Ajillo</div>
+          <div class="mm-row"><span class="mm-name">Pequeña</span><span class="mm-price">$45.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mediana</span><span class="mm-price">$75.000</span></div>
+          <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$95.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🍗 Otras Especialidades</div>
+          <p class="mm-note">Acompañadas de arroz con coco y patacón</p>
+          <div class="mm-row"><span class="mm-name">Pechuga a la Plancha</span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Pechuga Gratinada</span><span class="mm-price">$38.000</span></div>
+          <div class="mm-row"><span class="mm-name">Punta Gorda 250 gr.</span><span class="mm-price">$35.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🦐 Picadas</div>
+          <p class="mm-note">Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela</p>
+          <div class="mm-row"><span class="mm-name">Para Compartir 2 Personas</span><span class="mm-price">$80.000</span></div>
+          <div class="mm-row"><span class="mm-name">Para Compartir 4 Personas</span><span class="mm-price">$155.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🍮 Postres</div>
+          <div class="mm-row"><span class="mm-name">Enyucao</span><span class="mm-price">$8.000</span></div>
+          <div class="mm-row"><span class="mm-name">Arroz con Leche</span><span class="mm-price">$12.000</span></div>
+        </div>
+
+      </div>
+
+      <!-- BEBIDAS — FILA COMPLETA -->
+      <hr class="mm-divider">
+
+      <div>
+        <div class="mm-section">
+          <div class="mm-category-title">🥤 Bebidas</div>
+          <div class="mm-row"><span class="mm-name">Jugos naturales en Agua</span><span class="mm-price">$10.000</span></div>
+          <div class="mm-row"><span class="mm-name">Jugos naturales en Leche</span><span class="mm-price">$12.000</span></div>
+          <div class="mm-row"><span class="mm-name">Coca Cola / Kola Roman / Sprite / Quatro</span><span class="mm-price">$8.000</span></div>
+          <div class="mm-row"><span class="mm-name">Colombiana</span><span class="mm-price">$8.000</span></div>
+          <div class="mm-row"><span class="mm-name">Prod. Postobon</span><span class="mm-price">$8.000</span></div>
+          <div class="mm-row"><span class="mm-name">Hatsu <small>frambuesa, fresa, sandía, uva, hierba limón</small></span><span class="mm-price">$8.000</span></div>
+          <div class="mm-row"><span class="mm-name">Agua</span><span class="mm-price">$5.000</span></div>
+          <div class="mm-row"><span class="mm-name">Soda Schweppes</span><span class="mm-price">$5.000</span></div>
+        </div>
+
+        <div class="mm-section">
+          <div class="mm-category-title">🍺 Cervezas Nacionales</div>
+          <div class="mm-row"><span class="mm-name">Águila Light</span><span class="mm-price">$5.000</span></div>
+          <div class="mm-row"><span class="mm-name">Águila Negra</span><span class="mm-price">$5.000</span></div>
+          <div class="mm-row"><span class="mm-name">Costeña</span><span class="mm-price">$5.000</span></div>
+          <div class="mm-row"><span class="mm-name">Club Colombia</span><span class="mm-price">$7.000</span></div>
+          <div class="mm-row"><span class="mm-name">Coronita</span><span class="mm-price">$6.000</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mm-section">
+          <div class="mm-category-title">🍹 Cocteles</div>
+          <div class="mm-row"><span class="mm-name">Fruto del Amor <small>frutos rojos, ácido cítrico y soda</small></span><span class="mm-price">$25.000</span></div>
+          <div class="mm-row"><span class="mm-name">Oleada de Verano <small>maracuyá, jengibre, zumo de limón y soda hatsu</small></span><span class="mm-price">$28.000</span></div>
+          <div class="mm-row"><span class="mm-name">Soda de Tamarindo <small>sirope de tamarindo, soda y zumo de limón</small></span><span class="mm-price">$25.000</span></div>
+          <div class="mm-row"><span class="mm-name">Soda de Maracuyá <small>sirope de maracuyá, soda y zumo de limón</small></span><span class="mm-price">$25.000</span></div>
+          <div class="mm-row"><span class="mm-name">Soda de Jamaica <small>sirope de Jamaica, soda y zumo de limón</small></span><span class="mm-price">$25.000</span></div>
+          <div class="mm-row"><span class="mm-name">Soda de Corozo <small>sirope de Corozo, soda y zumo de limón</small></span><span class="mm-price">$25.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojito Cubano de la Casa <small>ron oscuro, hierba buena, zumo de limón y soda</small></span><span class="mm-price">$28.000</span></div>
+          <div class="mm-row"><span class="mm-name">Mojito de Corozo <small>ron oscuro, hierba buena, zumo de limón corozo y soda</small></span><span class="mm-price">$28.000</span></div>
+          <div class="mm-row"><span class="mm-name">Piña Colada <small>ron oscuro, piña, crema de coco y leche condensada</small></span><span class="mm-price">$30.000</span></div>
+          <div class="mm-row"><span class="mm-name">Coronita Endiablada <small>coronita, zumo de limón, naranja y granadilla</small></span><span class="mm-price">$18.000</span></div>
+          <div class="mm-row"><span class="mm-name">Lulada <small>bebida a base de lulo y soda</small></span><span class="mm-price">$25.000</span></div>
+        </div>
+      </div>
+
+      <hr class="mm-divider">
+
+      <div class="mm-full-width">
+        <div class="mm-category-title">🥃 Licores</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 32px;margin-top:12px;">
+          <div>
+            <div class="mm-row"><span class="mm-name">Ron Viejo de Caldas 750ml</span><span class="mm-price">$99.900</span></div>
+            <div class="mm-row"><span class="mm-name">Ron Medellín Añejo 8 años 375ml</span><span class="mm-price">$85.000</span></div>
+            <div class="mm-row"><span class="mm-name">Ron Medellín Añejo 8 años 750ml</span><span class="mm-price">$139.000</span></div>
+            <div class="mm-row"><span class="mm-name">Ron Medellín Añejo 12 años 375ml</span><span class="mm-price">$199.900</span></div>
+            <div class="mm-row"><span class="mm-name">Aguardiente Amarillo 750ml</span><span class="mm-price">$80.000</span></div>
+            <div class="mm-row"><span class="mm-name">Aguardiente Antioqueño 375ml</span><span class="mm-price">$51.000</span></div>
+            <div class="mm-row"><span class="mm-name">Aguardiente Real 700ml</span><span class="mm-price">$89.900</span></div>
+            <div class="mm-row"><span class="mm-name">Aguardiente GRD 750ml</span><span class="mm-price">$89.900</span></div>
+            <div class="mm-row"><span class="mm-name">Buchanan's Master 750ml</span><span class="mm-price">$402.000</span></div>
+            <div class="mm-row"><span class="mm-name">Buchanan's Deluxe 750ml</span><span class="mm-price">$294.000</span></div>
+            <div class="mm-row"><span class="mm-name">Johnnie Walker 700ml</span><span class="mm-price">$139.900</span></div>
+          </div>
+          <div>
+            <div class="mm-row"><span class="mm-name">Ginebra Heinkes 750ml</span><span class="mm-price">$111.000</span></div>
+            <div class="mm-row"><span class="mm-name">Ginebra Gordon 700ml</span><span class="mm-price">$149.000</span></div>
+            <div class="mm-row"><span class="mm-name">Ginebra Tanqueray 750ml</span><span class="mm-price">$299.900</span></div>
+            <div class="mm-row"><span class="mm-name">Vodka Smirnoff Iulo 750ml</span><span class="mm-price">$89.990</span></div>
+            <div class="mm-row"><span class="mm-name">Tequila Jose Cuervo 750 Reposado</span><span class="mm-price">$175.000</span></div>
+            <div class="mm-row"><span class="mm-name">Tequila Jose Cuervo 750 Blanco</span><span class="mm-price">$175.000</span></div>
+            <div class="mm-row"><span class="mm-name">Tequila Don Julio 700ml</span><span class="mm-price">$459.000</span></div>
+            <div class="mm-row"><span class="mm-name">Tequila Don Julio Cristal 70 años</span><span class="mm-price">$520.000</span></div>
+            <div class="mm-row"><span class="mm-name">Baileys 1lt</span><span class="mm-price">$165.000</span></div>
+            <div class="mm-row"><span class="mm-name">Vino Tinto Plaza Castillo 750ml</span><span class="mm-price">$45.000</span></div>
+            <div class="mm-row"><span class="mm-name">Vino Viejo Vinedo Blanco 750ml</span><span class="mm-price">$45.000</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /menu-modal-grid -->
+  </div><!-- /menu-modal -->
+</div><!-- /menu-modal-overlay -->
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://api.whatsapp.com/send?phone=573022713343&text=Hola! Quiero hacer una reserva en La Jaiba Gastrobar 🦀" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>

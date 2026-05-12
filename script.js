@@ -375,6 +375,30 @@ document.addEventListener('keydown', e => {
 });
 
 // Touch swipe for lightbox on mobile
+// MODAL MENÚ COMPLETO
+function openMenuModal() {
+  const modal = document.getElementById('menuModal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+}
+
+function closeMenuModal(e) {
+  if (e instanceof MouseEvent && e.target !== document.getElementById('menuModal')) return;
+  document.getElementById('menuModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('menuModal');
+    if (modal && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+});
+
 (function initLightboxSwipe() {
   const overlay = document.getElementById('lightboxOverlay');
   let touchStartX = 0;
