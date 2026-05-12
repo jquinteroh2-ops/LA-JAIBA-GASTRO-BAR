@@ -198,6 +198,37 @@ document.addEventListener('click', (e) => {
   });
 })();
 
+// ZOOM LIGHTBOX
+const menuPages = ['img/menu nuevo 2.jpeg', 'img/menu nuevo 1.jpeg'];
+let zoomCurrent = 0;
+
+window.openMenuZoom = function () {
+  zoomCurrent = (document.getElementById('bookCard') || {}).classList?.contains('flipped') ? 1 : 0;
+  const overlay = document.getElementById('menuZoomOverlay');
+  document.getElementById('menuZoomImg').src = menuPages[zoomCurrent];
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeMenuZoom = function (e) {
+  if (e && e.target !== document.getElementById('menuZoomOverlay') && !e.target.classList.contains('menu-zoom-close')) return;
+  document.getElementById('menuZoomOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+window.zoomFlip = function (dir) {
+  zoomCurrent = Math.max(0, Math.min(menuPages.length - 1, zoomCurrent + dir));
+  document.getElementById('menuZoomImg').src = menuPages[zoomCurrent];
+};
+
+document.addEventListener('keydown', function (e) {
+  const overlay = document.getElementById('menuZoomOverlay');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  if (e.key === 'Escape') { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  if (e.key === 'ArrowRight') window.zoomFlip(1);
+  if (e.key === 'ArrowLeft') window.zoomFlip(-1);
+});
+
 // SCROLL REVEAL
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const revealObserver = new IntersectionObserver((entries) => {
