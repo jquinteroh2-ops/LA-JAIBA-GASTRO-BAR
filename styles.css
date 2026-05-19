@@ -1332,3 +1332,86 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(200,151,42,0.3);
   }
+
+  /* DOMICILIOS */
+  #domicilios {
+    padding: 100px 60px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(180deg, var(--ocean-deep) 0%, rgba(13,43,78,0.5) 100%);
+  }
+  .domicilios-content { max-width: 760px; margin: 0 auto; }
+
+  .domicilios-cards {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 50px 0 28px;
+    flex-wrap: wrap;
+  }
+
+  .delivery-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 36px;
+    border-radius: 10px;
+    text-decoration: none;
+    min-width: 320px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .delivery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+
+  .rappi-card {
+    background: linear-gradient(135deg, #ff441a 0%, #ff6b40 100%);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(255,68,26,0.35);
+  }
+
+  .delivery-card-icon { font-size: 2.6rem; flex-shrink: 0; }
+
+  .delivery-card-info { flex: 1; text-align: left; }
+  .delivery-card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    line-height: 1;
+  }
+  .delivery-card-desc {
+    font-size: 0.8rem;
+    opacity: 0.88;
+    margin-top: 5px;
+    letter-spacing: 1px;
+  }
+
+  .delivery-card-cta {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .domicilios-note {
+    font-size: 0.82rem;
+    color: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    #domicilios { padding: 80px 24px; }
+    .delivery-card { min-width: unset; width: 100%; padding: 22px 24px; }
+    .delivery-card-cta { display: none; }
+  }
