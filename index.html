@@ -135,6 +135,20 @@
     .action-btn--eventos:hover { background: rgba(201,168,76,0.18); border-color: rgba(240,192,96,0.4); transform: translateX(4px); }
     .action-btn--eventos:hover .action-btn-arrow { transform: translateX(4px); color: #F0C060; }
     .action-btn--eventos .action-btn-icon { background: rgba(201,168,76,0.15); }
+    .action-btn--rappi { background: rgba(255,68,26,0.12); border-color: rgba(255,68,26,0.3); }
+    .action-btn--rappi:hover { background: rgba(255,68,26,0.22); border-color: rgba(255,68,26,0.6); transform: translateX(4px); }
+    .action-btn--rappi:hover .action-btn-arrow { transform: translateX(4px); color: #FF441A; }
+    .action-btn--rappi .action-btn-icon { background: rgba(255,68,26,0.18); }
+    .rappi-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,68,26,0.15); border: 1px solid rgba(255,68,26,0.35);
+      border-radius: 100px; padding: 2px 10px;
+      font-size: 0.65rem; font-weight: 700; color: #FF6B4A;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .rappi-badge::before { content: ''; width: 6px; height: 6px; background: #FF441A; border-radius: 50%; animation: rappiBlink 1.5s ease-in-out infinite; }
+    @keyframes rappiBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
     /* Features */
     .features { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
     .features-header { text-align: center; margin-bottom: 56px; }
@@ -260,6 +274,23 @@
           <div class="action-btn-text">
             <span class="action-btn-label">Eventos</span>
             <span class="action-btn-sub">Celebra con nosotros</span>
+          </div>
+        </div>
+        <svg class="action-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <!-- RAPPI DOMICILIOS -->
+      <a href="https://www.rappi.com.co/restaurantes/900492074-la-jaiba-gastro-bar"
+         target="_blank" rel="noopener noreferrer"
+         class="action-btn action-btn--rappi">
+        <div class="action-btn-left">
+          <div class="action-btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="white" stroke-width="1.5" width="22" height="22"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          </div>
+          <div class="action-btn-text">
+            <span class="action-btn-label">Domicilios</span>
+            <span class="action-btn-sub">Pedir por Rappi</span>
+            <span class="rappi-badge">Disponible ahora</span>
           </div>
         </div>
         <svg class="action-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
