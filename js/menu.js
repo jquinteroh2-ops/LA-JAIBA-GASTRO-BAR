@@ -2,7 +2,7 @@
    MENU DIGITAL — La Jaiba Gastrobar
    ============================================ */
 
-const WHATSAPP_NUMBER = '573XXXXXXXXX'; // <-- Cambia este número
+const WHATSAPP_NUMBER = '573022713343'; // <-- Cambia este número
 
 // ---- SVG Icons ----
 const ICONS = {

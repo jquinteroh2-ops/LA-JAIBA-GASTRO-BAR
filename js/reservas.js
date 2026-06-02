@@ -2,7 +2,7 @@
    RESERVAS — Multi-step form logic
    ============================================ */
 
-const WHATSAPP_NUMBER = '573XXXXXXXXX'; // <-- Cambia este número
+const WHATSAPP_NUMBER = '573022713343'; // <-- Cambia este número
 
 const state = {
   step: 1,
