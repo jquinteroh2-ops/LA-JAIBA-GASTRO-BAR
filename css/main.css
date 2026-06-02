@@ -1,0 +1,262 @@
+/* ============================================
+   LA JAIBA GASTROBAR — Global Styles
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ocean-deep: #0077B6;
+  --ocean-light: #00B4D8;
+  --ocean-glow: #00C9FF;
+  --dark-bg: #0D0D0D;
+  --dark-card: #141414;
+  --dark-border: #1E1E1E;
+  --cream: #F0F4F8;
+  --red-crab: #C0392B;
+  --red-light: #E74C3C;
+  --gold: #C9A84C;
+  --gold-light: #F0C060;
+  --white: #FFFFFF;
+  --gray-light: #9AA5B4;
+  --gray-mid: #4A5568;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+
+  --shadow-glow: 0 0 40px rgba(0, 180, 216, 0.25);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-btn: 0 4px 20px rgba(0, 119, 182, 0.4);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark-bg);
+  color: var(--cream);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   SHARED COMPONENTS
+   ============================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Back Button --- */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.back-btn:hover {
+  color: var(--ocean-light);
+}
+
+/* --- Section Title --- */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+.section-title span {
+  color: var(--ocean-light);
+}
+
+/* --- Ocean Divider --- */
+.wave-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ocean-deep), var(--ocean-light));
+  border-radius: 2px;
+  margin: 16px 0;
+}
+
+/* --- Pill Badge --- */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge--ocean {
+  background: rgba(0, 180, 216, 0.15);
+  color: var(--ocean-light);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.badge--red {
+  background: rgba(192, 57, 43, 0.15);
+  color: var(--red-light);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+}
+
+/* --- WhatsApp Float Button --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  z-index: 999;
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ocean-deep);
+  border-radius: 3px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background: #080808;
+  border-top: 1px solid var(--dark-border);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.footer-logo span {
+  color: var(--ocean-light);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--dark-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-light);
+  transition: all var(--transition);
+}
+
+.footer-social a:hover {
+  border-color: var(--ocean-light);
+  color: var(--ocean-light);
+  background: rgba(0, 180, 216, 0.1);
+}
+
+.footer-copy {
+  color: var(--gray-mid);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}

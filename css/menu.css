@@ -1,0 +1,600 @@
+/* ============================================
+   MENU DIGITAL — La Jaiba Gastrobar
+   ============================================ */
+
+/* Header */
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #1E1E1E;
+  padding: 0 20px;
+}
+
+.menu-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.menu-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.menu-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F0F4F8;
+  line-height: 1.1;
+}
+
+.menu-logo-sub {
+  font-size: 0.7rem;
+  color: #00B4D8;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.menu-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Search */
+.menu-search-wrap {
+  position: relative;
+}
+
+.menu-search-input {
+  background: #1A1A1A;
+  border: 1px solid #2A2A2A;
+  border-radius: 100px;
+  padding: 8px 16px 8px 40px;
+  color: #F0F4F8;
+  font-size: 0.875rem;
+  width: 200px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-search-input:focus {
+  outline: none;
+  border-color: #0077B6;
+  width: 240px;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+}
+
+.menu-search-input::placeholder {
+  color: #4A5568;
+}
+
+.menu-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4A5568;
+  pointer-events: none;
+}
+
+/* Categories tabs */
+.menu-categories {
+  background: #0D0D0D;
+  border-bottom: 1px solid #1A1A1A;
+  position: sticky;
+  top: 73px;
+  z-index: 99;
+}
+
+.menu-categories-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 20px;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tab {
+  flex-shrink: 0;
+  padding: 14px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4A5568;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-tab:hover {
+  color: #9AA5B4;
+}
+
+.menu-tab.active {
+  color: #00B4D8;
+  border-bottom-color: #00B4D8;
+}
+
+/* Main content */
+.menu-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+}
+
+/* Section panel */
+.menu-panel {
+  display: none;
+  animation: panelIn 0.3s ease;
+}
+
+.menu-panel.active {
+  display: block;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Category Banner */
+.category-banner {
+  margin: 24px 0 20px;
+  background: linear-gradient(135deg, #0077B6, #005A8E);
+  border-radius: 16px;
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-banner::before {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+.category-banner::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  bottom: -30px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+
+.category-banner-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.category-banner-text {
+  position: relative;
+  z-index: 1;
+}
+
+.category-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+}
+
+.category-banner-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+
+/* Subcategory title */
+.subcategory-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F0F4F8;
+  margin: 28px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1E1E1E;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subcategory-title::before {
+  content: '';
+  width: 3px;
+  height: 18px;
+  background: linear-gradient(180deg, #0077B6, #00B4D8);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Product card */
+.product-card {
+  background: #141414;
+  border: 1px solid #1E1E1E;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.product-card:hover {
+  border-color: rgba(0, 180, 216, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.product-img {
+  width: 90px;
+  min-width: 90px;
+  background: linear-gradient(135deg, #0A1628, #0D2144);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.product-body {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #F0F4F8;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.78rem;
+  color: #4A5568;
+  line-height: 1.5;
+}
+
+.product-accompaniment {
+  font-size: 0.72rem;
+  color: #3A4558;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-left: none;
+  min-width: 110px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #00B4D8;
+  white-space: nowrap;
+}
+
+.product-price-small {
+  font-size: 0.75rem;
+  color: #4A5568;
+}
+
+/* Price table for items with multiple sizes */
+.price-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-label {
+  font-size: 0.7rem;
+  color: #4A5568;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #00B4D8;
+  white-space: nowrap;
+}
+
+/* Pizza table */
+.pizza-sizes {
+  font-size: 0.72rem;
+  color: #4A5568;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: right;
+}
+
+.pizza-sizes span {
+  color: #00B4D8;
+  font-weight: 600;
+}
+
+/* Note card */
+.note-card {
+  background: rgba(0, 119, 182, 0.08);
+  border: 1px solid rgba(0, 119, 182, 0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: rgba(0, 180, 216, 0.8);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Licores list */
+.licores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.licor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #1A1A1A;
+  transition: background 0.2s;
+}
+
+.licor-item:last-child {
+  border-bottom: none;
+}
+
+.licor-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.licor-name {
+  font-size: 0.875rem;
+  color: #D0D8E0;
+  flex: 1;
+}
+
+.licor-price {
+  font-weight: 700;
+  color: #00B4D8;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.licores-card {
+  background: #141414;
+  border: 1px solid #1E1E1E;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Cocteles cards */
+.coctel-card {
+  background: linear-gradient(135deg, #0A1628, #0D1F35);
+  border: 1px solid rgba(0, 119, 182, 0.2);
+  border-radius: 16px;
+  padding: 18px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.coctel-card:hover {
+  border-color: rgba(0, 180, 216, 0.4);
+  transform: translateY(-2px);
+}
+
+.coctel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.coctel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F4F8;
+}
+
+.coctel-price {
+  font-weight: 700;
+  color: #00B4D8;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.coctel-desc {
+  font-size: 0.78rem;
+  color: #4A5568;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.cocteles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Bottom nav */
+.menu-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(13, 13, 13, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid #1E1E1E;
+  z-index: 100;
+}
+
+.menu-bottom-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #4A5568;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+  text-decoration: none;
+}
+
+.nav-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  color: #00B4D8;
+}
+
+.nav-btn--whatsapp {
+  background: #25D366;
+  color: white !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(37,211,102,0.4);
+}
+
+.nav-btn--whatsapp svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #4A5568;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cocteles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-search-input {
+    width: 140px;
+  }
+  .menu-search-input:focus {
+    width: 160px;
+  }
+  .product-img {
+    width: 70px;
+    min-width: 70px;
+  }
+}
