@@ -201,6 +201,67 @@
       .hero-logo { width: 140px !important; height: 140px !important; }
       .cta-section { padding: 40px 24px; margin: 0 16px 60px; }
     }
+
+    /* ---- STATS ---- */
+    .stats-section { padding: 48px 24px; border-top: 1px solid #1A1A1A; border-bottom: 1px solid #1A1A1A; background: #0D0D0D; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 800px; margin: 0 auto; }
+    @media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 900; color: #00B4D8; line-height: 1; }
+    .stat-suffix { color: #C9A84C; }
+    .stat-label { font-size: 0.8rem; color: #4A5568; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 6px; font-weight: 600; }
+
+    /* ---- HISTORIA ---- */
+    .historia-section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .historia-inner { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .historia-inner { grid-template-columns: 1fr 1fr; } }
+    .historia-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 700; color: #F0F4F8; line-height: 1.2; margin: 12px 0 20px; }
+    .historia-desc { font-size: 0.95rem; color: #4A5568; line-height: 1.8; margin-bottom: 16px; }
+    .historia-img-wrap { border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; }
+    .historia-img { width: 100%; height: 100%; object-fit: cover; }
+    .historia-divider { width: 48px; height: 3px; background: linear-gradient(90deg, #00B4D8, #C9A84C); border-radius: 2px; margin: 16px 0 24px; }
+
+    /* ---- REVIEWS ---- */
+    .reviews-section { padding: 80px 24px; background: #0A0A0A; }
+    .reviews-header { text-align: center; margin-bottom: 48px; }
+    .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; }
+    @media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+    .review-card { background: #141414; border: 1px solid #1E1E1E; border-radius: 20px; padding: 28px; transition: all 0.3s ease; }
+    .review-card:hover { border-color: rgba(0,180,216,0.25); transform: translateY(-3px); }
+    .review-stars { color: #C9A84C; font-size: 1rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text { font-size: 0.9rem; color: #718096; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #0077B6, #00B4D8); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 0.9rem; flex-shrink: 0; }
+    .review-name { font-weight: 600; color: #F0F4F8; font-size: 0.9rem; }
+    .review-via { font-size: 0.72rem; color: #4A5568; }
+
+    /* ---- INFO (Horarios + Contacto + Mapa) ---- */
+    .info-section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .info-section-header { text-align: center; margin-bottom: 48px; }
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 768px) { .info-grid { grid-template-columns: repeat(3, 1fr); } }
+    .info-card { background: #141414; border: 1px solid #1E1E1E; border-radius: 20px; padding: 32px 28px; }
+    .info-card-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(0,180,216,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .info-card-icon svg { width: 24px; height: 24px; stroke: #00B4D8; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .info-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: #F0F4F8; margin-bottom: 16px; }
+    .info-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1A1A1A; font-size: 0.875rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-day { color: #718096; }
+    .info-time { color: #F0F4F8; font-weight: 500; }
+    .info-time.closed { color: #4A5568; }
+    .info-contact-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #1A1A1A; text-decoration: none; transition: color 0.2s; }
+    .info-contact-item:last-child { border-bottom: none; }
+    .info-contact-item:hover .info-contact-label { color: #00B4D8; }
+    .info-contact-icon { width: 36px; height: 36px; border-radius: 10px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .info-contact-icon svg { width: 16px; height: 16px; }
+    .info-contact-label { font-size: 0.875rem; font-weight: 500; color: #F0F4F8; }
+    .info-contact-sub { font-size: 0.72rem; color: #4A5568; }
+    .map-link-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; background: rgba(0,180,216,0.08); border: 1px solid rgba(0,180,216,0.2); border-radius: 12px; color: #00B4D8; font-size: 0.875rem; font-weight: 600; text-decoration: none; margin-top: 16px; transition: all 0.2s; }
+    .map-link-btn:hover { background: rgba(0,180,216,0.16); border-color: rgba(0,180,216,0.4); }
+    .map-preview { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #1A1A1A; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; }
+    .map-preview-inner { text-align: center; color: #4A5568; }
+    .map-preview-inner svg { width: 40px; height: 40px; stroke: #00B4D8; opacity: 0.5; margin-bottom: 8px; }
+    .map-preview-inner p { font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -279,6 +340,20 @@
         <svg class="action-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
+      <!-- LLAMADA -->
+      <a href="tel:+573022713343" class="action-btn action-btn--llamada" style="background:rgba(39,174,96,0.12);border-color:rgba(39,174,96,0.25);">
+        <div class="action-btn-left">
+          <div class="action-btn-icon" style="background:rgba(39,174,96,0.2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="action-btn-text">
+            <span class="action-btn-label" style="color:#2ECC71;">Llamar ahora</span>
+            <span class="action-btn-sub">+57 302 271 3343</span>
+          </div>
+        </div>
+        <svg class="action-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
       <!-- RAPPI DOMICILIOS -->
       <a href="https://www.rappi.com.co/restaurantes/900492074-la-jaiba-gastro-bar"
          target="_blank" rel="noopener noreferrer"
@@ -295,6 +370,28 @@
         </div>
         <svg class="action-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="5000" data-suffix="+">0</div>
+      <div class="stat-label">Clientes felices</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="8" data-suffix="+ años">0</div>
+      <div class="stat-label">De experiencia</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="50" data-suffix="+">0</div>
+      <div class="stat-label">Platos en el menú</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="4.8" data-suffix="★" data-decimal="1">0</div>
+      <div class="stat-label">Calificación promedio</div>
     </div>
   </div>
 </section>
@@ -336,6 +433,71 @@
   </div>
 </section>
 
+<!-- HISTORIA -->
+<section class="historia-section">
+  <div class="historia-inner reveal">
+    <div class="historia-text">
+      <p class="features-eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="vertical-align:middle;margin-right:6px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Nuestra historia
+      </p>
+      <h2 class="historia-title">Nació del amor<br>por el mar</h2>
+      <div class="historia-divider"></div>
+      <p class="historia-desc">La Jaiba Gastrobar nació con una visión clara: traer los sabores auténticos del Caribe colombiano a cada mesa. Con recetas heredadas y técnicas que respetan la tradición, cada plato es un homenaje al mar.</p>
+      <p class="historia-desc">Hoy somos un referente gastronómico de mariscos y pescados frescos, donde cada visita se convierte en una experiencia memorable para familias, amigos y parejas.</p>
+    </div>
+    <div class="historia-img-wrap">
+      <img src="img/salon.jpg" alt="Nuestro restaurante" class="historia-img" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="reviews-header reveal">
+    <p class="features-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="vertical-align:middle;margin-right:6px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Opiniones de clientes
+    </p>
+    <h2 class="features-title">Lo que dicen<br>de nosotros</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"La cazuela de jaiba es increíble, la mejor que he probado. El sabor es auténtico y el servicio muy atento. Definitivamente vuelvo."</p>
+      <div class="review-author">
+        <div class="review-avatar">MG</div>
+        <div>
+          <div class="review-name">María González</div>
+          <div class="review-via">via Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"El ambiente es espectacular y la atención de primera. Pedimos la paella para 4 y quedamos encantados. Ya somos clientes fijos."</p>
+      <div class="review-author">
+        <div class="review-avatar">CM</div>
+        <div>
+          <div class="review-name">Carlos Martínez</div>
+          <div class="review-via">via Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Los langostinos gratinados son una delicia. El lugar tiene un ambiente muy agradable, perfecto para una cena en familia."</p>
+      <div class="review-author">
+        <div class="review-avatar">AR</div>
+        <div>
+          <div class="review-name">Andrea Rincón</div>
+          <div class="review-via">via Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY STRIP -->
 <section class="gallery-strip">
   <h2 class="gallery-strip-title reveal">Nuestra <span>Experiencia</span></h2>
@@ -346,6 +508,76 @@
     <div class="gallery-strip-item"><img src="img/mesas.jpg" alt="Nuestro espacio" loading="lazy"><div class="gallery-strip-item-overlay"></div></div>
     <div class="gallery-strip-item"><img src="img/salon.jpg" alt="Salón" loading="lazy"><div class="gallery-strip-item-overlay"></div></div>
     <div class="gallery-strip-item"><img src="img/cocteles.jpg" alt="Cócteles" loading="lazy"><div class="gallery-strip-item-overlay"></div></div>
+  </div>
+</section>
+
+<!-- INFO: HORARIOS + CONTACTO + UBICACION -->
+<section class="info-section">
+  <div class="info-section-header reveal">
+    <p class="features-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Visítanos
+    </p>
+    <h2 class="features-title">Todo lo que necesitas<br>para llegar</h2>
+  </div>
+  <div class="info-grid">
+
+    <!-- Horarios -->
+    <div class="info-card reveal">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="info-card-title">Horarios de Atención</div>
+      <div class="info-row"><span class="info-day">Lunes</span><span class="info-time closed">Cerrado</span></div>
+      <div class="info-row"><span class="info-day">Martes – Viernes</span><span class="info-time">12:00 – 10:00 pm</span></div>
+      <div class="info-row"><span class="info-day">Sábado</span><span class="info-time">11:00 – 11:00 pm</span></div>
+      <div class="info-row"><span class="info-day">Domingo</span><span class="info-time">11:00 – 9:00 pm</span></div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="info-card reveal">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="info-card-title">Contáctanos</div>
+      <a href="tel:+573022713343" class="info-contact-item">
+        <div class="info-contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div><div class="info-contact-label">+57 302 271 3343</div><div class="info-contact-sub">Llamar directamente</div></div>
+      </a>
+      <a href="https://wa.me/573022713343" target="_blank" class="info-contact-item">
+        <div class="info-contact-icon">
+          <svg viewBox="0 0 24 24" fill="#25D366" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div><div class="info-contact-label">WhatsApp</div><div class="info-contact-sub">Escríbenos ahora</div></div>
+      </a>
+      <a href="https://www.instagram.com/lajaiba_gastrobar/" target="_blank" class="info-contact-item">
+        <div class="info-contact-icon">
+          <svg viewBox="0 0 24 24" fill="#E1306C" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </div>
+        <div><div class="info-contact-label">@lajaiba_gastrobar</div><div class="info-contact-sub">Síguenos en Instagram</div></div>
+      </a>
+    </div>
+
+    <!-- Ubicacion -->
+    <div class="info-card reveal">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="info-card-title">Cómo llegar</div>
+      <div class="map-preview">
+        <div class="map-preview-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>La Jaiba Gastrobar<br>Colombia</p>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=La+Jaiba+Gastrobar" target="_blank" class="map-link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver en Google Maps
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -394,6 +626,30 @@
     el.style.transitionDelay = (i % 4) * 0.08 + 's';
     observer.observe(el);
   });
+
+  // Contador animado
+  const counters = document.querySelectorAll('.stat-number');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const decimals = parseInt(el.dataset.decimal || '0');
+      const duration = 1800;
+      const step = 16;
+      const steps = duration / step;
+      const increment = target / steps;
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + increment, target);
+        el.textContent = current.toFixed(decimals) + suffix;
+        if (current >= target) clearInterval(timer);
+      }, step);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
 
   // Hero bubbles — generadas después del splash
   const heroBubblesEl = document.getElementById('hero-bubbles');
