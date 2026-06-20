@@ -1,26 +1,3 @@
-// LIQUID GLASS BUBBLES
-(function initLiquidGlass() {
-  const layer = document.getElementById('lgLayer');
-  if (!layer) return;
-  const count = window.innerWidth < 768 ? 7 : 15;
-  for (let i = 0; i < count; i++) {
-    const b = document.createElement('div');
-    b.className = 'lg-b';
-    const size = Math.random() * 140 + 35;           // 35–175 px
-    const left = Math.random() * 88 + 4;             // 4–92 %
-    const dur  = (Math.random() * 22 + 20).toFixed(1); // 20–42 s
-    const del  = (Math.random() * 25).toFixed(1);
-    const dx   = ((Math.random() - 0.5) * 90).toFixed(0);
-    const dx2  = ((Math.random() - 0.5) * 70).toFixed(0);
-    b.style.cssText =
-      `width:${size}px;height:${size}px;` +
-      `left:${left}%;bottom:${(Math.random() * -15).toFixed(0)}%;` +
-      `animation-duration:${dur}s;animation-delay:-${del}s;` +
-      `--dx:${dx}px;--dx2:${dx2}px;`;
-    layer.appendChild(b);
-  }
-})();
-
 // PARTICLES
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
