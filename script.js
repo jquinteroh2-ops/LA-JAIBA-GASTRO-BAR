@@ -1,3 +1,107 @@
+// LIQUID GLASS BUBBLES
+(function initLiquidGlass() {
+  const layer = document.getElementById('lgLayer');
+  if (!layer) return;
+  const count = window.innerWidth < 768 ? 7 : 15;
+  for (let i = 0; i < count; i++) {
+    const b = document.createElement('div');
+    b.className = 'lg-b';
+    const size = Math.random() * 140 + 35;           // 35–175 px
+    const left = Math.random() * 88 + 4;             // 4–92 %
+    const dur  = (Math.random() * 22 + 20).toFixed(1); // 20–42 s
+    const del  = (Math.random() * 25).toFixed(1);
+    const dx   = ((Math.random() - 0.5) * 90).toFixed(0);
+    const dx2  = ((Math.random() - 0.5) * 70).toFixed(0);
+    b.style.cssText =
+      `width:${size}px;height:${size}px;` +
+      `left:${left}%;bottom:${(Math.random() * -15).toFixed(0)}%;` +
+      `animation-duration:${dur}s;animation-delay:-${del}s;` +
+      `--dx:${dx}px;--dx2:${dx2}px;`;
+    layer.appendChild(b);
+  }
+})();
+
+// PARTICLES
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+const particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 2 + 0.5,
+    speedX: (Math.random() - 0.5) * 0.5,
+    speedY: (Math.random() - 0.5) * 0.5,
+    opacity: Math.random() * 0.6 + 0.1,
+    color: Math.random() > 0.5 ? '14,110,140' : '200,151,42'
+  });
+}
+
+// BUBBLES
+const bubbles = [];
+const BUBBLE_COUNT = 35;
+
+function createBubble(fromBottom) {
+  return {
+    x: Math.random() * canvas.width,
+    y: fromBottom ? canvas.height + Math.random() * 60 : Math.random() * canvas.height,
+    radius: Math.random() * 18 + 4,
+    speedY: Math.random() * 0.65 + 0.25,
+    wobble: Math.random() * Math.PI * 2,
+    wobbleSpeed: (Math.random() - 0.5) * 0.045,
+    opacity: Math.random() * 0.28 + 0.07,
+  };
+}
+
+for (let i = 0; i < BUBBLE_COUNT; i++) bubbles.push(createBubble(false));
+
+function animParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.speedX; p.y += p.speedY;
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${p.color},${p.opacity})`;
+    ctx.fill();
+  });
+
+  bubbles.forEach((b, i) => {
+    b.wobble += b.wobbleSpeed;
+    b.x += Math.sin(b.wobble) * 0.55;
+    b.y -= b.speedY;
+    if (b.y + b.radius < 0) bubbles[i] = createBubble(true);
+
+    ctx.save();
+    ctx.globalAlpha = b.opacity;
+
+    ctx.beginPath();
+    ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(14,200,230,0.85)';
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(14,200,230,0.04)';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(b.x - b.radius * 0.28, b.y - b.radius * 0.3, b.radius * 0.22, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.fill();
+
+    ctx.restore();
+  });
+
+  requestAnimationFrame(animParticles);
+}
+animParticles();
 
 // DATE CONSTRAINTS — reserva normal solo desde hoy en adelante
 (function setDateMin() {
@@ -9,6 +113,26 @@
   if (fechaInput) fechaInput.min = `${yyyy}-${mm}-${dd}`;
 })();
 
+// HERO BUBBLES
+(function spawnHeroBubbles() {
+  const hero = document.getElementById('hero');
+  for (let i = 0; i < 28; i++) {
+    const b = document.createElement('div');
+    b.className = 'hero-bubble';
+    const size   = Math.random() * 28 + 6;
+    const left   = Math.random() * 100;
+    const delay  = Math.random() * 12;
+    const dur    = Math.random() * 10 + 8;
+    const drift  = ((Math.random() - 0.5) * 80).toFixed(1);
+    const bottom = Math.random() * 30;
+    b.style.Text =
+      `width:${size}px;height:${size}px;` +
+      `left:${left}%;bottom:${bottom}%;` +
+      `animation-duration:${dur}s;animation-delay:-${delay}s;` +
+      `--drift:${drift}px;`;
+    hero.appendChild(b);
+  }
+})();
 
 // NAVBAR SCROLL
 window.addEventListener('scroll', () => {
@@ -41,7 +165,103 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// BOOK MENU
+(function () {
+  let current = 0;
+  const total = 2;
+  let flipping = false;
+  let touchStartX = 0;
 
+  function update() {
+    const card = document.getElementById('bookCard');
+    if (!card) return;
+    card.classList.toggle('flipped', current === 1);
+    document.getElementById('prevPage').disabled = current === 0;
+    document.getElementById('nextPage').disabled = current === total - 1;
+    for (let i = 0; i < total; i++) {
+      const dot = document.getElementById('dot-' + i);
+      if (dot) dot.classList.toggle('active', i === current);
+    }
+    const tip = document.querySelector('.book-tip');
+    if (tip) tip.textContent = current === 0
+      ? '🤚 Toca el lado derecho o desliza para pasar la página'
+      : '🤚 Toca el lado izquierdo o desliza para volver';
+  }
+
+  window.flipPage = function (dir) {
+    if (flipping) return;
+    const next = current + dir;
+    if (next < 0 || next >= total) return;
+    flipping = true;
+    current = next;
+    update();
+    setTimeout(() => { flipping = false; }, 780);
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const stage = document.getElementById('bookStage');
+    if (!stage) return;
+
+    stage.addEventListener('click', function (e) {
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      window.flipPage(x > rect.width / 2 ? 1 : -1);
+    });
+
+    stage.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', function (e) {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) window.flipPage(diff > 0 ? 1 : -1);
+    }, { passive: true });
+
+    update();
+  });
+})();
+
+// ZOOM LIGHTBOX
+const menuPages = ['img/menu nuevo 2.jpeg', 'img/menu nuevo 1.jpeg'];
+let zoomCurrent = 0;
+
+window.openMenuZoom = function () {
+  zoomCurrent = (document.getElementById('bookCard') || {}).classList?.contains('flipped') ? 1 : 0;
+  const overlay = document.getElementById('menuZoomOverlay');
+  document.getElementById('menuZoomImg').src = menuPages[zoomCurrent];
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeMenuZoom = function (e) {
+  if (e && e.target !== document.getElementById('menuZoomOverlay') && !e.target.classList.contains('menu-zoom-close')) return;
+  document.getElementById('menuZoomOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+window.zoomFlip = function (dir) {
+  zoomCurrent = Math.max(0, Math.min(menuPages.length - 1, zoomCurrent + dir));
+  document.getElementById('menuZoomImg').src = menuPages[zoomCurrent];
+};
+
+document.addEventListener('keydown', function (e) {
+  const overlay = document.getElementById('menuZoomOverlay');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  if (e.key === 'Escape') { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  if (e.key === 'ArrowRight') window.zoomFlip(1);
+  if (e.key === 'ArrowLeft') window.zoomFlip(-1);
+});
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObserver.observe(el));
 
 // TOAST
 function showToast(msg) {
@@ -169,6 +389,17 @@ function sendSpecialReservation() {
   showToast('Consulta de evento enviada por WhatsApp.');
 }
 
+// 3D TILT on special cards
+document.querySelectorAll('.special-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-8px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  card.addEventListener('touchend',   () => { card.style.transform = ''; });
+});
 
 // Ticker duplicate for seamless loop
 const ticker = document.getElementById('ticker');
