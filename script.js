@@ -125,7 +125,7 @@ animParticles();
     const dur    = Math.random() * 10 + 8;
     const drift  = ((Math.random() - 0.5) * 80).toFixed(1);
     const bottom = Math.random() * 30;
-    b.style.Text =
+    b.style.cssText =
       `width:${size}px;height:${size}px;` +
       `left:${left}%;bottom:${bottom}%;` +
       `animation-duration:${dur}s;animation-delay:-${delay}s;` +
