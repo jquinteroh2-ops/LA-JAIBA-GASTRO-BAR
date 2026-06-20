@@ -278,6 +278,9 @@
     max-width: 1200px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
   }
+  .about-grid--single {
+    grid-template-columns: 1fr; max-width: 760px;
+  }
   .about-visual { position: relative; }
   .about-img-frame {
     position: relative; width: 100%; aspect-ratio: 1/1.1;
