@@ -26,7 +26,7 @@
 }
 
 .reservas-brand span {
-  color: #CBA24C;
+  color: #00B4D8;
 }
 
 /* Progress */
@@ -49,11 +49,11 @@
 }
 
 .progress-step.done {
-  background: #CBA24C;
+  background: #00B4D8;
 }
 
 .progress-step.active {
-  background: linear-gradient(90deg, #9C7D33, #E6C878);
+  background: linear-gradient(90deg, #0077B6, #00C9FF);
 }
 
 /* Step indicator */
@@ -74,7 +74,7 @@
 }
 
 .step-number .current {
-  color: #CBA24C;
+  color: #00B4D8;
   font-size: 1.1rem;
   font-weight: 700;
   vertical-align: middle;
@@ -164,15 +164,15 @@
 }
 
 .comensal-btn:hover {
-  border-color: rgba(203, 162, 76, 0.4);
-  color: #CBA24C;
+  border-color: rgba(0, 180, 216, 0.4);
+  color: #00B4D8;
 }
 
 .comensal-btn.selected {
-  border-color: #CBA24C;
-  background: rgba(156, 125, 51, 0.15);
-  color: #CBA24C;
-  box-shadow: 0 0 0 4px rgba(203, 162, 76, 0.1);
+  border-color: #00B4D8;
+  background: rgba(0, 119, 182, 0.15);
+  color: #00B4D8;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
 }
 
 /* Custom counter */
@@ -217,7 +217,7 @@
 }
 
 .counter-btn:hover {
-  background: #9C7D33;
+  background: #0077B6;
 }
 
 .counter-value {
@@ -268,7 +268,7 @@
 }
 
 .calendar-nav-btn:hover {
-  background: #9C7D33;
+  background: #0077B6;
   color: white;
 }
 
@@ -310,21 +310,21 @@
 }
 
 .cal-day:hover:not(.disabled):not(.empty) {
-  background: rgba(203, 162, 76, 0.1);
-  color: #CBA24C;
-  border-color: rgba(203, 162, 76, 0.3);
+  background: rgba(0, 180, 216, 0.1);
+  color: #00B4D8;
+  border-color: rgba(0, 180, 216, 0.3);
 }
 
 .cal-day.today {
-  color: #CBA24C;
+  color: #00B4D8;
   font-weight: 700;
 }
 
 .cal-day.selected {
-  background: #9C7D33;
+  background: #0077B6;
   color: white;
-  border-color: #CBA24C;
-  box-shadow: 0 0 12px rgba(203, 162, 76, 0.4);
+  border-color: #00B4D8;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
 }
 
 .cal-day.disabled {
@@ -355,13 +355,13 @@
 }
 
 .time-btn:hover {
-  border-color: rgba(203, 162, 76, 0.4);
+  border-color: rgba(0, 180, 216, 0.4);
 }
 
 .time-btn.selected {
-  border-color: #CBA24C;
-  background: rgba(156, 125, 51, 0.15);
-  box-shadow: 0 0 0 3px rgba(203, 162, 76, 0.1);
+  border-color: #00B4D8;
+  background: rgba(0, 119, 182, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
 }
 
 .time-hour {
@@ -381,7 +381,7 @@
 }
 
 .time-btn.selected .time-hour {
-  color: #CBA24C;
+  color: #00B4D8;
 }
 
 /* Form fields */
@@ -417,8 +417,8 @@
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #9C7D33;
-  box-shadow: 0 0 0 3px rgba(156, 125, 51, 0.15);
+  border-color: #0077B6;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
 }
 
 .form-input::placeholder,
@@ -460,14 +460,14 @@
 }
 
 .chip:hover {
-  border-color: rgba(203, 162, 76,0.4);
-  color: #CBA24C;
+  border-color: rgba(0,180,216,0.4);
+  color: #00B4D8;
 }
 
 .chip.selected {
-  background: rgba(156, 125, 51,0.15);
-  border-color: #CBA24C;
-  color: #CBA24C;
+  background: rgba(0,119,182,0.15);
+  border-color: #00B4D8;
+  color: #00B4D8;
 }
 
 /* Summary card */
@@ -480,7 +480,7 @@
 }
 
 .summary-header {
-  background: linear-gradient(135deg, #9C7D33, #6F5623);
+  background: linear-gradient(135deg, #0077B6, #004E8C);
   padding: 24px;
   display: flex;
   align-items: center;
@@ -542,8 +542,8 @@
 .success-icon {
   width: 80px;
   height: 80px;
-  background: rgba(203, 162, 76, 0.1);
-  border: 2px solid rgba(203, 162, 76, 0.3);
+  background: rgba(0, 180, 216, 0.1);
+  border: 2px solid rgba(0, 180, 216, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -581,7 +581,7 @@
 
 .btn-primary {
   flex: 1;
-  background: linear-gradient(135deg, #9C7D33, #86692B);
+  background: linear-gradient(135deg, #0077B6, #005A8E);
   color: white;
   border: none;
   border-radius: 14px;
@@ -598,9 +598,9 @@
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #B08E3E, #86692B);
+  background: linear-gradient(135deg, #0085CC, #006699);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(156, 125, 51, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 119, 182, 0.4);
 }
 
 .btn-secondary {

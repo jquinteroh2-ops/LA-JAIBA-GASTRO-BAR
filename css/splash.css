@@ -40,20 +40,20 @@
 }
 
 .splash-wave:nth-child(1) {
-  background: rgba(156, 125, 51, 0.08);
+  background: rgba(0, 119, 182, 0.08);
   animation-delay: 0s;
   bottom: -40px;
 }
 
 .splash-wave:nth-child(2) {
-  background: rgba(203, 162, 76, 0.06);
+  background: rgba(0, 180, 216, 0.06);
   animation-delay: 0.5s;
   bottom: -60px;
   left: -5%;
 }
 
 .splash-wave:nth-child(3) {
-  background: rgba(230, 200, 120, 0.04);
+  background: rgba(0, 201, 255, 0.04);
   animation-delay: 1s;
   bottom: -80px;
   left: 5%;
@@ -75,7 +75,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--ocean-light, #CBA24C);
+  background: var(--ocean-light, #00B4D8);
   border-radius: 50%;
   opacity: 0;
   animation: particleFloat linear infinite;
@@ -108,17 +108,17 @@
   height: 200px;
   object-fit: contain;
   border-radius: 50%;
-  filter: drop-shadow(0 0 40px rgba(203, 162, 76, 0.7)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 0 40px rgba(0, 180, 216, 0.7)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
   animation: logoPulse 2s ease-in-out 1.3s infinite alternate;
 }
 
 @keyframes logoPulse {
   from {
-    filter: drop-shadow(0 0 25px rgba(203, 162, 76, 0.5)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 0 25px rgba(0, 180, 216, 0.5)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
     transform: scale(1);
   }
   to {
-    filter: drop-shadow(0 0 60px rgba(203, 162, 76, 0.9)) drop-shadow(0 0 25px rgba(201,168,76,0.3)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 0 60px rgba(0, 180, 216, 0.9)) drop-shadow(0 0 25px rgba(201,168,76,0.3)) drop-shadow(0 8px 30px rgba(0,0,0,0.6));
     transform: scale(1.04);
   }
 }
@@ -134,7 +134,7 @@
 }
 
 .splash-name .accent {
-  color: #CBA24C;
+  color: #00B4D8;
 }
 
 .splash-subtitle {
@@ -176,10 +176,10 @@
   top: 0;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #9C7D33, #CBA24C, #E6C878);
+  background: linear-gradient(90deg, #0077B6, #00B4D8, #00C9FF);
   border-radius: 1px;
   animation: loadingFill 2.2s cubic-bezier(0.4, 0, 0.6, 1) 0.5s forwards;
-  box-shadow: 0 0 10px rgba(230, 200, 120, 0.8);
+  box-shadow: 0 0 10px rgba(0, 201, 255, 0.8);
 }
 
 @keyframes loadingFill {
@@ -228,8 +228,8 @@
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%,
     rgba(255, 255, 255, 0.35),
-    rgba(203, 162, 76, 0.12) 60%,
-    rgba(156, 125, 51, 0.06)
+    rgba(0, 180, 216, 0.12) 60%,
+    rgba(0, 119, 182, 0.06)
   );
   border: 1px solid rgba(255, 255, 255, 0.18);
   animation: bubbleRise linear infinite;
