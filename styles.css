@@ -1125,6 +1125,52 @@
     .menu-modal-grid { grid-template-columns: 1fr; gap: 30px; }
   }
 
+  /* ---- FILTRO DE MENÚ (chips) ---- */
+  .menu-filter {
+    position: sticky;
+    top: 62px;
+    z-index: 30;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 14px 2px;
+    margin-bottom: 30px;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26,179,212,0.18);
+    scrollbar-width: none;
+  }
+  .menu-filter::-webkit-scrollbar { display: none; }
+  .mfilter-chip {
+    flex: 0 0 auto;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    padding: 9px 18px;
+    color: var(--sand);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(26,179,212,0.25);
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .25s, background .25s, border-color .25s;
+  }
+  .mfilter-chip:hover { color: var(--cream); border-color: var(--ocean-light); }
+  .mfilter-chip.active {
+    background: linear-gradient(135deg, var(--ocean-teal), var(--ocean-light));
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .menu-sections { column-count: 2; column-gap: 48px; }
+  .menu-sections .mm-section { break-inside: avoid; -webkit-column-break-inside: avoid; }
+  .menu-sections.is-filtered { column-count: 1; max-width: 640px; margin: 0 auto; }
+  @media (max-width: 720px) {
+    .menu-sections { column-count: 1; }
+    .menu-filter { top: 56px; }
+  }
+
   .mm-section { margin-bottom: 28px; }
   .mm-section:last-child { margin-bottom: 0; }
 

@@ -131,12 +131,32 @@
 
   <!-- MENÚ COMPLETO (en línea) -->
   <div class="menu-inline" style="max-width:1100px;margin:0 auto;">
-    <div class="menu-modal-grid">
+    <!-- BARRA DE FILTROS -->
+      <div class="menu-filter" id="menuFilter">
+        <button class="mfilter-chip active" data-cat="all">Todos</button>
+        <button class="mfilter-chip" data-cat="entradas-calientes">Entradas Calientes</button>
+        <button class="mfilter-chip" data-cat="entradas-frias">Entradas Frías</button>
+        <button class="mfilter-chip" data-cat="sancochos">Sancochos</button>
+        <button class="mfilter-chip" data-cat="cazuelas">Cazuelas</button>
+        <button class="mfilter-chip" data-cat="pescados">Pescados</button>
+        <button class="mfilter-chip" data-cat="picadas">Picadas</button>
+        <button class="mfilter-chip" data-cat="otros-del-mar">Otros del Mar</button>
+        <button class="mfilter-chip" data-cat="langosta">Langosta</button>
+        <button class="mfilter-chip" data-cat="pastas">Pastas</button>
+        <button class="mfilter-chip" data-cat="paellas">Paellas</button>
+        <button class="mfilter-chip" data-cat="especialidades">Especialidades</button>
+        <button class="mfilter-chip" data-cat="infantil">Infantil</button>
+        <button class="mfilter-chip" data-cat="pizzas">Pizzas</button>
+        <button class="mfilter-chip" data-cat="postres">Postres</button>
+        <button class="mfilter-chip" data-cat="bebidas">Bebidas</button>
+        <button class="mfilter-chip" data-cat="cervezas">Cervezas</button>
+        <button class="mfilter-chip" data-cat="cocteles">Cócteles</button>
+        <button class="mfilter-chip" data-cat="licores">Licores</button>
+      </div>
 
-      <!-- COLUMNA IZQUIERDA -->
-      <div>
+      <div class="menu-sections" id="menuSections">
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="entradas-calientes">
           <div class="mm-category-title"><i class="fa-solid fa-fire"></i> Entradas Calientes</div>
           <div class="mm-row"><span class="mm-name">Muelas de Jaiba al Ajillo</span><span class="mm-price">$21.900</span></div>
           <div class="mm-row"><span class="mm-name">Canasta de Patacón con Camarón</span><span class="mm-price">$24.000</span></div>
@@ -147,7 +167,7 @@
           <div class="mm-row"><span class="mm-name">Canoa de Plátano Amarillo con Pulpo</span><span class="mm-price">$38.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="entradas-frias">
           <div class="mm-category-title"><i class="fa-solid fa-snowflake"></i> Entradas Frías</div>
           <div class="mm-sub-title">Cóctel de Camarón</div>
           <div class="mm-row"><span class="mm-name">Pequeño</span><span class="mm-price">$19.000</span></div>
@@ -163,7 +183,7 @@
           <div class="mm-row"><span class="mm-name">Grande</span><span class="mm-price">$59.900</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="sancochos">
           <div class="mm-category-title"><i class="fa-solid fa-mug-hot"></i> Sancochos</div>
           <p class="mm-note">Acompañados de arroz con coco y patacón</p>
           <div class="mm-row"><span class="mm-name">Mojarra Roja</span><span class="mm-price">$35.000</span></div>
@@ -173,7 +193,7 @@
           <div class="mm-row"><span class="mm-name">Pargo Rojo</span><span class="mm-price">$52.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="cazuelas">
           <div class="mm-category-title"><i class="fa-solid fa-bowl-food"></i> Cazuelas</div>
           <p class="mm-note">Acompañadas de arroz con coco y patacón</p>
           <div class="mm-row"><span class="mm-name">Cazuela de Jaiba</span><span class="mm-price">$32.000</span></div>
@@ -183,7 +203,7 @@
           <div class="mm-row"><span class="mm-name">Mixta Frutos del Mar</span><span class="mm-price">$73.900</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="pescados">
           <div class="mm-category-title"><i class="fa-solid fa-fish"></i> Pescados</div>
           <p class="mm-note">Acompañados de arroz con coco, patacón y ensalada</p>
           <div class="mm-sub-title">Pargo Rojo</div>
@@ -218,7 +238,7 @@
           <div class="mm-row"><span class="mm-name">Mojarra Negra Asada</span><span class="mm-price">$43.900</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="picadas">
           <div class="mm-category-title"><i class="fa-solid fa-utensils"></i> Picadas</div>
           <p class="mm-note">Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela</p>
           <div class="mm-row"><span class="mm-name">2 Personas</span><span class="mm-price">$125.900</span></div>
@@ -226,12 +246,9 @@
           <div class="mm-row"><span class="mm-name">6 Personas</span><span class="mm-price">$249.000</span></div>
         </div>
 
-      </div>
+      
 
-      <!-- COLUMNA DERECHA -->
-      <div>
-
-        <div class="mm-section">
+        <div class="mm-section" data-cat="otros-del-mar">
           <div class="mm-category-title"><i class="fa-solid fa-shrimp"></i> Otros del Mar</div>
           <p class="mm-note">Acompañados de arroz con coco y patacón</p>
           <div class="mm-row"><span class="mm-name">Camarones al Ajillo</span><span class="mm-price">$48.000</span></div>
@@ -245,7 +262,7 @@
           <div class="mm-row"><span class="mm-name">Filete de Tilapia</span><span class="mm-price">$45.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="langosta">
           <div class="mm-category-title"><i class="fa-solid fa-fish-fins"></i> Langosta</div>
           <p class="mm-note">Sola o acompañada con camarones</p>
           <div class="mm-row"><span class="mm-name">Pequeña</span><span class="mm-price">$52.900</span></div>
@@ -256,7 +273,7 @@
           <div class="mm-row"><span class="mm-name">Grande con Camarones</span><span class="mm-price">$109.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="pastas">
           <div class="mm-category-title"><i class="fa-solid fa-plate-wheat"></i> Pastas</div>
           <div class="mm-row"><span class="mm-name">Camarón</span><span class="mm-price">$42.000</span></div>
           <div class="mm-row"><span class="mm-name">Pollo</span><span class="mm-price">$40.000</span></div>
@@ -266,7 +283,7 @@
           <div class="mm-row"><span class="mm-name">A la Langosta</span><span class="mm-price">$125.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="paellas">
           <div class="mm-category-title"><i class="fa-solid fa-bowl-rice"></i> Paellas</div>
           <p class="mm-note">Con langostino, mejillones, camarón y otras delicias del mar</p>
           <div class="mm-row"><span class="mm-name">Sencilla</span><span class="mm-price">$48.000</span></div>
@@ -276,19 +293,19 @@
           <div class="mm-row"><span class="mm-name">Especial de la Casa</span><span class="mm-price">$302.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="especialidades">
           <div class="mm-category-title"><i class="fa-solid fa-drumstick-bite"></i> Otras Especialidades</div>
           <div class="mm-row"><span class="mm-name">Pechuga a la Plancha</span><span class="mm-price">$38.000</span></div>
           <div class="mm-row"><span class="mm-name">Pechuga Gratinada</span><span class="mm-price">$42.000</span></div>
           <div class="mm-row"><span class="mm-name">Punta Gorda</span><span class="mm-price">$38.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="infantil">
           <div class="mm-category-title"><i class="fa-solid fa-child"></i> Menú Infantil</div>
           <div class="mm-row"><span class="mm-name">Croquetas de Pollo + Papas y Gaseosa</span><span class="mm-price">$38.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="pizzas">
           <div class="mm-category-title"><i class="fa-solid fa-pizza-slice"></i> Pizzas</div>
           <table class="mm-pizza-table">
             <thead>
@@ -306,13 +323,13 @@
           </table>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="postres">
           <div class="mm-category-title"><i class="fa-solid fa-ice-cream"></i> Postres</div>
           <div class="mm-row"><span class="mm-name">Torta de Queso / Naranja (con helado)</span><span class="mm-price">$22.000</span></div>
           <div class="mm-row"><span class="mm-name">Arroz con Leche</span><span class="mm-price">$12.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="bebidas">
           <div class="mm-category-title"><i class="fa-solid fa-glass-water"></i> Bebidas</div>
           <div class="mm-row"><span class="mm-name">Jugos naturales en agua</span><span class="mm-price">$10.000</span></div>
           <div class="mm-row"><span class="mm-name">Jugos naturales en leche</span><span class="mm-price">$12.000</span></div>
@@ -324,7 +341,7 @@
           <div class="mm-row"><span class="mm-name">Soda Schweppes</span><span class="mm-price">$5.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="cervezas">
           <div class="mm-category-title"><i class="fa-solid fa-beer-mug-empty"></i> Cervezas Nacionales</div>
           <div class="mm-row"><span class="mm-name">Águila Light</span><span class="mm-price">$5.000</span></div>
           <div class="mm-row"><span class="mm-name">Águila Negra</span><span class="mm-price">$5.000</span></div>
@@ -333,7 +350,7 @@
           <div class="mm-row"><span class="mm-name">Coronita</span><span class="mm-price">$6.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="cocteles">
           <div class="mm-category-title"><i class="fa-solid fa-martini-glass-citrus"></i> Cocteles</div>
           <div class="mm-row"><span class="mm-name">Fruto del Amor<small>Frutos rojos, ácido cítrico y soda</small></span><span class="mm-price">$25.000</span></div>
           <div class="mm-row"><span class="mm-name">Oleada de Verano<small>Maracuyá, jengibre, zumo de limón y soda hatsu</small></span><span class="mm-price">$28.000</span></div>
@@ -358,7 +375,7 @@
           <div class="mm-row"><span class="mm-name">Destornillador<small>Vodka y jugo de naranja</small></span><span class="mm-price">$28.000</span></div>
         </div>
 
-        <div class="mm-section">
+        <div class="mm-section" data-cat="licores">
           <div class="mm-category-title"><i class="fa-solid fa-whiskey-glass"></i> Licores</div>
           <div class="mm-row"><span class="mm-name">Ron Viejo de Caldas 750ml</span><span class="mm-price">$99.900</span></div>
           <div class="mm-row"><span class="mm-name">Ron Medellín Añejo 8 años 375ml</span><span class="mm-price">$85.000</span></div>
@@ -383,10 +400,7 @@
           <div class="mm-row"><span class="mm-name">Vino Tinto Plaza Castillo 750ml</span><span class="mm-price">$45.000</span></div>
           <div class="mm-row"><span class="mm-name">Vino Viejo Viñedo Blanco 750ml</span><span class="mm-price">$45.000</span></div>
         </div>
-
       </div>
-
-    </div>
   </div>
 
 
