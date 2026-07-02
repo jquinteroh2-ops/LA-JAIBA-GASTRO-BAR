@@ -403,3 +403,30 @@ document.addEventListener('keydown', function(e) {
     lightboxNav(dx < 0 ? 1 : -1);
   }, { passive: true });
 })();
+
+// ---- FILTRO DE MENÚ POR CATEGORÍAS (chips) ----
+(function initMenuFilter() {
+  const filter = document.getElementById('menuFilter');
+  const sections = document.getElementById('menuSections');
+  if (!filter || !sections) return;
+  const chips = filter.querySelectorAll('.mfilter-chip');
+  const items = sections.querySelectorAll('.mm-section');
+  filter.addEventListener('click', function (e) {
+    const btn = e.target.closest('.mfilter-chip');
+    if (!btn) return;
+    const cat = btn.dataset.cat;
+    chips.forEach(c => c.classList.toggle('active', c === btn));
+    sections.classList.toggle('is-filtered', cat !== 'all');
+    items.forEach(sec => {
+      sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
+    });
+    // Al filtrar, reencuadrar el menú para ver la categoría desde arriba
+    if (cat !== 'all') {
+      const menu = document.getElementById('menu');
+      if (menu) {
+        const y = menu.getBoundingClientRect().top + window.scrollY - 68;
+        if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  });
+})();
