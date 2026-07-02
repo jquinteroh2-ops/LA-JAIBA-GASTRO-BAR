@@ -5,20 +5,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --ocean-deep: #0077B6;
-  --ocean-light: #00B4D8;
-  --ocean-glow: #00C9FF;
-  --dark-bg: #0D0D0D;
-  --dark-card: #141414;
-  --dark-border: #1E1E1E;
-  --cream: #F0F4F8;
-  --red-crab: #C0392B;
-  --red-light: #E74C3C;
-  --gold: #C9A84C;
-  --gold-light: #F0C060;
+  /* --ocean-* se reutilizan como tonos DORADOS para un look premium
+     (así todos los var(--ocean-*) existentes pasan a dorado) */
+  --ocean-deep: #9C7D33;
+  --ocean-light: #CBA24C;
+  --ocean-glow: #E6C878;
+  --dark-bg: #0A0B0D;
+  --dark-card: #131519;
+  --dark-border: #24262d;
+  --cream: #ECE7DD;
+  --red-crab: #B0432F;
+  --red-light: #C85A41;
+  --gold: #CBA24C;
+  --gold-light: #E6C878;
   --white: #FFFFFF;
-  --gray-light: #9AA5B4;
-  --gray-mid: #4A5568;
+  --gray-light: #A39C8E;
+  --gray-mid: #66625A;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -28,9 +30,9 @@
   --radius-lg: 24px;
   --radius-xl: 40px;
 
-  --shadow-glow: 0 0 40px rgba(0, 180, 216, 0.25);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-btn: 0 4px 20px rgba(0, 119, 182, 0.4);
+  --shadow-glow: 0 0 40px rgba(203, 162, 76, 0.22);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.55);
+  --shadow-btn: 0 4px 20px rgba(203, 162, 76, 0.35);
 
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -50,7 +50,7 @@
 
 .menu-logo-sub {
   font-size: 0.7rem;
-  color: #00B4D8;
+  color: #CBA24C;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -80,9 +80,9 @@
 
 .menu-search-input:focus {
   outline: none;
-  border-color: #0077B6;
+  border-color: #9C7D33;
   width: 240px;
-  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+  box-shadow: 0 0 0 3px rgba(156, 125, 51, 0.15);
 }
 
 .menu-search-input::placeholder {
@@ -145,8 +145,8 @@
 }
 
 .menu-tab.active {
-  color: #00B4D8;
-  border-bottom-color: #00B4D8;
+  color: #CBA24C;
+  border-bottom-color: #CBA24C;
 }
 
 /* Main content */
@@ -174,7 +174,7 @@
 /* Category Banner */
 .category-banner {
   margin: 24px 0 20px;
-  background: linear-gradient(135deg, #0077B6, #005A8E);
+  background: linear-gradient(135deg, #9C7D33, #86692B);
   border-radius: 16px;
   padding: 24px 28px;
   position: relative;
@@ -250,7 +250,7 @@
   content: '';
   width: 3px;
   height: 18px;
-  background: linear-gradient(180deg, #0077B6, #00B4D8);
+  background: linear-gradient(180deg, #9C7D33, #CBA24C);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -275,7 +275,7 @@
 }
 
 .product-card:hover {
-  border-color: rgba(0, 180, 216, 0.3);
+  border-color: rgba(203, 162, 76, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
@@ -283,7 +283,7 @@
 .product-img {
   width: 90px;
   min-width: 90px;
-  background: linear-gradient(135deg, #0A1628, #0D2144);
+  background: linear-gradient(135deg, #0C0D11, #111318);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,7 +344,7 @@
 .product-price {
   font-weight: 700;
   font-size: 1rem;
-  color: #00B4D8;
+  color: #CBA24C;
   white-space: nowrap;
 }
 
@@ -377,7 +377,7 @@
 .price-value {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #00B4D8;
+  color: #CBA24C;
   white-space: nowrap;
 }
 
@@ -392,18 +392,18 @@
 }
 
 .pizza-sizes span {
-  color: #00B4D8;
+  color: #CBA24C;
   font-weight: 600;
 }
 
 /* Note card */
 .note-card {
-  background: rgba(0, 119, 182, 0.08);
-  border: 1px solid rgba(0, 119, 182, 0.2);
+  background: rgba(156, 125, 51, 0.08);
+  border: 1px solid rgba(156, 125, 51, 0.2);
   border-radius: 10px;
   padding: 10px 14px;
   font-size: 0.78rem;
-  color: rgba(0, 180, 216, 0.8);
+  color: rgba(203, 162, 76, 0.8);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -442,7 +442,7 @@
 
 .licor-price {
   font-weight: 700;
-  color: #00B4D8;
+  color: #CBA24C;
   font-size: 0.9rem;
   white-space: nowrap;
 }
@@ -456,15 +456,15 @@
 
 /* Cocteles cards */
 .coctel-card {
-  background: linear-gradient(135deg, #0A1628, #0D1F35);
-  border: 1px solid rgba(0, 119, 182, 0.2);
+  background: linear-gradient(135deg, #0C0D11, #111318);
+  border: 1px solid rgba(156, 125, 51, 0.2);
   border-radius: 16px;
   padding: 18px;
   transition: border-color 0.25s, transform 0.25s;
 }
 
 .coctel-card:hover {
-  border-color: rgba(0, 180, 216, 0.4);
+  border-color: rgba(203, 162, 76, 0.4);
   transform: translateY(-2px);
 }
 
@@ -484,7 +484,7 @@
 
 .coctel-price {
   font-weight: 700;
-  color: #00B4D8;
+  color: #CBA24C;
   font-size: 1rem;
   white-space: nowrap;
 }
@@ -543,7 +543,7 @@
 }
 
 .nav-btn:hover, .nav-btn.active {
-  color: #00B4D8;
+  color: #CBA24C;
 }
 
 .nav-btn--whatsapp {
