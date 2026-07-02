@@ -37,9 +37,13 @@ const menuData = {
     title: 'Entradas Calientes',
     desc: 'Para abrir el apetito',
     items: [
-      { name: 'Muelas de Jaiba al Ajillo', price: '$19.990' },
-      { name: 'Canastas de Patacón con Camarón', price: '$24.000' },
-      { name: 'Canoa de Plátano Maduro con Camarones', price: '$25.000' },
+      { name: 'Muelas de Jaiba al Ajillo', price: '$21.900' },
+      { name: 'Canasta de Patacón con Camarón', price: '$24.000' },
+      { name: 'Canasta de Patacón con Caracol y Camarón', price: '$31.000' },
+      { name: 'Canasta de Patacón con Pulpo', price: '$38.000' },
+      { name: 'Canoa de Plátano Amarillo con Camarón', price: '$25.000' },
+      { name: 'Canoa de Plátano Amarillo con Caracol y Camarón', price: '$31.900' },
+      { name: 'Canoa de Plátano Amarillo con Pulpo', price: '$38.000' },
     ]
   },
   'entradas-frias': {
@@ -50,36 +54,29 @@ const menuData = {
       {
         name: 'Cóctel de Camarón',
         items: [
-          { name: 'Cóctel de Camarón Pequeño', price: '$17.990' },
-          { name: 'Cóctel de Camarón Grande', price: '$29.990' },
+          { name: 'Cóctel de Camarón Pequeño', price: '$19.000' },
+          { name: 'Cóctel de Camarón Grande', price: '$31.900' },
         ]
       },
       {
         name: 'Cóctel Mixto Camarón y Caracol',
         items: [
-          { name: 'Cóctel Mixto Pequeño', price: '$22.900' },
-          { name: 'Cóctel Mixto Grande', price: '$31.990' },
+          { name: 'Cóctel Mixto Pequeño', price: '$25.000' },
+          { name: 'Cóctel Mixto Grande', price: '$33.900' },
         ]
       },
       {
         name: 'Ceviche de Camarón',
         items: [
-          { name: 'Ceviche de Camarón Pequeño', price: '$17.990' },
-          { name: 'Ceviche de Camarón Grande', price: '$29.990' },
+          { name: 'Ceviche de Camarón Pequeño', price: '$23.900' },
+          { name: 'Ceviche de Camarón Grande', price: '$33.900' },
         ]
       },
       {
-        name: 'Ceviche Mixto Camarón y Caracol',
+        name: 'Cóctel o Ceviche Frutos del Mar',
         items: [
-          { name: 'Ceviche Mixto Pequeño', price: '$22.900' },
-          { name: 'Ceviche Mixto Grande', price: '$31.990' },
-        ]
-      },
-      {
-        name: 'Cóctel / Ceviche Frutos del Mar',
-        items: [
-          { name: 'Frutos del Mar Pequeño', price: '$35.990' },
-          { name: 'Frutos del Mar Grande', price: '$54.990' },
+          { name: 'Frutos del Mar Pequeño', price: '$38.900' },
+          { name: 'Frutos del Mar Grande', price: '$59.900' },
         ]
       },
     ]
@@ -91,9 +88,10 @@ const menuData = {
     note: 'Acompañados de arroz con coco y patacón',
     items: [
       { name: 'Sancocho de Mojarra Roja', price: '$35.000' },
-      { name: 'Sancocho Mojarra Negra', price: '$35.000' },
-      { name: 'Sancocho de Robalo', price: '$45.000' },
-      { name: 'Sancocho de Pargo', price: '$49.900' },
+      { name: 'Sancocho de Mojarra Negra', price: '$35.000' },
+      { name: 'Sancocho de Sierra', price: '$45.000' },
+      { name: 'Sancocho de Róbalo', price: '$45.000' },
+      { name: 'Sancocho de Pargo Rojo', price: '$52.000' },
     ]
   },
   'cazuelas': {
@@ -102,11 +100,11 @@ const menuData = {
     desc: 'Acompañadas de arroz con coco y patacón',
     note: 'Acompañadas de arroz con coco y patacón',
     items: [
-      { name: 'Cazuela de Jaiba', price: '$29.900' },
+      { name: 'Cazuela de Jaiba', price: '$32.000' },
       { name: 'Cazuela de Camarón', price: '$49.000' },
-      { name: 'Cazuela de Camarón y Caracol', price: '$37.990' },
-      { name: 'Camarón y Langostinos', price: '$59.990' },
-      { name: 'Mixta Frutos del Mar', price: '$65.990' },
+      { name: 'Cazuela de Camarón y Caracol', price: '$55.900' },
+      { name: 'Cazuela de Camarón y Langostinos', price: '$62.900' },
+      { name: 'Cazuela Mixta Frutos del Mar', price: '$73.900' },
     ]
   },
   'pescados': {
@@ -118,43 +116,55 @@ const menuData = {
       {
         name: 'Pargo Rojo',
         items: [
-          { name: 'Pargo Rojo Frito', price: '$44.990' },
-          { name: 'Pargo al Ajillo con Camarones', price: '$59.990' },
-          { name: 'Pargo Mixto Camarón y Caracol', price: '$64.000' },
+          { name: 'Pargo Rojo Frito', price: '$46.900' },
+          { name: 'Pargo Rojo al Ajillo con Camarones', price: '$59.900' },
+          { name: 'Pargo Rojo con Camarón y Caracol', price: '$64.900' },
           { name: 'Pargo Asado', price: '$49.990' },
         ]
       },
       {
-        name: 'Robalo',
+        name: 'Bocachico',
         items: [
-          { name: 'Robalo Frito', price: '$39.990' },
-          { name: 'Robalo al Ajillo con Camarón', price: '$49.990' },
-          { name: 'Robalo Mixto', price: '$64.000' },
-          { name: 'Robalo Asado', price: '$44.990' },
+          { name: 'Viuda de Bocachico', price: '$59.900' },
+          { name: 'Bocachico Asado', price: '$45.000' },
+          { name: 'Bocachico al Ajillo', price: '$48.000' },
+          { name: 'Bocachico Mixto', price: '$65.000' },
+        ]
+      },
+      {
+        name: 'Róbalo',
+        items: [
+          { name: 'Róbalo Frito', price: '$41.900' },
+          { name: 'Róbalo al Ajillo con Camarones', price: '$52.900' },
+          { name: 'Róbalo con Camarón y Caracol', price: '$66.900' },
+          { name: 'Róbalo Asado', price: '$46.900' },
+        ]
+      },
+      {
+        name: 'Sierra',
+        items: [
+          { name: 'Sierra Frita', price: '$46.900' },
+          { name: 'Sierra al Ajillo con Camarones', price: '$59.900' },
+          { name: 'Sierra con Camarón y Caracol', price: '$64.900' },
+          { name: 'Sierra Asada', price: '$49.990' },
         ]
       },
       {
         name: 'Mojarra Roja',
         items: [
-          { name: 'Mojarra Roja Frita', price: '$39.990' },
-          { name: 'Mojarra Roja al Ajillo con Camarón', price: '$42.990' },
-          { name: 'Mojarra Roja Mixto', price: '$62.990' },
-          { name: 'Mojarra Roja Asada', price: '$34.900' },
+          { name: 'Mojarra Roja Frita', price: '$39.900' },
+          { name: 'Mojarra Roja al Ajillo con Camarones', price: '$43.900' },
+          { name: 'Mojarra Roja con Caracol', price: '$62.900' },
+          { name: 'Mojarra Roja Asada', price: '$43.900' },
         ]
       },
       {
         name: 'Mojarra Negra',
         items: [
-          { name: 'Mojarra Negra Frita', price: '$29.990' },
-          { name: 'Mojarra Negra al Ajillo con Camarón', price: '$42.990' },
-          { name: 'Mojarra Negra Mixto', price: '$62.990' },
-          { name: 'Mojarra Negra Asada', price: '$34.990' },
-        ]
-      },
-      {
-        name: 'Especialidad',
-        items: [
-          { name: 'Viuda de Bocachico Abierto', price: '$49.000' },
+          { name: 'Mojarra Negra Frita', price: '$39.900' },
+          { name: 'Mojarra Negra al Ajillo con Camarones', price: '$43.900' },
+          { name: 'Mojarra Negra con Caracol', price: '$62.900' },
+          { name: 'Mojarra Negra Asada', price: '$43.900' },
         ]
       }
     ]
@@ -162,11 +172,12 @@ const menuData = {
   'picadas': {
     icon: ICONS.share,
     title: 'Picadas para Compartir',
-    desc: 'Medallones de pescado, cazuela de jaiba, arroz de coco, patacones, caracol guisado',
-    note: 'Medallones de pescado, cazuela de jaiba, arroz de coco, patacones, caracol guisado',
+    desc: 'Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela',
+    note: 'Medallón de pescado, camarón al ajillo, mejillón, jaiba, langostino y cazuela',
     items: [
-      { name: 'Picada para Compartir 2 Personas', price: '$119.000' },
-      { name: 'Picada para Compartir 4 Personas', price: '$179.990' },
+      { name: 'Picada para Compartir 2 Personas', price: '$125.900' },
+      { name: 'Picada para Compartir 4 Personas', price: '$189.900' },
+      { name: 'Picada para Compartir 6 Personas', price: '$249.000' },
     ]
   },
   'otros-del-mar': {
@@ -175,34 +186,47 @@ const menuData = {
     desc: 'Acompañados de arroz con coco y patacón',
     note: 'Acompañados de arroz con coco y patacón',
     items: [
-      { name: 'Langostinos al Ajillo', price: '$60.990' },
-      { name: 'Langostino Gratinado', price: '$66.990' },
+      { name: 'Camarones al Ajillo', price: '$48.000' },
+      { name: 'Langosta al Ajillo', price: '$60.900' },
+      { name: 'Langosta Gratinada', price: '$66.990' },
       { name: 'Caracol Guisado', price: '$45.990' },
-      { name: 'Pulpo Relleno de Mariscos', price: '$89.990' },
-      { name: 'Explosión de Camarones en Salsa de Piña', price: '$69.990' },
-      { name: 'Explosión Mixta en Salsa de Piña', price: '$82.990' },
+      { name: 'Pulpo Frutos del Mar', price: '$89.900' },
+      { name: 'Explosión de Camarones en Salsa de Piña', price: '$69.900' },
+      { name: 'Caracol y Camarón', price: '$82.900' },
+      { name: 'Pulpo a la Parrilla', price: '$60.900' },
+      { name: 'Filete de Tilapia', price: '$45.000' },
     ]
   },
   'langosta': {
     icon: ICONS.lobster,
     title: 'Langosta',
-    desc: 'Acompañada de patacones y arroz',
-    note: 'Acompañada de patacones y arroz',
+    desc: 'Sola o con camarones',
+    note: 'Precios disponibles sola o acompañada con camarones',
     items: [
-      { name: 'Langosta Pequeña', price: '$49.990' },
-      { name: 'Langosta Mediana', price: '$79.990' },
-      { name: 'Langosta Grande', price: '$96.990' },
+      { name: 'Langosta Pequeña', price: '$52.900' },
+      { name: 'Langosta Pequeña con Camarones', price: '$68.000' },
+      { name: 'Langosta Mediana', price: '$80.900' },
+      { name: 'Langosta Mediana con Camarones', price: '$89.900' },
+      { name: 'Langosta Grande', price: '$98.900' },
+      { name: 'Langosta Grande con Camarones', price: '$109.000' },
     ]
   },
   'especialidades': {
     icon: ICONS.chef,
     title: 'Otras Especialidades',
-    desc: 'Acompañadas de arroz con coco y patacón',
-    note: 'Acompañadas de arroz con coco y patacón',
+    desc: 'Carnes y pollo de la casa',
     items: [
-      { name: 'Pechuga a la Plancha', price: '$30.000' },
-      { name: 'Pechuga Gratinada', price: '$38.000' },
-      { name: 'Punta Gorda 250 gr.', price: '$35.000' },
+      { name: 'Pechuga a la Plancha', price: '$38.000' },
+      { name: 'Pechuga Gratinada', price: '$42.000' },
+      { name: 'Punta Gorda', price: '$38.000' },
+    ]
+  },
+  'infantil': {
+    icon: ICONS.share,
+    title: 'Menú Infantil',
+    desc: 'Para los más pequeños de la casa',
+    items: [
+      { name: 'Croquetas de Pollo + Papas y Gaseosa', price: '$38.000' },
     ]
   },
   'paellas': {
@@ -211,11 +235,11 @@ const menuData = {
     desc: 'Con langostino, mejillones, camarón y delicias del mar',
     note: 'Con langostino, mejillones, camarón y otras delicias del mar',
     items: [
-      { name: 'Paella Sencilla', price: '$43.990' },
-      { name: 'Paella para Compartir 2 Personas', price: '$79.990' },
-      { name: 'Paella para Compartir 4 Personas', price: '$149.990' },
-      { name: 'Paella para Compartir 6 Personas', price: '$229.990' },
-      { name: 'Paella Especial de la Casa 6 Pers.', price: '$299.990' },
+      { name: 'Paella Sencilla', price: '$48.000' },
+      { name: 'Paella para Compartir 2 Personas', price: '$82.000' },
+      { name: 'Paella para Compartir 4 Personas', price: '$152.000' },
+      { name: 'Paella para Compartir 6 Personas', price: '$232.000' },
+      { name: 'Paella Especial de la Casa', price: '$302.000' },
     ]
   },
   'pastas': {
@@ -223,9 +247,12 @@ const menuData = {
     title: 'Pastas',
     desc: 'Preparadas al momento',
     items: [
-      { name: 'Pasta de Camarón al Ajillo', price: 'Consultar' },
-      { name: 'Pasta Mixta Frutos del Mar', price: 'Consultar' },
-      { name: 'Pasta de Pollo', price: 'Consultar' },
+      { name: 'Pasta de Camarón', price: '$42.000' },
+      { name: 'Pasta de Pollo', price: '$40.000' },
+      { name: 'Pasta de Camarón y Caracol', price: '$48.000' },
+      { name: 'Pasta de Camarón y Langostino', price: '$68.900' },
+      { name: 'Pasta Frutos del Mar', price: '$78.900' },
+      { name: 'Pasta a la Langosta', price: '$125.000' },
     ]
   },
   'pizzas': {
@@ -233,13 +260,13 @@ const menuData = {
     title: 'Pizzas',
     desc: 'Disponibles en Pizzeta, Mediana y Grande',
     pizzas: [
-      { name: 'Jamón con Queso', pizzeta: '$15.000', mediana: '$30.000', grande: '$40.000' },
-      { name: 'Hawaiana', pizzeta: '$15.000', mediana: '$30.000', grande: '$40.000' },
-      { name: 'Camarón al Ajillo', pizzeta: '$20.000', mediana: '$35.000', grande: '$50.000' },
-      { name: 'Camarón y Caracol', pizzeta: '$28.000', mediana: '$38.000', grande: '$58.000' },
-      { name: 'Cuatro Carnes', pizzeta: '$25.000', mediana: '$45.000', grande: '$60.000' },
-      { name: 'Pollo', pizzeta: '$20.000', mediana: '$35.000', grande: '$48.000' },
-      { name: 'Carne Esmechada', pizzeta: '$20.000', mediana: '$35.000', grande: '$48.000' },
+      { name: 'Jamón con Queso', pizzeta: '$20.000', mediana: '$38.000', grande: '$48.000' },
+      { name: 'Hawaiana', pizzeta: '$20.000', mediana: '$38.000', grande: '$48.000' },
+      { name: 'Camarón al Ajillo', pizzeta: '$28.000', mediana: '$45.000', grande: '$62.000' },
+      { name: 'Camarón y Caracol', pizzeta: '$35.000', mediana: '$49.900', grande: '$66.900' },
+      { name: 'Cuatro Carnes', pizzeta: '$28.000', mediana: '$49.900', grande: '$68.900' },
+      { name: 'Pollo', pizzeta: '$20.900', mediana: '$38.000', grande: '$48.000' },
+      { name: 'Carne Esmechada', pizzeta: '$25.000', mediana: '$40.900', grande: '$52.900' },
     ]
   },
   'postres': {
@@ -247,7 +274,7 @@ const menuData = {
     title: 'Postres',
     desc: 'El dulce final perfecto',
     items: [
-      { name: 'Enyucao', price: '$10.000' },
+      { name: 'Torta de Queso / Naranja (con helado)', price: '$22.000' },
       { name: 'Arroz con Leche', price: '$12.000' },
     ]
   },
@@ -294,6 +321,16 @@ const menuData = {
       { name: 'Piña Colada', price: '$30.000', desc: 'Ron oscuro, piña, crema de coco y leche condensada' },
       { name: 'Coronita Endiablada', price: '$18.000', desc: 'Coronita, zumo de limón, zumo de naranja y granadilla' },
       { name: 'Lulada', price: '$25.000', desc: 'Bebida a base de lulo y soda' },
+      { name: 'Margarita Tradicional', price: '$22.000', desc: 'Tequila, triple-sec y jugo de limón' },
+      { name: 'Margarita Blue', price: '$25.000', desc: 'Tequila, jugo de limón y curaçao' },
+      { name: 'Cuba Libre', price: '$24.000', desc: 'Ron, coca-cola y limón' },
+      { name: 'Daikiri', price: '$26.000', desc: 'Ron, fresa y limón' },
+      { name: 'Caipirinha', price: '$28.000', desc: 'Limón, ron y jengibre' },
+      { name: 'Mojito de Maracuyá', price: '$28.000', desc: 'Ron, limón, menta, soda y pulpa de maracuyá' },
+      { name: 'Tequila Sunrise', price: '$28.000', desc: 'Tequila, jugo de naranja y granadilla' },
+      { name: 'Gin Tonic', price: '$30.000', desc: 'Ginebra, agua tónica y jugo de limón' },
+      { name: 'Long Island', price: '$30.000', desc: 'Vodka, gin, tequila, triple-sec, sirup, coca-cola y limón' },
+      { name: 'Destornillador', price: '$28.000', desc: 'Vodka y jugo de naranja' },
     ]
   },
   'licores': {
