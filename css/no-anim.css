@@ -1,0 +1,92 @@
+/* ============================================================
+   MODO MANTENIMIENTO — ANIMACIONES DESACTIVADAS
+   ------------------------------------------------------------
+   Apaga TODAS las animaciones, transiciones y efectos de
+   movimiento del sitio para poder trabajar sobre el HTML plano.
+
+   PARA REACTIVAR TODO (volver a la pagina normal):
+     1) Borra o comenta esta linea en index.html, menu.html,
+        reservas.html e invitacion.html:
+            <link rel="stylesheet" href="css/no-anim.css">
+     2) En script.js pon:  const ANIMACIONES_ACTIVAS = true;
+
+   No se toco ningun otro archivo de estilos: al quitar estos
+   dos pasos la pagina queda exactamente como estaba.
+   ============================================================ */
+
+/* --- 1. Sin animaciones ni transiciones en ningun elemento --- */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  animation-delay: 0s !important;
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+  transition-delay: 0s !important;
+  transition-duration: 0s !important;
+}
+
+/* --- 2. Sin scroll suave (salta directo a la seccion) --- */
+html,
+body {
+  scroll-behavior: auto !important;
+}
+
+/* --- 3. El contenido que aparecia al hacer scroll se ve siempre --- */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* --- 4. Fondos decorativos animados fuera (burbujas y particulas) --- */
+#particles,
+.hero-bubble,
+.splash-particles,
+.particle,
+.bubbles-container,
+.bubble {
+  display: none !important;
+}
+
+/* --- 5. Marquesina (ticker) quieta y legible --- */
+.features-ticker {
+  transform: none !important;
+}
+
+/* --- 6. Nada se mueve al pasar el mouse (los colores si cambian) --- */
+.nav-cta:hover,
+.btn-primary:hover,
+.stat-card:hover,
+.menu-card:hover,
+.menu-card:hover::before,
+.reel-card:hover,
+.ig-follow-btn:hover,
+.gallery-item:hover,
+.gallery-item:hover img,
+.special-card:hover,
+.form-submit:hover,
+.map-open-btn:hover,
+.social-btn:hover,
+.whatsapp-float:hover,
+.menu-modal-close:hover {
+  transform: none !important;
+}
+
+/* --- 7. Botones desactivados: se ven igual, pero el cursor
+       ya no es "mano" para que se note que no hacen nada.
+       (el bloqueo real esta en js/mantenimiento.js)          --- */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"],
+[onclick],
+[aria-disabled="true"] {
+  cursor: default !important;
+}

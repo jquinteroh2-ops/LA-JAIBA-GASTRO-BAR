@@ -1,3 +1,10 @@
+/* ============================================================
+   MODO MANTENIMIENTO
+   Ponlo en true para volver a activar todas las animaciones
+   (y quita el <link> de css/no-anim.css en los HTML).
+   ============================================================ */
+const ANIMACIONES_ACTIVAS = false;
+
 // PARTICLES
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
@@ -78,7 +85,7 @@ function animParticles() {
 
   requestAnimationFrame(animParticles);
 }
-animParticles();
+if (ANIMACIONES_ACTIVAS) animParticles();
 
 // DATE CONSTRAINTS — reserva normal solo desde hoy en adelante
 (function setDateMin() {
@@ -92,6 +99,7 @@ animParticles();
 
 // HERO BUBBLES
 (function spawnHeroBubbles() {
+  if (!ANIMACIONES_ACTIVAS) return;
   const hero = document.getElementById('hero');
   for (let i = 0; i < 28; i++) {
     const b = document.createElement('div');
@@ -144,14 +152,19 @@ document.addEventListener('click', (e) => {
 
 // SCROLL REVEAL
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 60);
-    }
-  });
-}, { threshold: 0.1 });
-revealEls.forEach(el => revealObserver.observe(el));
+if (!ANIMACIONES_ACTIVAS) {
+  // Mantenimiento: todo visible de una vez, sin observar el scroll
+  revealEls.forEach(el => el.classList.add('visible'));
+} else {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
+}
 
 // TOAST
 function showToast(msg) {
@@ -280,7 +293,7 @@ function sendSpecialReservation() {
 }
 
 // 3D TILT on special cards
-document.querySelectorAll('.special-card').forEach(card => {
+if (ANIMACIONES_ACTIVAS) document.querySelectorAll('.special-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -293,7 +306,7 @@ document.querySelectorAll('.special-card').forEach(card => {
 
 // Ticker duplicate for seamless loop
 const ticker = document.getElementById('ticker');
-ticker.innerHTML += ticker.innerHTML;
+if (ANIMACIONES_ACTIVAS) ticker.innerHTML += ticker.innerHTML;
 
 // GALLERY FILTER
 function filterGallery(cat, btn) {
@@ -351,6 +364,7 @@ function closeLightbox() {
 function lightboxNav(dir) {
   lbIdx = (lbIdx + dir + lbItems.length) % lbItems.length;
   const img = document.getElementById('lightboxImg');
+  if (!ANIMACIONES_ACTIVAS) { renderLightbox(); return; }
   img.style.opacity = '0';
   setTimeout(() => {
     renderLightbox();
@@ -425,7 +439,7 @@ document.addEventListener('keydown', function(e) {
       const menu = document.getElementById('menu');
       if (menu) {
         const y = menu.getBoundingClientRect().top + window.scrollY - 68;
-        if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+        if (window.scrollY > y) window.scrollTo({ top: y, behavior: ANIMACIONES_ACTIVAS ? 'smooth' : 'auto' });
       }
     }
   });
